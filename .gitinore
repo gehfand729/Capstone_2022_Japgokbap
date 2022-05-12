@@ -1,9 +1,8 @@
-project/Library
-project/Temp
+/Library
+/Temp
 *.suo
 *.sln
 *.sln.docstates
 *.unityproj
 *.csproj
-*.pidb
 *.userprefs
