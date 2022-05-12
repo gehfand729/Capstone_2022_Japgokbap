@@ -1,5 +1,5 @@
-Library/
-Temp/
+project/Library
+project/Temp
 *.suo
 *.sln
 *.sln.docstates
