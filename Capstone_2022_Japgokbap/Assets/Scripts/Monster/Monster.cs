@@ -10,11 +10,15 @@ public abstract class Monster : MonoBehaviour
     protected int enemyOffensePower;
     protected int enemyDefensePower;
     protected int enemyExperience;
+    [SerializeField] protected bool isFollowingPlayer;
 
-    void Start()
+    void Awake()
     {
+        isFollowingPlayer = true;
+
         MyNavMesh = GetComponent<NavMeshAgent>();
     }
+    protected abstract IEnumerator Move();
 
     protected abstract void SpawnExpObjet();
 
