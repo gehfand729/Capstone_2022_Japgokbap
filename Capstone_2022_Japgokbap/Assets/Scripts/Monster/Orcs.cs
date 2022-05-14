@@ -11,20 +11,26 @@ public class Orcs : Monster
     [SerializeField] protected int m_enemyDefensePower;
     [SerializeField] protected int m_enemyExperience;
 
-    void Update() 
+    void Update()
     {
-        if(m_enemyHp > 0)
+        if(isFollowingPlayer)
         {
-            NavMesh.SamplePosition(GameManager.instance.GetPlayerPosition(), out NavMeshHit hit, 1f, 1);
-
-            this.MyNavMesh.SetDestination(hit.position);
-
+            StartCoroutine(Move());
         }
-        else
+        else if(m_enemyHp <= 0)
         {
             SpawnExpObjet();
             Destroy(this.gameObject);
         }
+    }
+
+    protected override IEnumerator Move()
+    {
+        NavMesh.SamplePosition(GameManager.instance.GetPlayerPosition(), out NavMeshHit hit, 1f, 1);
+
+        this.MyNavMesh.SetDestination(hit.position);
+
+        yield return null;
     }
 
     protected override void SpawnExpObjet()
