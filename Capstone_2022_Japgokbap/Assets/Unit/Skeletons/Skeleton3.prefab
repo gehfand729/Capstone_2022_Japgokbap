@@ -68,10 +68,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda72ea32d6b3724cac315b5f4b734b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_enemyHp: 270
-  m_enemyOffensePower: 180
-  m_enemyDefensePower: 15
-  m_enemyExperience: 0
+  enemyHp: 100
+  enemyOffensePower: 0
+  enemyDefensePower: 0
+  enemyExperience: 0
+  enemyAttackRange: 1
+  enemyAttackSpeed: 0
+  isFollowingPlayer: 0
 --- !u!136 &1666894579105827578
 CapsuleCollider:
   m_ObjectHideFlags: 0
