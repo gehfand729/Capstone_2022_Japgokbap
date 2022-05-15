@@ -15,7 +15,7 @@ public class Orcs : Monster
     {
         if(isFollowingPlayer)
         {
-            StartCoroutine(Move());
+            Move();
         }
         else if(m_enemyHp <= 0)
         {
@@ -24,13 +24,9 @@ public class Orcs : Monster
         }
     }
 
-    protected override IEnumerator Move()
+    protected override void Move()
     {
-        NavMesh.SamplePosition(GameManager.instance.GetPlayerPosition(), out NavMeshHit hit, 1f, 1);
-
-        this.MyNavMesh.SetDestination(hit.position);
-
-        yield return null;
+        this.MyNavMesh.SetDestination(GameManager.instance.GetPlayerPosition());
     }
 
     protected override void SpawnExpObjet()
