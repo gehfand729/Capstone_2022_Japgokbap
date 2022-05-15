@@ -1,11 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MonsterLove.StateMachine;
 using UnityEngine.AI;
 
 public abstract class Monster : MonoBehaviour
 {
     protected NavMeshAgent MyNavMesh { get; private set; }
+    protected enum States
+    {
+        Follow,
+        Attack,
+        Die
+    }
+
+    StateMachine<States> fsm;
+
     protected int enemyHp;
     protected int enemyOffensePower;
     protected int enemyDefensePower;
@@ -14,11 +24,15 @@ public abstract class Monster : MonoBehaviour
 
     void Awake()
     {
+        fsm = new StateMachine<States>(this);
+        fsm.ChangeState(States.Follow);
+
         isFollowingPlayer = true;
 
         MyNavMesh = GetComponent<NavMeshAgent>();
     }
-    protected abstract IEnumerator Move();
+
+    protected abstract void Move();
 
     protected abstract void SpawnExpObjet();
 

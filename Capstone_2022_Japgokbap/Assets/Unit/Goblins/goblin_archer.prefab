@@ -798,12 +798,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5196200199337943303}
   - component: {fileID: 2232853409187756925}
-  - component: {fileID: 7443471069364264291}
   - component: {fileID: 4711259687979921473}
-  - component: {fileID: 5230415979458600555}
+  - component: {fileID: 2309995832683111704}
   - component: {fileID: 8698977320935016585}
   m_Layer: 0
-  m_Name: goblin_archer 1
+  m_Name: goblin_archer
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -844,25 +843,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7443471069364264291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4852430825681746877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b88ed9511482bfb4898e1eed2db890c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFollowingPlayer: 0
-  m_enemyHp: 100
-  m_enemyOffensePower: 100
-  m_enemyDefensePower: 100
-  m_enemyExperience: 0
-  m_attackRange: 0
-  m_attackDelay: 3.767
 --- !u!136 &4711259687979921473
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -877,19 +857,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!135 &5230415979458600555
-SphereCollider:
+--- !u!114 &2309995832683111704
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4852430825681746877}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee05a87862ca89848a2ef4ae6e163313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFollowingPlayer: 0
+  m_enemyHp: 100
+  m_enemyOffensePower: 100
+  m_enemyDefensePower: 100
+  m_enemyExperience: 0
 --- !u!195 &8698977320935016585
 NavMeshAgent:
   m_ObjectHideFlags: 0

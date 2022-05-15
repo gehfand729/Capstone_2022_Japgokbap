@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using MonsterLove.StateMachine;
 
 public class Goblins : Monster
 {
@@ -11,11 +12,11 @@ public class Goblins : Monster
     [SerializeField] protected int m_enemyDefensePower;
     [SerializeField] protected int m_enemyExperience;
 
-    void Update()
+    protected virtual void Update()
     {
         if(isFollowingPlayer)
         {
-            StartCoroutine(Move());
+            Move();
         }
         else if(m_enemyHp <= 0)
         {
@@ -24,13 +25,9 @@ public class Goblins : Monster
         }
     }
 
-    protected override IEnumerator Move()
+    protected override void Move()
     {
-        NavMesh.SamplePosition(GameManager.instance.GetPlayerPosition(), out NavMeshHit hit, 1f, 1);
-
-        this.MyNavMesh.SetDestination(hit.position);
-
-        yield return null;
+        this.MyNavMesh.SetDestination(GameManager.instance.GetPlayerPosition());
     }
     
     protected override void GetDamaged()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IRangeAttackable
 {
-    IEnumerator RangedAttack();
+    void RangedAttack();
 
     void SetRange(float range);
 }
