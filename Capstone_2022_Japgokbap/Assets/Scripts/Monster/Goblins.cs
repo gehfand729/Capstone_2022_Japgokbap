@@ -45,14 +45,14 @@ public class Goblins : Monster
     {
         this.enemyAttackDelay -= Time.deltaTime;
 
-        if (enemyAttackDelay < 0)
-            enemyAttackDelay = 0;
+        if (this.enemyAttackDelay < 0)
+            this.enemyAttackDelay = 0;
         
-        if (enemyAttackDelay == 0)
+        if (this.enemyAttackDelay == 0)
         {
             this.enemyAnimator.SetTrigger("attackTrigger");
 
-            enemyAttackDelay = enemyAttackSpeed;
+            this.enemyAttackDelay = this.enemyAttackSpeed;
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);

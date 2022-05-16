@@ -12,6 +12,7 @@ public abstract class Monster : MonoBehaviour
     {
         Follow,
         Attack,
+        Pattern,
         Die
     }
 

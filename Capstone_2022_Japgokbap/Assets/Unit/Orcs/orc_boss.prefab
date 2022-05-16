@@ -1436,7 +1436,7 @@ Animator:
   m_GameObject: {fileID: 5942504253472392294}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 25a609a364575cc449fa7129b6fcd5b4, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd8e135dbc316244eb90e702c5b007a0, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1479,10 +1479,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84b5c9d1ec70cf48a5286df5820ac15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_enemyHp: 100
-  m_enemyOffensePower: 0
-  m_enemyDefensePower: 0
-  m_enemyExperience: 0
+  enemyHp: 0
+  enemyOffensePower: 0
+  enemyDefensePower: 0
+  enemyExperience: 0
+  enemyAttackRange: 0
+  enemyAttackDelay: 0
+  enemyAttackSpeed: 0
+  isFollowingPlayer: 0
+  rushDelay: 0
+  rushCooltime: 0
+  originSpeed: 0
+  rushSpeed: 0
 --- !u!136 &8708929910197334076
 CapsuleCollider:
   m_ObjectHideFlags: 0

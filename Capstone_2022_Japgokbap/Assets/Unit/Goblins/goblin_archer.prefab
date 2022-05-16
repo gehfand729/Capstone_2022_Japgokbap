@@ -874,7 +874,8 @@ MonoBehaviour:
   enemyDefensePower: 0
   enemyExperience: 0
   enemyAttackRange: 10
-  enemyAttackSpeed: 0
+  enemyAttackDelay: 4
+  enemyAttackSpeed: 4
   isFollowingPlayer: 0
 --- !u!195 &8698977320935016585
 NavMeshAgent:

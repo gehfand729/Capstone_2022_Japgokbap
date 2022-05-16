@@ -37,11 +37,24 @@ public class Golems : Monster
 
     protected void Attack_Enter()
     {
+        this.enemyAnimator.SetTrigger("attackTrigger");
         this.MyNavMesh.isStopped = true;
     }
 
     protected void Attack_Update()
     {
+        this.enemyAttackDelay -= Time.deltaTime;
+
+        if (this.enemyAttackDelay < 0)
+            this.enemyAttackDelay = 0;
+        
+        if (this.enemyAttackDelay == 0)
+        {
+            this.enemyAnimator.SetTrigger("attackTrigger");
+
+            this.enemyAttackDelay = this.enemyAttackSpeed;
+        }
+
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
         if (distance > this.enemyAttackRange)
@@ -52,7 +65,11 @@ public class Golems : Monster
 
     protected void Attack_Exit()
     {
+        if (this.fsm.NextState == States.Follow)
+            this.enemyAnimator.SetTrigger("moveTrigger");
+
         this.MyNavMesh.isStopped = false;
+        this.enemyAttackDelay = this.enemyAttackSpeed;
     }
 
     protected void Die_Enter()
