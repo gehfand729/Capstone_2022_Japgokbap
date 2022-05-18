@@ -1635,12 +1635,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHp: 100
+  originHp: 0
   enemyOffensePower: 0
   enemyDefensePower: 0
   enemyExperience: 0
   enemyAttackRange: 20
-  enemyAttackDelay: 1
-  enemyAttackSpeed: 1
+  enemyAttackDelay: 4
+  enemyAttackSpeed: 4
   isFollowingPlayer: 0
 --- !u!136 &8793266479319878297
 CapsuleCollider:

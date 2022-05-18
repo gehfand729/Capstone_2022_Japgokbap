@@ -495,8 +495,8 @@ MonoBehaviour:
   enemyDefensePower: 0
   enemyExperience: 0
   enemyAttackRange: 20
-  enemyAttackDelay: 1
-  enemyAttackSpeed: 1
+  enemyAttackDelay: 4
+  enemyAttackSpeed: 4
   isFollowingPlayer: 0
 --- !u!136 &6982846834037814901
 CapsuleCollider:

@@ -20,6 +20,7 @@ public abstract class Monster : MonoBehaviour
 
     [Header ("Enemy Stats")]
     [SerializeField] protected int enemyHp;
+    [SerializeField] protected float originHp;
     [SerializeField] protected int enemyOffensePower;
     [SerializeField] protected int enemyDefensePower;
     [SerializeField] protected int enemyExperience;
@@ -27,7 +28,7 @@ public abstract class Monster : MonoBehaviour
     [SerializeField] protected float enemyAttackDelay;
     [SerializeField] protected float enemyAttackSpeed;
     [SerializeField] protected bool isFollowingPlayer;
-
+    
     protected Vector3 targetPosition;
     protected Animator enemyAnimator;
 
@@ -37,6 +38,7 @@ public abstract class Monster : MonoBehaviour
         fsm.ChangeState(States.Follow);
 
         isFollowingPlayer = true;
+        originHp = enemyHp;
 
         MyNavMesh = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();

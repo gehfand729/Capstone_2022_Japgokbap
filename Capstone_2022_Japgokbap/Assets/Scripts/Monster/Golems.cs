@@ -43,6 +43,8 @@ public class Golems : Monster
 
     protected void Attack_Update()
     {
+        this.transform.LookAt(targetPosition);
+        
         this.enemyAttackDelay -= Time.deltaTime;
 
         if (this.enemyAttackDelay < 0)

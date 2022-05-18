@@ -36,12 +36,19 @@ public class GameManager : MonoBehaviour
 
     private void Update() 
     {
-        StartTimer();
+        if (StageManager.instance.fsm.State != StageManager.States.Ready)
+            StartTimer();
+        
     }
 
     public Vector3 GetPlayerPosition()
     {
         return player.transform.position;
+    }
+
+    public void SetMinute(int time)
+    {
+        minute = time;
     }
 
     #endregion
@@ -50,14 +57,19 @@ public class GameManager : MonoBehaviour
 
     private void StartTimer()
     {
-        second += Time.deltaTime;
+        second -= Time.deltaTime;
 
         timerText.text = string.Format("{0:D2}:{1:D2}", minute, (int)second);
 
-        if((int)second > 59)
+        if((int)second < 0)
         {
             second = 0;
-            minute++;
+            minute -= 1;
+
+            if (minute < 0)
+            {
+                minute = 0;
+            }
         }
     }
 

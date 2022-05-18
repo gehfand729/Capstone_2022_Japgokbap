@@ -870,7 +870,7 @@ GameObject:
   - component: {fileID: 261564594}
   - component: {fileID: 5749371119450932441}
   m_Layer: 0
-  m_Name: Great Sword Walk
+  m_Name: WorriorInstance
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -929,10 +929,11 @@ MonoBehaviour:
   readySkill: 1
   realtime: 0
   skillPrefab: {fileID: 4131891160570470766, guid: 4f1e5fb064c8e3c4cb1d97919987d0e9, type: 3}
-  coolTime: 10
+  coolTime: 0
   animDelay: 2
   duration: 2
   Damage: 0
+  skillParticle: {fileID: 8177509200838468481, guid: db7e3c2b6614d3e46bf082b2609d1c8e, type: 3}
 --- !u!114 &261564589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,10 +951,11 @@ MonoBehaviour:
   readySkill: 1
   realtime: 0
   skillPrefab: {fileID: 4131891160570470766, guid: ff0cf110fe24d944da3cde58faea4e5f, type: 3}
-  coolTime: 10
+  coolTime: 0
   animDelay: 0
   duration: 3
   Damage: 0
+  skillParticle: {fileID: 6847802665603852916, guid: 337662a11252a2e4793cc33e49889bde, type: 3}
 --- !u!114 &261564590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,7 +969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPrefab: {fileID: 8812030697612040980, guid: 3a2f1f3c86f7f7747a7eb2a33b20a52d, type: 3}
-  attackParticle: {fileID: 0}
+  attackParticle: {fileID: 5288328550908618982, guid: 07eb39d3410ff4446b74f799bc7b620c, type: 3}
   attackDelay: 0.65
 --- !u!114 &261564591
 MonoBehaviour:
@@ -999,12 +1001,12 @@ MonoBehaviour:
   playerAnimator: {fileID: 0}
   readySkill: 1
   realtime: 0
-  skillPrefab: {fileID: 0}
+  skillPrefab: {fileID: 8791075249115662829, guid: 84027556b11ccd5459fae3bac53b15e5, type: 3}
   coolTime: 0
-  animDelay: 0
-  duration: 0
+  animDelay: 1
+  duration: 1.5
   Damage: 0
-  skillParticle: {fileID: 0}
+  skillParticle: {fileID: 5447803300084837581, guid: b6f0afd01368a1d41b708febd59d8ec7, type: 3}
 --- !u!114 &2871729710083916456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,9 +1026,9 @@ MonoBehaviour:
   skillPrefab: {fileID: 0}
   coolTime: 0
   animDelay: 0
-  duration: 0
+  duration: 10
   Damage: 0
-  skillParticle: {fileID: 0}
+  skillParticle: {fileID: 2214721480864359111, guid: db6933ec6f055b244befe403cdc5a5d1, type: 3}
 --- !u!114 &1309873714333111647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,9 +1048,9 @@ MonoBehaviour:
   skillPrefab: {fileID: 0}
   coolTime: 0
   animDelay: 0
-  duration: 0
+  duration: 10
   Damage: 0
-  skillParticle: {fileID: 0}
+  skillParticle: {fileID: 2214721480864359111, guid: eb51f034777f6a74f872642acd9e829c, type: 3}
 --- !u!54 &261564594
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1076,9 +1078,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 3
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.1}
+  m_Center: {x: 0, y: 0.7, z: 0.1}
 --- !u!1 &2485731629493001118
 GameObject:
   m_ObjectHideFlags: 0

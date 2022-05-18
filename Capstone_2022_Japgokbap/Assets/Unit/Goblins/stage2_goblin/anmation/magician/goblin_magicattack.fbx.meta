@@ -17,7 +17,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: <Root Transform>
+    motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -38,7 +38,7 @@ ModelImporter:
       name: Standing Idle 04
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 0
+      firstFrame: 88
       lastFrame: 224
       wrapMode: 0
       orientationOffsetY: 0
