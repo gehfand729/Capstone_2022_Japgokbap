@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GameScene.unity
     guid: 977376159fd45c947bbf40ae742f7b76
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SpawnTestScene.unity
     guid: ee446ca4ba44da749bdb3e681fac08be
+  - enabled: 1
+    path: Assets/Scenes/TempScene.unity
+    guid: d2e88ff9aeb686e41acc18991fda6eb8
   m_configObjects: {}

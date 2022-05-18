@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
         if(!lockBehaviour){
             moveDirX = Input.GetAxisRaw("Horizontal");
             moveDirZ = Input.GetAxisRaw("Vertical");
-            inputDir = new Vector3(moveDirX,0,moveDirZ).normalized;
+            inputDir = new Vector3(moveDirX, 0, moveDirZ).normalized;
 
             rb.MovePosition(transform.position + inputDir*Time.deltaTime*playerMoveSpeed);
             playerAnimator.SetBool("isWalk",inputDir != Vector3.zero);
