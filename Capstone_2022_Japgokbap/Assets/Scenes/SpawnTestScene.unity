@@ -1058,14 +1058,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964641371}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b524173d1faaafc4c9473caec4801b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 261564587}
+  time: 0
   minute: 0
-  second: 60
+  second: 0
   timerText: {fileID: 2024265022}
 --- !u!1 &1968036663
 GameObject:
@@ -1154,7 +1155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2026768338
 Transform:
   m_ObjectHideFlags: 0
@@ -1193,55 +1194,55 @@ MonoBehaviour:
   magicianInstance: {fileID: 153829307390509354, guid: e770ba99307278946b6792a64b768598, type: 3}
   expClones: {fileID: 2121168765}
   expObject: {fileID: 5986583666806072436, guid: c935ed4a88fc4e64d8ceef2118340379, type: 3}
-  round1ClearTime: 3
+  round1ClearTime: 180
   monsters1: {fileID: 1147812666}
-  count1: 3
-  count2: 3
+  count1: 10
+  count2: 10
   monsters2: {fileID: 581071364}
-  count3: 3
-  count4: 3
-  count5: 3
-  count6: 3
+  count3: 10
+  count4: 10
+  count5: 10
+  count6: 10
   monsters3: {fileID: 1247731522}
-  count7: 3
-  count8: 3
-  count9: 3
-  round2ClearTime: 3
+  count7: 10
+  count8: 10
+  count9: 10
+  round2ClearTime: 180
   monsters4: {fileID: 903089130}
-  count10: 3
-  count11: 3
+  count10: 10
+  count11: 10
   monsters5: {fileID: 766795140}
-  count12: 3
-  count13: 3
-  count14: 3
+  count12: 10
+  count13: 10
+  count14: 10
   monsters6: {fileID: 549925726}
-  count15: 3
-  count16: 3
-  count17: 3
-  count18: 3
+  count15: 10
+  count16: 10
+  count17: 10
+  count18: 10
   monsters7: {fileID: 1148894431}
-  count19: 3
-  count20: 3
-  count21: 3
-  count22: 3
-  round3ClearTime: 3
+  count19: 10
+  count20: 10
+  count21: 10
+  count22: 10
+  round3ClearTime: 180
   monsters8: {fileID: 2005330340}
-  count23: 3
-  count24: 3
+  count23: 10
+  count24: 10
   monsters9: {fileID: 1866263175}
-  count25: 3
-  count26: 3
-  count27: 3
+  count25: 10
+  count26: 10
+  count27: 10
   monsters10: {fileID: 1968036663}
-  count28: 3
-  count29: 3
-  count30: 3
+  count28: 10
+  count29: 10
+  count30: 10
   monsters11: {fileID: 1466938570}
-  count31: 3
-  count32: 3
-  count33: 3
-  count34: 3
-  round4ClearTime: 2
+  count31: 10
+  count32: 10
+  count33: 10
+  count34: 10
+  round4ClearTime: 60
   monsters12: {fileID: 1050236944}
   monsterPool: {fileID: 1644673560}
   enemySpawner:

@@ -208,7 +208,7 @@ public class StageManager : MonoBehaviour
 
         roundInfoText.text = "Stage 1-1";
 
-        GameManager.instance.SetMinute(round1ClearTime - 1);
+        GameManager.instance.SetTime(round1ClearTime);
     }
 
     IEnumerator Stage1_Enter()
@@ -296,7 +296,7 @@ public class StageManager : MonoBehaviour
 
     void Stage1_Update()
     {
-        if (GameManager.instance.minute == 0)
+        if (GameManager.instance.time == 0)
         {
             fsm.ChangeState(States.Stage2);
         }
@@ -312,8 +312,6 @@ public class StageManager : MonoBehaviour
         EarlySpawnMonster(goblin_1_queue, goblins[1], archerMaxCount);
         EarlySpawnMonster(goblin_2_queue, goblins[2], worriorMaxCount);
         EarlySpawnMonster(goblin_3_queue, goblins[3], magicianMaxCount);
-
-        GameManager.instance.SetMinute(round2ClearTime - 1);
     }
 
     IEnumerator Stage2_Enter()
@@ -325,6 +323,7 @@ public class StageManager : MonoBehaviour
         roundInfoText.text = "1초 뒤 시작됩니다.";
 		yield return new WaitForSeconds(1f);
 
+        GameManager.instance.SetTime(round2ClearTime);
         
         roundInfoText.text = "Stage 2-1";
 
@@ -445,7 +444,7 @@ public class StageManager : MonoBehaviour
         {
             fsm.ChangeState(States.Stage2);
         }
-        else if (GameManager.instance.minute == 0 && !bossCleared)
+        else if (GameManager.instance.time == 0 && !bossCleared)
         {
             fsm.ChangeState(States.Finish);
         }
@@ -462,8 +461,6 @@ public class StageManager : MonoBehaviour
         EarlySpawnMonster(golem_1_queue, golems[1], worriorMaxCount);
         EarlySpawnMonster(golem_2_queue, golems[2], magicianMaxCount);
         EarlySpawnMonster(golem_3_queue, golems[3], magicianMaxCount);
-
-        GameManager.instance.SetMinute(round3ClearTime - 1);
     }
 
     IEnumerator Stage3_Enter()
@@ -474,6 +471,8 @@ public class StageManager : MonoBehaviour
 		yield return new WaitForSeconds(1f);
         roundInfoText.text = "1초 뒤 시작됩니다.";
 		yield return new WaitForSeconds(1f);
+
+        GameManager.instance.SetTime(round3ClearTime);
 
         roundInfoText.text = "Stage 3-1";
 
@@ -587,7 +586,7 @@ public class StageManager : MonoBehaviour
         {
             fsm.ChangeState(States.BossStage);
         }
-        else if (GameManager.instance.minute == 0 && !bossCleared)
+        else if (GameManager.instance.time == 0 && !bossCleared)
         {
             fsm.ChangeState(States.Finish);
         }
@@ -610,7 +609,7 @@ public class StageManager : MonoBehaviour
         roundInfoText.text = "1초 뒤 시작됩니다.";
 		yield return new WaitForSeconds(1f);
 
-        GameManager.instance.SetMinute(round4ClearTime - 1);
+        GameManager.instance.SetTime(round4ClearTime);
 
         roundInfoText.text = "Final Boss";
 
@@ -717,7 +716,7 @@ public class StageManager : MonoBehaviour
             for (int i = 1; i < childList.Length; i++)
             {
                 if (childList[i] != transform)
-                    Destroy(childList[i].gameObject);
+                    Destroy(childList[i].gameObject); // queue로 보내야함
             }
         }
     }

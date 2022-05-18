@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
             return m_instance;
         }
     }
+
+    public float time;
     public int minute;
     public float second;
     public Text timerText;
@@ -37,7 +39,9 @@ public class GameManager : MonoBehaviour
     private void Update() 
     {
         if (StageManager.instance.fsm.State != StageManager.States.Ready)
+        {
             StartTimer();
+        }
         
     }
 
@@ -46,9 +50,9 @@ public class GameManager : MonoBehaviour
         return player.transform.position;
     }
 
-    public void SetMinute(int time)
+    public void SetTime(int settime)
     {
-        minute = time;
+        time = settime;
     }
 
     #endregion
@@ -57,19 +61,16 @@ public class GameManager : MonoBehaviour
 
     private void StartTimer()
     {
-        second -= Time.deltaTime;
+        time -= Time.deltaTime;
+
+        second = ((int)time % 60);
+        minute = ((int)time / 60 % 60);
 
         timerText.text = string.Format("{0:D2}:{1:D2}", minute, (int)second);
 
-        if((int)second < 0)
+        if((int)time < 0)
         {
-            second = 0;
-            minute -= 1;
-
-            if (minute < 0)
-            {
-                minute = 0;
-            }
+            time = 0;
         }
     }
 
