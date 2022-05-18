@@ -2,34 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
-{    
-    [SerializeField] private GameObject attackPrefab;
-    [SerializeField] private GameObject attackParticle;
-    public float attackDelay;
+public class PlayerAttack : Skill{
 
-    private GameObject player;
-    private Animator playerAnimator;
 
-    void Start(){
-        player = GameObject.FindWithTag("Player");
-        playerAnimator = player.GetComponent<Animator>();
+    [SerializeField] private float skillDuration;
+
+    private void Start() {
+        StopCoroutine(DoSkill());
+        StartCoroutine(DoSkill());
     }
-
-    public IEnumerator Attack(float delay){
-        //플레이어 오브젝트의 앞쪽 방향에 생성
-        GameObject spawnPrefab = Instantiate(attackPrefab, player.transform.position + player.transform.forward, player.transform.rotation);
-        GameObject spawnParticle = Instantiate(attackParticle, player.transform.position + player.transform.forward, player.transform.rotation);
-        spawnPrefab.transform.parent = player.transform;
-        spawnParticle.transform.parent = player.transform;
-        //공격 애니메이션 적용
+    
+    public override IEnumerator DoSkill()
+    {
+        PlayerController.lockBehaviour = true;
         playerAnimator.SetTrigger("doSlash");
 
-        //공격시간(delay)후 attack 상태 해제
-        //이후 생성한 프리팹 제거
-        yield return new WaitForSeconds(delay);
-        PlayerMovement.lockBehaviour = false;
-        Destroy(spawnPrefab);
-        Destroy(spawnParticle);
+        GameObject instantePrefab = Instantiate(skillPrefab, playerTransform.position + playerTransform.forward, playerTransform.rotation);
+        GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + playerTransform.forward, playerTransform.rotation);
+
+        instantePrefab.transform.parent = this.transform;
+        spawnParticle.transform.parent = this.transform;
+
+        yield return new WaitForSeconds(skillDuration);
+        PlayerController.lockBehaviour = false;
+
+        Destroy(this.gameObject);
     }
 }

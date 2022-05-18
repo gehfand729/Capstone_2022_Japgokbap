@@ -5,21 +5,23 @@ using UnityEngine;
 //워리어 클래스의 스킬들의 부모 클래스
 public class WarriorSkill : MonoBehaviour
 {
-    #region public
+    #region "Public"
     [HideInInspector] public Transform playerTransform;
     [HideInInspector] public Animator playerAnimator;
     [HideInInspector] public bool readySkill = true;
     [HideInInspector] public float realtime;
-    public GameObject skillPrefab;
-    public float coolTime;
-    public float animDelay;
-    public float duration;
-    //대미지 추가 시 필요.
-    public float Damage;
+    #endregion
+
+    #region "Protected"
+    [SerializeField] protected GameObject skillPrefab;
+    [SerializeField] protected float coolTime;
+    [SerializeField] protected float animDelay;
+    [SerializeField] protected float duration;
+    protected float Damage;
     #endregion
 
     void Start(){
-        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+        playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         playerAnimator = GetComponent<Animator>();
     }
 

@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8103554830581109505}
+  - component: {fileID: 7987296835778345180}
   m_Layer: 0
   m_Name: XAttack
-  m_TagString: PlayerAttack
+  m_TagString: SkillPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7987296835778345180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791075249115662829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9994d42039cca3d46955e3e7f9b91642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillSO: {fileID: 11400000, guid: 09e561993bae20a4597f83f10a00862d, type: 2}
+  skillDamage: 0
+  skillPrefab: {fileID: 820963525084626576}
+  skillParticle: {fileID: 5447803300084837581, guid: b6f0afd01368a1d41b708febd59d8ec7, type: 3}
+  m_cooltime: 30
+  animDelay: 1
+  skillDuration: 1.8
 --- !u!1001 &8155520583589193092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48,7 +68,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8812030697612040976, guid: 3a2f1f3c86f7f7747a7eb2a33b20a52d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8812030697612040976, guid: 3a2f1f3c86f7f7747a7eb2a33b20a52d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -86,10 +106,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: AttackPrefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7152292043404426868, guid: 3a2f1f3c86f7f7747a7eb2a33b20a52d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3a2f1f3c86f7f7747a7eb2a33b20a52d, type: 3}
+--- !u!1 &820963525084626576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8812030697612040980, guid: 3a2f1f3c86f7f7747a7eb2a33b20a52d, type: 3}
+  m_PrefabInstance: {fileID: 8155520583589193092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &820963525084626580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8812030697612040976, guid: 3a2f1f3c86f7f7747a7eb2a33b20a52d, type: 3}
   m_PrefabInstance: {fileID: 8155520583589193092}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8805942664346903192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820963525084626576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7faadc3fc068a48959387e8c23f76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Skill: {fileID: 11400000, guid: 09e561993bae20a4597f83f10a00862d, type: 2}

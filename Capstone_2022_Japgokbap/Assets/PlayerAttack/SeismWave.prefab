@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5305438081133072840}
+  - component: {fileID: 399745626162759935}
   m_Layer: 0
   m_Name: SeismWave
-  m_TagString: Untagged
+  m_TagString: SkillPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399745626162759935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131891160570470766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468474326a6e29a43a54babac25e0e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillSO: {fileID: 11400000, guid: cd9055148b43aee4993539aff385f78d, type: 2}
+  skillDamage: 0
+  skillPrefab: {fileID: 752159350810695206}
+  skillParticle: {fileID: 8177509200838468481, guid: db7e3c2b6614d3e46bf082b2609d1c8e, type: 3}
+  m_cooltime: 0
+  animDelay: 2
+  skillDuration: 2
 --- !u!1001 &8086964969239711026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86,10 +106,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: AttackCylinder
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 371385994264735809, guid: 470626c30e95ed243b1b49eaa8ff5746, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 470626c30e95ed243b1b49eaa8ff5746, type: 3}
+--- !u!1 &752159350810695206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8812030697612040980, guid: 470626c30e95ed243b1b49eaa8ff5746, type: 3}
+  m_PrefabInstance: {fileID: 8086964969239711026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &752159350810695202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8812030697612040976, guid: 470626c30e95ed243b1b49eaa8ff5746, type: 3}
   m_PrefabInstance: {fileID: 8086964969239711026}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2752926883104274264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752159350810695206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7faadc3fc068a48959387e8c23f76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Skill: {fileID: 11400000, guid: cd9055148b43aee4993539aff385f78d, type: 2}
