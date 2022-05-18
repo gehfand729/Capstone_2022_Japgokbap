@@ -5,28 +5,71 @@ using UnityEngine.AI;
 
 public class Skeletons : Monster
 {
-    [Header ("Enemy Stats")]
-    [SerializeField] protected int m_enemyHp;
-    [SerializeField] protected int m_enemyOffensePower;
-    [SerializeField] protected int m_enemyDefensePower;
-    [SerializeField] protected int m_enemyExperience;
-
-    void Update()
+    protected void Follow_Enter()
     {
-        if(isFollowingPlayer)
+        this.isFollowingPlayer = this.isFollowingPlayer ? false : true;
+    }
+
+    protected void Follow_Update()
+    {
+        if (this.isFollowingPlayer)
         {
             Move();
         }
-        else if(m_enemyHp <= 0)
+
+        float distance = Vector3.Distance(targetPosition, this.transform.position);
+
+        if (distance <= this.enemyAttackRange)
         {
-            SpawnExpObjet();
-            Destroy(this.gameObject);
+            fsm.ChangeState(States.Attack);
+        }
+
+        if (this.enemyHp < 0)
+        {
+            fsm.ChangeState(States.Die);
         }
     }
 
-    protected override void Move()
+    protected void Follow_Exit()
     {
-        this.MyNavMesh.SetDestination(GameManager.instance.GetPlayerPosition());
+        this.isFollowingPlayer = this.isFollowingPlayer ? false : true;
+    }
+
+    protected void Attack_Enter()
+    {
+        this.MyNavMesh.isStopped = true;
+    }
+
+    protected void Attack_Update()
+    {
+        float distance = Vector3.Distance(targetPosition, this.transform.position);
+
+        if (distance > this.enemyAttackRange)
+        {
+            fsm.ChangeState(States.Follow);
+        }
+    }
+
+    protected void Attack_Exit()
+    {
+        this.MyNavMesh.isStopped = false;
+    }
+
+    protected void Die_Enter()
+    {
+        this.enemyHp = 0;
+        SpawnExpObjet();
+        //Destroy(this.gameObject);
+    }
+
+    protected void Die_Update()
+    {
+
+    }
+
+    protected void Die_Exit()
+    {
+        
     }
 
     protected override void SpawnExpObjet()

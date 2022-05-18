@@ -2911,10 +2911,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e336aeecbec4f447a66563f8e748b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_enemyHp: 100
-  m_enemyOffensePower: 0
-  m_enemyDefensePower: 0
-  m_enemyExperience: 0
+  enemyHp: 100
+  enemyOffensePower: 0
+  enemyDefensePower: 0
+  enemyExperience: 0
+  enemyAttackRange: 0
+  enemyAttackDelay: 0
+  enemyAttackSpeed: 0
+  isFollowingPlayer: 0
 --- !u!136 &7689828041180269609
 CapsuleCollider:
   m_ObjectHideFlags: 0

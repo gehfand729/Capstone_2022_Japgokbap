@@ -3468,8 +3468,8 @@ GameObject:
   - component: {fileID: 8513520746995466602}
   - component: {fileID: 8191101583968801957}
   - component: {fileID: 8368029286573521025}
+  - component: {fileID: -3447941321695686617}
   - component: {fileID: 8775437893334837690}
-  - component: {fileID: 811392902045993311}
   m_Layer: 0
   m_Name: golem_boss
   m_TagString: Monster
@@ -3533,6 +3533,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-3447941321695686617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9038102883696188368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ee9fe4b0dfd624789877b095ca8001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHp: 100
+  originHp: 0
+  enemyOffensePower: 0
+  enemyDefensePower: 0
+  enemyExperience: 0
+  enemyAttackRange: 20
+  enemyAttackDelay: 4
+  enemyAttackSpeed: 4
+  isFollowingPlayer: 0
 --- !u!136 &8775437893334837690
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3547,22 +3568,6 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &811392902045993311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9038102883696188368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e336aeecbec4f447a66563f8e748b1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_enemyHp: 100
-  m_enemyOffensePower: 0
-  m_enemyDefensePower: 0
-  m_enemyExperience: 0
 --- !u!1 &9127006313287841931
 GameObject:
   m_ObjectHideFlags: 0

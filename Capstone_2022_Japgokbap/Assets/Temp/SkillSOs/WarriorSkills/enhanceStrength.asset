@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2101759f37daa4a4bbc0f5c80282322d, type: 3}
+  m_Name: enhanceStrength
+  m_EditorClassIdentifier: 
+  skillCode: WP001
+  skillName: "\uADFC\uB825\uAC15\uD654"
+  skillImage: {fileID: 0}
+  skillLevel: 0
+  baseDamage: 0
+  damage: 0
+  skillPrefab: {fileID: 0}
+  skillDescription: "\uACF5\uACA9\uB825\uC744 10 \uC0C1\uC2B9 \uC2DC\uD0A8\uB2E4."
+  enhancementStatus: 10
