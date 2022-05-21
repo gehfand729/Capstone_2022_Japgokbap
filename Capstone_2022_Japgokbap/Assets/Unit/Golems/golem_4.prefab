@@ -1639,10 +1639,12 @@ MonoBehaviour:
   enemyOffensePower: 0
   enemyDefensePower: 0
   enemyExperience: 0
-  enemyAttackRange: 20
+  enemyAttackRange: 30
   enemyAttackDelay: 4
   enemyAttackSpeed: 4
   isFollowingPlayer: 0
+  attackPrefab: {fileID: 460281817639306632, guid: 74b4322c1c9333549b02d0d3224f946f, type: 3}
+  attackSpell: {fileID: 8416909928269208696, guid: 749a480d3f05e5743a9b23a4bb17bebf, type: 3}
 --- !u!136 &8793266479319878297
 CapsuleCollider:
   m_ObjectHideFlags: 0

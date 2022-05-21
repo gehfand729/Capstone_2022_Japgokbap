@@ -1480,6 +1480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHp: 100
+  originHp: 0
   enemyOffensePower: 0
   enemyDefensePower: 0
   enemyExperience: 0
@@ -1487,11 +1488,15 @@ MonoBehaviour:
   enemyAttackDelay: 4
   enemyAttackSpeed: 4
   isFollowingPlayer: 0
+  attackPrefab: {fileID: 5499419445137193981, guid: 02b4dce336050484cb70a26e0970a9ba, type: 3}
   rushDelay: 5
   rushCooltime: 5
   rushRange: 10
   originSpeed: 0
   rushSpeed: 8
+  rageModeCheck: 0
+  ragePrefab: {fileID: 3765675202793471872, guid: eb7abdd390bfcbe45a7e69e74e41b9f6, type: 3}
+  rageAura: {fileID: 4467085515059098622, guid: 8be96b19566d9644f95eaf805df901bc, type: 3}
 --- !u!136 &8708929910197334076
 CapsuleCollider:
   m_ObjectHideFlags: 0

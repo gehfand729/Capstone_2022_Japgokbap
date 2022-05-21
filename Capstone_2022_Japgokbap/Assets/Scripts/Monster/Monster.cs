@@ -28,6 +28,8 @@ public abstract class Monster : MonoBehaviour
     [SerializeField] protected float enemyAttackDelay;
     [SerializeField] protected float enemyAttackSpeed;
     [SerializeField] protected bool isFollowingPlayer;
+
+    [SerializeField] protected GameObject attackPrefab;
     
     protected Vector3 targetPosition;
     protected Animator enemyAnimator;
@@ -49,15 +51,14 @@ public abstract class Monster : MonoBehaviour
         targetPosition = GameManager.instance.GetPlayerPosition();
 
         fsm.Driver.Update.Invoke();
+
+        enemyAttackDelay -= Time.deltaTime;
     }
 
     protected void Move()
     {
         this.MyNavMesh.SetDestination(GameManager.instance.GetPlayerPosition());
     }
-
-    // hp가 0이하로 떨어졌을 경우 다시 큐에 넣고 비활성화 상태로 돌려야 함
-    // Die();
 
     protected abstract void SpawnExpObjet();
 

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     #region "Pulbic"
-    public GameObject player;
+
+    [HideInInspector] public GameObject playerInstance;
     //싱글톤
     public static GameManager instance
     {
@@ -36,6 +37,11 @@ public class GameManager : MonoBehaviour
 
     #region "Public Methods"
 
+    private void Start() 
+    {
+        playerInstance = FindObjectOfType<PlayerController>().gameObject;
+    }
+
     private void Update() 
     {
         if (StageManager.instance.fsm.State != StageManager.States.Ready)
@@ -47,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     public Vector3 GetPlayerPosition()
     {
-        return player.transform.position;
+        return playerInstance.transform.position;
     }
 
     public void SetTime(int settime)

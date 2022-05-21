@@ -19,7 +19,7 @@ public class Demon : Monster
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance <= this.enemyAttackRange)
+        if (distance <= this.enemyAttackRange || this.enemyAttackDelay < 0)
         {
             fsm.ChangeState(States.Attack);
         }
@@ -38,10 +38,19 @@ public class Demon : Monster
     protected void Attack_Enter()
     {
         this.MyNavMesh.isStopped = true;
+        this.MyNavMesh.velocity = Vector3.zero;
     }
 
     protected void Attack_Update()
     {
+        if (this.enemyAttackDelay < 0)
+            this.enemyAttackDelay = 0;
+
+        if (this.enemyAttackDelay == 0)
+        {
+            Attack();
+        }
+
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
         if (distance > this.enemyAttackRange)
@@ -53,6 +62,9 @@ public class Demon : Monster
     protected void Attack_Exit()
     {
         this.MyNavMesh.isStopped = false;
+
+        if (this.fsm.NextState == States.Follow)
+            this.enemyAnimator.SetTrigger("moveTrigger");
     }
 
     protected void Die_Enter()
@@ -70,6 +82,13 @@ public class Demon : Monster
     protected void Die_Exit()
     {
         
+    }
+
+    protected void Attack()
+    {
+        this.enemyAnimator.SetTrigger("attackTrigger");
+
+        this.enemyAttackDelay = this.enemyAttackSpeed;
     }
 
     protected override void SpawnExpObjet()
