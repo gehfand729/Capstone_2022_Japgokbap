@@ -8,3 +8,6 @@ Capstone 12Week ToDoList
 
 고쳐야할것 버프 스킬 사용시 이펙트가 표현이 안됨.
 이펙트 수정
+
+공격시 데미지 뜨게함.
+https://medium.com/@qldrhqorhsh/unity-tutorial-11-skill-damage-%EC%8A%A4%ED%82%AC-%EB%8D%B0%EB%AF%B8%EC%A7%80-425d160cfde1
