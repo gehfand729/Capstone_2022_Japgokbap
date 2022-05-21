@@ -468,6 +468,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0bfe4c5308a1de448b82e65bcee7378b, type: 2}
   - {fileID: 11400000, guid: 4096800dfb919ea4c8b70b1d88668b15, type: 2}
   - {fileID: 11400000, guid: a5957454be47d5947a202c38fa4a136f, type: 2}
+  - {fileID: 11400000, guid: 5f4adb5955cd7624ea9f0106bdd69ef0, type: 2}
   selectButtons: []
 --- !u!4 &668364389
 Transform:
