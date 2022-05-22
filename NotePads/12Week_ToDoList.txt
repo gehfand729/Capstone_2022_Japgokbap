@@ -1,0 +1,13 @@
+Capstone 12Week ToDoList
+
+궁수 작업
+패시브 스킬 완성
+오브젝트(상자, 포션) 스폰 관리
+
+스킬 가중치 랜덤 적용
+
+고쳐야할것 버프 스킬 사용시 이펙트가 표현이 안됨.
+이펙트 수정
+
+공격시 데미지 뜨게함.
+https://medium.com/@qldrhqorhsh/unity-tutorial-11-skill-damage-%EC%8A%A4%ED%82%AC-%EB%8D%B0%EB%AF%B8%EC%A7%80-425d160cfde1

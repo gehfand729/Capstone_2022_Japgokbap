@@ -55,7 +55,7 @@ public class InterfaceManager : MonoBehaviour
 
     #region "Private Methods"
     private void CalHP(){
-        playerHPBar.value = playerController.playerMaxHP;
+        playerHPBar.value = playerController.playerCurrentHP;
     }
 
     private void CalExp(){

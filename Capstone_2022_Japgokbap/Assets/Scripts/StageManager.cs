@@ -76,6 +76,8 @@ public class StageManager : MonoBehaviour
     [Header ("Objects")]
     public GameObject expClones;
     public GameObject expObject;
+    //test
+    public GameObject itemClones;
 
     [Header ("1-1")]
     public int round1ClearTime;

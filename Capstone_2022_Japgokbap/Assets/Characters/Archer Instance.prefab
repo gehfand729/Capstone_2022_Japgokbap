@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 819668315107101354}
   - component: {fileID: 8324182880208492794}
   - component: {fileID: 7999475280110375026}
+  - component: {fileID: -7877187627684304705}
   m_Layer: 3
   m_Name: Archer Instance
   m_TagString: Untagged
@@ -96,3 +97,28 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7877187627684304705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8221040719977503401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b50ade657f9d04dbf106bd3fb9dc7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 5
+  skillList: []
+  PlayerSkill: 
+  playerMaxHP: 0
+  playerCurrentHP: 0
+  playerOffensePower: 0
+  playerDeffencePower: 0
+  playerMoveSpeed: 0
+  playerLv: 1
+  playerCurrentExp: 0
+  playerLvUpExp: 100
+  classJob: {fileID: 11400000, guid: 73019ddffd7d50246966aba9e9a6fc58, type: 2}
+  combat: {fileID: 0}

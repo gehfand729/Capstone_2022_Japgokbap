@@ -7,6 +7,14 @@ TagManager:
   - Monster
   - PlayerAttack
   - EXP
+  - SkillPrefab
+  - SelectAbillityPanel
+  - UsableSkillBar
+  - Canvas
+  - PlayerLv
+  - InterfaceManager
+  - Box
+  - Potion
   layers:
   - Default
   - TransparentFX

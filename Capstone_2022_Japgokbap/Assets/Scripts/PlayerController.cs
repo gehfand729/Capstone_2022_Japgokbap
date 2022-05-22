@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("PlayerStatus")]
     [HideInInspector] public int playerMaxHP;
+    [HideInInspector] public int playerCurrentHP;
     public int playerOffensePower;
     public int playerDeffencePower;
     public float playerMoveSpeed;
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
         //평타의 데미지 하드 코딩 상태;
         combat.damage = 300;
         playerMaxHP = classJob.hp;
+        playerCurrentHP = playerMaxHP;
         playerMoveSpeed = classJob.moveSpeed;
         playerOffensePower = classJob.offensePower;
         playerDeffencePower = classJob.deffencePower;
@@ -196,20 +198,35 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
-    #region "Event Methods"
+    #region "CallBack"
     private void OnCollisionEnter(Collision other) 
     {
         if(other.transform.CompareTag("Monster"))
         {
-            playerMaxHP -= 10;
+            playerCurrentHP -= 10;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.CompareTag("EXP")){
-            PlayerExpCalc(100.0f);
-            Destroy(other.gameObject);
+        // if(other.transform.CompareTag("EXP")){
+        //     PlayerExpCalc(100.0f);
+        //     Destroy(other.gameObject);
+        // }
+        switch(other.tag){
+            case "EXP":
+                PlayerExpCalc(100.0f);
+                Destroy(other.gameObject);
+            break;
+            case "Potion":
+                playerCurrentHP += 10;
+                Debug.Log("CurrentHP has recovered");
+                if(playerCurrentHP >= playerMaxHP){
+                    playerCurrentHP = playerMaxHP;
+                    Debug.Log("Already CurrentHP is Full");
+                }
+                Destroy(other.gameObject);
+            break;
         }
     }
     #endregion

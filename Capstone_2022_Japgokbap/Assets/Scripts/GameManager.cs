@@ -34,8 +34,6 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    #region "Public Methods"
-
     private void Update() 
     {
         if (StageManager.instance.fsm.State != StageManager.States.Ready)
@@ -45,6 +43,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    #region "Public Methods"
     public Vector3 GetPlayerPosition()
     {
         return player.transform.position;
