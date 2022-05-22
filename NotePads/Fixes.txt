@@ -25,3 +25,9 @@ ObjectHit.cs(생성)
 
 Scene
 itemClones 생성(생성되는 item은 itemClones의 하위 오브젝트로 들어감.)
+
+Skill.cs
+   skillPrefab = this.transform.GetChild(0).gameObject; 삭제
+
+TEST
+궁수 기본 공격의 하위 오브젝트 삭제. 분할.(공격 프리팹이 2개 나오는 문제가 있었음.)

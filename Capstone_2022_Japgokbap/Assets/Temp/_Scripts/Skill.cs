@@ -15,9 +15,6 @@ public abstract class Skill : MonoBehaviour {
     private void Awake(){
         playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         playerAnimator = GameObject.FindWithTag("Player").GetComponent<Animator>();
-        skillPrefab = this.transform.GetChild(0).gameObject;
-        // skillDamage = skillSO.damage;
-        // Debug.Log(skillDamage);
     }
     
 

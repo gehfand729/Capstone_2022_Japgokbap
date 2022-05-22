@@ -49,7 +49,7 @@ public abstract class Monster : MonoBehaviour
         MyNavMesh = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
 
-        hudPos = transform.FindChild("HudDamage").gameObject.GetComponent<Transform>();
+        hudPos = transform.Find("HudDamage").gameObject.GetComponent<Transform>();
     }
 
     void Update()

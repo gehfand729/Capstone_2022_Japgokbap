@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2101759f37daa4a4bbc0f5c80282322d, type: 3}
+  m_Name: Iokheira
+  m_EditorClassIdentifier: 
+  skillCode: A001
+  skillName: "\uC774\uC624\uB9AC\uCF00\uC774\uB77C"
+  skillImage: {fileID: 21300000, guid: 8a1680ec09858bc4aa7b4e3ad474dd89, type: 3}
+  skillLevel: 0
+  baseDamage: 100
+  damage: 0
+  skillPrefab: {fileID: 3901965892192086675, guid: d1436e3d792a9eb43927fe486acf0c12, type: 3}
+  skillDescription: "\uD50C\uB808\uC774\uC5B4\uAC00 \uC9C0\uC815\uD55C \uC601\uC5ED\uC5D0
+    n\uCD08 \uB3D9\uC548 (\uBC94\uC704) \uD654\uC0B4\uBE44\uB97C \uB0B4\uB824 \uC801\uC744
+    110%\uC758 \uB370\uBBF8\uC9C0\uB85C \uACF5\uACA9\uD55C\uB2E4."
+  enhancementStatus: 0

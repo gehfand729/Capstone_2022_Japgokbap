@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3840057652601648105}
   - component: {fileID: -4280276460275864066}
   m_Layer: 0
-  m_Name: AttackCylinder
+  m_Name: IokheiraPrefab
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,4 +67,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3912f1b2549effa46a74a1c8f036025f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Skill: {fileID: 0}
+  Skill: {fileID: 11400000, guid: d39b0a37cae66c64a9e92de7ec67e7f6, type: 2}

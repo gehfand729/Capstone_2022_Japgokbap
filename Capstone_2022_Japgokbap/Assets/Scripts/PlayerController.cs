@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     private InterfaceManager interfaceManager;
 
     [Header("SkillList")]
-    [HideInInspector] public List<SkillSO> skillList = new List<SkillSO>();
+    public List<SkillSO> skillList = new List<SkillSO>();
     #endregion
 
     #region "Public"
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
             inputDir = new Vector3(moveDirX, 0, moveDirZ).normalized;
 
             rb.MovePosition(transform.position + inputDir*Time.deltaTime*playerMoveSpeed);
-            playerAnimator.SetBool("isWalk",inputDir != Vector3.zero);
+            //playerAnimator.SetBool("isWalk",inputDir != Vector3.zero);
             PlayerRotate();
         }
     }
@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
                     transform.rotation = Quaternion.LookRotation(mouseDir);
                 }
                 // attack.StartCoroutine(attack.Attack(attack.attackDelay));
-                GameObject instObject = Instantiate(combat.skillPrefab);
+                GameObject instObject = Instantiate(combat.skillPrefab,transform.position, Quaternion.identity);
                 instObject.transform.parent = transform;
             }
         }
