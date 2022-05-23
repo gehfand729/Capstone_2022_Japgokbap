@@ -9,8 +9,9 @@ public class AttackHit : MonoBehaviour
     private void Awake() {
         skillDamage = Skill.damage;
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag);
         switch(other.tag){
             case "Monster":
                 Debug.Log($"{Skill.skillName} : {skillDamage}");

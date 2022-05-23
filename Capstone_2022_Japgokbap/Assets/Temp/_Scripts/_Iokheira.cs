@@ -24,7 +24,7 @@ public class _Iokheira : Skill
             yield return new WaitForSeconds(animDelay);
             PlayerController.lockBehaviour = false;
 
-            GameObject instantePrefab= Instantiate(skillPrefab, playerTransform.position + playerTransform.forward*3, playerTransform.rotation);
+            GameObject instantePrefab= Instantiate(skillPrefab, playerTransform.position + playerTransform.forward * 10, playerTransform.rotation);
             GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + playerTransform.forward + new Vector3(0,2,0), transform.rotation);
 
             //instantePrefab.transform.parent = this.transform;
