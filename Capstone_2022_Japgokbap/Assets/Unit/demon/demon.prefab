@@ -1483,7 +1483,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 15
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1508,13 +1508,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHp: 100
+  originHp: 0
   enemyOffensePower: 0
   enemyDefensePower: 0
   enemyExperience: 0
-  enemyAttackRange: 0
-  enemyAttackDelay: 0
-  enemyAttackSpeed: 0
+  enemyAttackRange: 10
+  enemyAttackDelay: 5
+  enemyAttackSpeed: 5
   isFollowingPlayer: 0
+  isAttacking: 0
+  attackPrefab: {fileID: 0}
+  rushDelay: 6
+  rushCooltime: 6
+  rushRange: 13
+  originSpeed: 0
+  rushSpeed: 15
 --- !u!136 &7943304895959494620
 CapsuleCollider:
   m_ObjectHideFlags: 0

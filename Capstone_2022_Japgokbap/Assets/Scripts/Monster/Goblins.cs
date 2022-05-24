@@ -14,12 +14,14 @@ public class Goblins : Monster
     {
         if (this.isFollowingPlayer)
         {
+            FollowSetting();
+
             Move();
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance <= this.enemyAttackRange)
+        if (distance <= this.enemyAttackRange && this.enemyAttackRange > 0)
         {
             fsm.ChangeState(States.Attack);
         }
@@ -37,9 +39,7 @@ public class Goblins : Monster
 
     protected void Attack_Enter()
     {
-        Attack();
 
-        this.MyNavMesh.isStopped = true;
     }
 
     protected void Attack_Update()
@@ -47,35 +47,24 @@ public class Goblins : Monster
         this.transform.LookAt(targetPosition);
 
         if (this.enemyAttackDelay < 0)
-            this.enemyAttackDelay = 0;
-        
-        if (this.enemyAttackDelay == 0)
         {
+            this.enemyAttackDelay = this.enemyAttackSpeed;;
+            
             Attack();
-
-            this.enemyAttackDelay = this.enemyAttackSpeed;
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance > this.enemyAttackRange)
+        if (distance > this.enemyAttackRange && !this.isAttacking)
         {
             fsm.ChangeState(States.Follow);
         }
-    }
-
-    protected void Attack_OnColliderEnter()
-    {
-        
     }
 
     protected void Attack_Exit()
     {
         if (this.fsm.NextState == States.Follow)
             this.enemyAnimator.SetTrigger("moveTrigger");
-
-        this.MyNavMesh.isStopped = false;
-        this.enemyAttackDelay = this.enemyAttackSpeed;
     }
 
     protected void Die_Enter()
@@ -97,10 +86,7 @@ public class Goblins : Monster
 
     protected void Attack()
     {
-        if(this.enemyAttackRange > 0)
-        {
-            this.enemyAnimator.SetTrigger("attackTrigger");
-        }
+        this.enemyAnimator.SetTrigger("attackTrigger");
     }
 
     protected void ThrowAttackPrefab()

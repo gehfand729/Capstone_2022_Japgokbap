@@ -16,12 +16,14 @@ public class Golems : Monster
     {
         if (this.isFollowingPlayer)
         {
+            FollowSetting();
+
             Move();
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance <= this.enemyAttackRange)
+        if (distance <= this.enemyAttackRange && this.enemyAttackRange > 0)
         {
             fsm.ChangeState(States.Attack);
         }
@@ -39,29 +41,21 @@ public class Golems : Monster
 
     protected void Attack_Enter()
     {
-        if (this.enemyAttackDelay > 0)
-        {
-            Attack();
-        }
 
-        this.MyNavMesh.isStopped = true;
     }
 
     protected void Attack_Update()
     {
         if (this.enemyAttackDelay < 0)
-            this.enemyAttackDelay = 0;
-        
-        if (this.enemyAttackDelay == 0)
         {
+            this.enemyAttackDelay = this.enemyAttackSpeed;;
+            
             Attack();
-
-            this.enemyAttackDelay = this.enemyAttackSpeed;
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance > this.enemyAttackRange)
+        if (distance > this.enemyAttackRange && !this.isAttacking)
         {
             fsm.ChangeState(States.Follow);
         }
@@ -71,9 +65,6 @@ public class Golems : Monster
     {
         if (this.fsm.NextState == States.Follow)
             this.enemyAnimator.SetTrigger("moveTrigger");
-
-        this.MyNavMesh.isStopped = false;
-        this.enemyAttackDelay = this.enemyAttackSpeed;
     }
 
     protected void Die_Enter()
@@ -95,9 +86,8 @@ public class Golems : Monster
 
     protected void Attack()
     {
-        Quaternion.Lerp(this.transform.rotation, GameManager.instance.playerInstance.transform.rotation, Time.deltaTime);
+        //Quaternion.Lerp(this.transform.rotation, GameManager.instance.playerInstance.transform.rotation, Time.deltaTime);
         this.transform.LookAt(targetPosition);
-
         this.enemyAnimator.SetTrigger("attackTrigger");
     }
 
@@ -108,7 +98,7 @@ public class Golems : Monster
         attack.transform.parent = this.transform;
 
         attack = Instantiate(this.attackPrefab, targetPosition + new Vector3(0,1,0), Quaternion.Euler(-90,0,0));
-        Destroy(attack, this.enemyAttackDelay);
+        Destroy(attack, this.enemyAttackSpeed / 2);
     }
 
     protected override void SpawnExpObjet()

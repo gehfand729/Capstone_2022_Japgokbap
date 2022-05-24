@@ -24,10 +24,9 @@ public class Orcs : Monster
     {    
         rushDelay -= Time.deltaTime;
 
-        if (this.isFollowingPlayer && !this.enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if (this.isFollowingPlayer)
         {
-            if (!this.enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
-                this.enemyAnimator.SetTrigger("moveTrigger");
+            FollowSetting();
 
             Move();
         }
@@ -68,9 +67,7 @@ public class Orcs : Monster
 
     protected void Attack_Enter()
     {
-        Attack();
-        //this.enemyAnimator.SetBool("isAttacking", true);
-        this.MyNavMesh.isStopped = true;
+
     }
 
     protected void Attack_Update()
@@ -78,16 +75,15 @@ public class Orcs : Monster
         rushDelay -= Time.deltaTime;
 
         if (this.enemyAttackDelay < 0)
-            this.enemyAttackDelay = 0;
-
-        if (this.enemyAttackDelay == 0)
         {
+            this.enemyAttackDelay = this.enemyAttackSpeed;;
+            
             Attack();
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance > this.enemyAttackRange)
+        if (distance > this.enemyAttackRange && !this.isAttacking)
         {
             fsm.ChangeState(States.Follow);
         }
@@ -95,10 +91,6 @@ public class Orcs : Monster
 
     protected void Attack_Exit()
     {
-        this.MyNavMesh.isStopped = false;
-        this.enemyAttackDelay = this.enemyAttackSpeed;
-
-        //this.enemyAnimator.SetBool("isAttacking", false);
         if (this.fsm.NextState == States.Follow)
             this.enemyAnimator.SetTrigger("moveTrigger");
     }

@@ -13,6 +13,8 @@ public abstract class Monster : MonoBehaviour
         Follow,
         Attack,
         Pattern,
+        Pattern2,
+        Pattern3,
         Die
     }
 
@@ -28,6 +30,7 @@ public abstract class Monster : MonoBehaviour
     [SerializeField] protected float enemyAttackDelay;
     [SerializeField] protected float enemyAttackSpeed;
     [SerializeField] protected bool isFollowingPlayer;
+    [SerializeField] protected bool isAttacking;
 
     [SerializeField] protected GameObject attackPrefab;
     
@@ -53,6 +56,26 @@ public abstract class Monster : MonoBehaviour
         fsm.Driver.Update.Invoke();
 
         enemyAttackDelay -= Time.deltaTime;
+    }
+
+    protected void FollowSetting()
+    {
+        isAttacking = false;
+
+        MyNavMesh.ResetPath();
+        MyNavMesh.isStopped = false;
+        MyNavMesh.updatePosition = true;
+        MyNavMesh.updateRotation = true;
+    }
+
+    protected void AttackSetting()
+    {
+        isAttacking = true;
+
+        MyNavMesh.isStopped = true;
+        MyNavMesh.updatePosition = false;
+        MyNavMesh.updateRotation = false;
+        MyNavMesh.velocity = Vector3.zero;
     }
 
     protected void Move()
