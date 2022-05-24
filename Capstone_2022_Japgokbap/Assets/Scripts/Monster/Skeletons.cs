@@ -84,7 +84,7 @@ public class Skeletons : Monster
         GameObject hudText = Instantiate(hudDamageText);
         hudText.transform.position = hudPos.position;
         hudText.GetComponent<DamageTextTest>().damage = damage; 
-        Destroy(this.gameObject);
+        this.enemyHp -= damage;
         SpawnExpObjet();
     }
 }

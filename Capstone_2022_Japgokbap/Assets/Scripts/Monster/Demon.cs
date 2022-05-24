@@ -172,7 +172,6 @@ public class Demon : Monster
         GameObject hudText = Instantiate(hudDamageText);
         hudText.transform.position = hudPos.position;
         hudText.GetComponent<DamageTextTest>().damage = damage; 
-        Destroy(this.gameObject);
         SpawnExpObjet();
     }
 }
