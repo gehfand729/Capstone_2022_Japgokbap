@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Golems : Monster
 {
+    [SerializeField] protected GameObject attackSpell;
+
     protected void Follow_Enter()
     {
         this.isFollowingPlayer = this.isFollowingPlayer ? false : true;
@@ -14,12 +16,14 @@ public class Golems : Monster
     {
         if (this.isFollowingPlayer)
         {
+            FollowSetting();
+
             Move();
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance <= this.enemyAttackRange)
+        if (distance <= this.enemyAttackRange && this.enemyAttackRange > 0)
         {
             fsm.ChangeState(States.Attack);
         }
@@ -37,29 +41,21 @@ public class Golems : Monster
 
     protected void Attack_Enter()
     {
-        this.enemyAnimator.SetTrigger("attackTrigger");
-        this.MyNavMesh.isStopped = true;
+
     }
 
     protected void Attack_Update()
     {
-        this.transform.LookAt(targetPosition);
-        
-        this.enemyAttackDelay -= Time.deltaTime;
-
         if (this.enemyAttackDelay < 0)
-            this.enemyAttackDelay = 0;
-        
-        if (this.enemyAttackDelay == 0)
         {
-            this.enemyAnimator.SetTrigger("attackTrigger");
-
-            this.enemyAttackDelay = this.enemyAttackSpeed;
+            this.enemyAttackDelay = this.enemyAttackSpeed;;
+            
+            Attack();
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance > this.enemyAttackRange)
+        if (distance > this.enemyAttackRange && !this.isAttacking)
         {
             fsm.ChangeState(States.Follow);
         }
@@ -69,9 +65,6 @@ public class Golems : Monster
     {
         if (this.fsm.NextState == States.Follow)
             this.enemyAnimator.SetTrigger("moveTrigger");
-
-        this.MyNavMesh.isStopped = false;
-        this.enemyAttackDelay = this.enemyAttackSpeed;
     }
 
     protected void Die_Enter()
@@ -89,6 +82,23 @@ public class Golems : Monster
     protected void Die_Exit()
     {
         
+    }
+
+    protected void Attack()
+    {
+        //Quaternion.Lerp(this.transform.rotation, GameManager.instance.playerInstance.transform.rotation, Time.deltaTime);
+        this.transform.LookAt(targetPosition);
+        this.enemyAnimator.SetTrigger("attackTrigger");
+    }
+
+    protected void ThrowAttackPrefab()
+    {
+        GameObject attack = Instantiate(attackSpell, this.transform.position + (targetPosition - this.transform.position).normalized * 8f + new Vector3(0, 4f, 0), Quaternion.identity);
+        attack.transform.LookAt(targetPosition);
+        attack.transform.parent = this.transform;
+
+        attack = Instantiate(this.attackPrefab, targetPosition + new Vector3(0,1,0), Quaternion.Euler(-90,0,0));
+        Destroy(attack, this.enemyAttackSpeed / 2);
     }
 
     protected override void SpawnExpObjet()

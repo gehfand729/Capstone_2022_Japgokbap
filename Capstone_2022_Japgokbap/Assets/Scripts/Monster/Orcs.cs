@@ -12,6 +12,8 @@ public class Orcs : Monster
     [SerializeField] protected float originSpeed;
     [SerializeField] protected float rushSpeed;
     [SerializeField] protected bool rageModeCheck;
+    [SerializeField] protected GameObject ragePrefab;
+    [SerializeField] protected GameObject rageAura;
 
     protected void Follow_Enter()
     {
@@ -20,13 +22,11 @@ public class Orcs : Monster
 
     protected void Follow_Update()
     {    
-        this.enemyAttackDelay -= Time.deltaTime;
         rushDelay -= Time.deltaTime;
 
-        if (this.isFollowingPlayer && !this.enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if (this.isFollowingPlayer)
         {
-            if (!this.enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
-                this.enemyAnimator.SetTrigger("moveTrigger");
+            FollowSetting();
 
             Move();
         }
@@ -67,26 +67,23 @@ public class Orcs : Monster
 
     protected void Attack_Enter()
     {
-        //this.enemyAnimator.SetBool("isAttacking", true);
-        this.MyNavMesh.isStopped = true;
+
     }
 
     protected void Attack_Update()
-    { 
-        this.enemyAttackDelay -= Time.deltaTime;
+    {
         rushDelay -= Time.deltaTime;
 
         if (this.enemyAttackDelay < 0)
-            this.enemyAttackDelay = 0;
-
-        if (this.enemyAttackDelay == 0)
         {
-            this.enemyAnimator.SetTrigger("attackTrigger");
+            this.enemyAttackDelay = this.enemyAttackSpeed;;
+            
+            Attack();
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance > this.enemyAttackRange)
+        if (distance > this.enemyAttackRange && !this.isAttacking)
         {
             fsm.ChangeState(States.Follow);
         }
@@ -94,11 +91,6 @@ public class Orcs : Monster
 
     protected void Attack_Exit()
     {
-        this.MyNavMesh.isStopped = false;
-
-        this.enemyAttackDelay = this.enemyAttackSpeed;
-
-        //this.enemyAnimator.SetBool("isAttacking", false);
         if (this.fsm.NextState == States.Follow)
             this.enemyAnimator.SetTrigger("moveTrigger");
     }
@@ -113,8 +105,6 @@ public class Orcs : Monster
 
     protected void Pattern_Update()
     {
-        this.enemyAttackDelay -= Time.deltaTime;
-
         Move();
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
@@ -146,6 +136,25 @@ public class Orcs : Monster
     protected void Die_Exit()
     {
         
+    }
+
+    protected void Attack()
+    {
+        this.enemyAnimator.SetTrigger("attackTrigger");
+    }
+
+    protected void ThrowAttackPrefab()
+    {
+        GameObject attack = Instantiate(this.attackPrefab, this.transform.position + this.transform.forward, Quaternion.identity);
+        attack.transform.parent = this.transform;
+    }
+
+    protected void ThrowRagePrefab()
+    {
+        GameObject rage = Instantiate(this.ragePrefab, this.transform.position + new Vector3(0,1,0), Quaternion.Euler(-90, 0, 0));
+        rage.transform.parent = this.transform;
+        rage = Instantiate(this.rageAura, this.transform.position + new Vector3(0,1,0), Quaternion.Euler(-90, 0, 0));
+        rage.transform.parent = this.transform;
     }
 
     protected override void SpawnExpObjet()

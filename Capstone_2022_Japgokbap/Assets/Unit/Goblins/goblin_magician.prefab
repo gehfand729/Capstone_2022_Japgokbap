@@ -941,6 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHp: 100
+  originHp: 0
   enemyOffensePower: 0
   enemyDefensePower: 0
   enemyExperience: 0
@@ -948,6 +949,7 @@ MonoBehaviour:
   enemyAttackDelay: 7
   enemyAttackSpeed: 7
   isFollowingPlayer: 0
+  attackPrefab: {fileID: 4971319159835614275, guid: 550f5357be9c1e34392b2a55b565c50a, type: 3}
 --- !u!136 &4903468802697672916
 CapsuleCollider:
   m_ObjectHideFlags: 0

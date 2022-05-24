@@ -870,13 +870,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHp: 100
+  originHp: 0
   enemyOffensePower: 0
   enemyDefensePower: 0
   enemyExperience: 0
-  enemyAttackRange: 10
+  enemyAttackRange: 15
   enemyAttackDelay: 4
   enemyAttackSpeed: 4
   isFollowingPlayer: 0
+  attackPrefab: {fileID: 1152963532394531431, guid: f3df76d07f3bcdc43a6366a4883c8e72, type: 3}
 --- !u!195 &8698977320935016585
 NavMeshAgent:
   m_ObjectHideFlags: 0
