@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
             inputDir = new Vector3(moveDirX, 0, moveDirZ).normalized;
 
             rb.MovePosition(transform.position + inputDir*Time.deltaTime*playerMoveSpeed);
-            //playerAnimator.SetBool("isWalk",inputDir != Vector3.zero);
+            playerAnimator.SetBool("isWalk",inputDir != Vector3.zero);
             PlayerRotate();
         }
     }
