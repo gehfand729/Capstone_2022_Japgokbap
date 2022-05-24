@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2101759f37daa4a4bbc0f5c80282322d, type: 3}
   m_Name: XAttack
   m_EditorClassIdentifier: 
-  skillCode: W003
+  skillCode: W004
   skillName: XAttack
   skillImage: {fileID: 21300000, guid: 0c136515f7aa49e43ba0840df48c1f4d, type: 3}
   skillLevel: 0

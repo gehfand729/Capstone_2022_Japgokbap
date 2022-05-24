@@ -167,8 +167,11 @@ public class Demon : Monster
         expClone.transform.parent = StageManager.instance.expClones.transform;
     }
 
-    protected override void GetDamaged()
+    protected override void GetDamaged(int damage)
     {
+        GameObject hudText = Instantiate(hudDamageText);
+        hudText.transform.position = hudPos.position;
+        hudText.GetComponent<DamageTextTest>().damage = damage; 
         Destroy(this.gameObject);
         SpawnExpObjet();
     }

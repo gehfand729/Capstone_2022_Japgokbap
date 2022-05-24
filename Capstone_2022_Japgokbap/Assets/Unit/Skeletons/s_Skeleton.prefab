@@ -30,8 +30,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7438410184211855814}
   - {fileID: 2974404644404584987}
+  - {fileID: 7438410184211855814}
+  - {fileID: 7325061260275951440}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69,10 +70,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda72ea32d6b3724cac315b5f4b734b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_enemyHp: 0
-  m_enemyOffensePower: 0
-  m_enemyDefensePower: 0
-  m_enemyExperience: 0
+  enemyHp: 0
+  originHp: 0
+  enemyOffensePower: 0
+  enemyDefensePower: 0
+  enemyExperience: 0
+  enemyAttackRange: 0
+  enemyAttackDelay: 0
+  enemyAttackSpeed: 0
+  isFollowingPlayer: 0
+  hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
+  hudPos: {fileID: 0}
 --- !u!136 &1666894579105827578
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -87,6 +95,36 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!1 &7887600330769284835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7325061260275951440}
+  m_Layer: 0
+  m_Name: HudDamage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7325061260275951440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7887600330769284835}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3463749007072607234}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2395109583442184030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -244,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046188683215830680, guid: 4049c4c1d2fdaee49981a4e44d1bc300, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5046188683215830680, guid: 4049c4c1d2fdaee49981a4e44d1bc300, type: 3}
       propertyPath: m_LocalPosition.x
@@ -486,7 +524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7567950574360961744, guid: e8d56d0c246dff54095a2f285d650a8c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7567950574360961744, guid: e8d56d0c246dff54095a2f285d650a8c, type: 3}
       propertyPath: m_LocalPosition.x

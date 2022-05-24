@@ -55,7 +55,7 @@ public class InterfaceManager : MonoBehaviour
 
     #region "Private Methods"
     private void CalHP(){
-        playerHPBar.value = playerController.playerMaxHP;
+        playerHPBar.value = playerController.playerCurrentHP;
     }
 
     private void CalExp(){
@@ -78,7 +78,7 @@ public class InterfaceManager : MonoBehaviour
         switch (selectNumber)
         {
             case 1:
-            if(selectButtons[0].skill.enhancementStatus<1){
+            if(selectButtons[0].skill.skillPrefab != null){
                 if(!playerController.skillList.Contains(selectButtons[0].skill)){
                     playerController.skillList.Add(selectButtons[0].skill);
                 }
@@ -87,7 +87,7 @@ public class InterfaceManager : MonoBehaviour
                 }else playerController.playerOffensePower += selectButtons[0].skill.enhancementStatus;
                 break;
             case 2:
-            if(selectButtons[1].skill.enhancementStatus<1){
+            if(selectButtons[1].skill.skillPrefab != null){
                 if(!playerController.skillList.Contains(selectButtons[1].skill)){
                     playerController.skillList.Add(selectButtons[1].skill);
                 }
@@ -96,7 +96,7 @@ public class InterfaceManager : MonoBehaviour
                 }else playerController.playerOffensePower += selectButtons[1].skill.enhancementStatus;
                 break;
             case 3:
-            if(selectButtons[2].skill.enhancementStatus<1){
+            if(selectButtons[2].skill.skillPrefab != null){
                 if(!playerController.skillList.Contains(selectButtons[2].skill)){
                     playerController.skillList.Add(selectButtons[2].skill);
                 }

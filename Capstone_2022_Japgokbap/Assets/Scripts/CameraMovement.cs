@@ -37,7 +37,7 @@ public class CameraMovement : MonoBehaviour
 
     void FindGameObject(string name){
         if(GameObject.FindWithTag(name)){
-            player = GameObject.Find(name);
+            player = GameObject.FindWithTag(name);
         }
     }
 

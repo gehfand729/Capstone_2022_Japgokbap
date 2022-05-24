@@ -860,8 +860,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3142316528585102592}
   - component: {fileID: 3175452557985460374}
-  - component: {fileID: 2871729710083916456}
-  - component: {fileID: 1309873714333111647}
   - component: {fileID: 261564594}
   - component: {fileID: 5749371119450932441}
   - component: {fileID: 261564588}
@@ -902,54 +900,12 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 532bebe5445014a4489867d01a989b94, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2871729710083916456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2364408046984564666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749db05c1ec23144080fae5f9a8f060c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
-  playerAnimator: {fileID: 0}
-  readySkill: 1
-  realtime: 0
-  skillPrefab: {fileID: 0}
-  coolTime: 0
-  animDelay: 0
-  duration: 10
-  skillParticle: {fileID: 2214721480864359111, guid: db6933ec6f055b244befe403cdc5a5d1, type: 3}
---- !u!114 &1309873714333111647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2364408046984564666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ec91643db14f6244996fcc73d09dc90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
-  playerAnimator: {fileID: 0}
-  readySkill: 1
-  realtime: 0
-  skillPrefab: {fileID: 0}
-  coolTime: 0
-  animDelay: 0
-  duration: 10
-  skillParticle: {fileID: 2214721480864359111, guid: eb51f034777f6a74f872642acd9e829c, type: 3}
 --- !u!54 &261564594
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -996,6 +952,7 @@ MonoBehaviour:
   skillList: []
   PlayerSkill: 
   playerMaxHP: 0
+  playerCurrentHP: 0
   playerOffensePower: 0
   playerDeffencePower: 0
   playerMoveSpeed: 10

@@ -37,6 +37,12 @@ public abstract class Monster : MonoBehaviour
     protected Vector3 targetPosition;
     protected Animator enemyAnimator;
 
+        #region "Test"
+    //test
+    [SerializeField] protected GameObject hudDamageText;
+    [SerializeField] protected Transform hudPos;
+    #endregion
+
     void Awake()
     {
         fsm = new StateMachine<States, StateDriverUnity>(this);
@@ -47,6 +53,8 @@ public abstract class Monster : MonoBehaviour
 
         MyNavMesh = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
+
+        hudPos = transform.Find("HudDamage").gameObject.GetComponent<Transform>();
     }
 
     void Update()
@@ -86,5 +94,5 @@ public abstract class Monster : MonoBehaviour
     protected abstract void SpawnExpObjet();
 
     // 파라미터로 int damage 전달해서 damage만큼 hp 감소시켜야 함
-    protected abstract void GetDamaged();
+    protected abstract void GetDamaged(int damage);
 }
