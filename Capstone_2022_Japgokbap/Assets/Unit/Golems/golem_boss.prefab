@@ -3502,7 +3502,7 @@ Animator:
   m_GameObject: {fileID: 9038102883696188368}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f3bc33885d9817143b9b11ec5837c596, type: 3}
-  m_Controller: {fileID: 9100000, guid: 038b04495ef3d314f87132f036b61a33, type: 2}
+  m_Controller: {fileID: 9100000, guid: 728e4dc09375e4143a3ca185617ec37c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3521,7 +3521,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 9
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -3550,10 +3550,15 @@ MonoBehaviour:
   enemyOffensePower: 0
   enemyDefensePower: 0
   enemyExperience: 0
-  enemyAttackRange: 20
-  enemyAttackDelay: 4
-  enemyAttackSpeed: 4
+  enemyAttackRange: 30
+  enemyAttackDelay: 5
+  enemyAttackSpeed: 5
   isFollowingPlayer: 0
+  attackPrefab: {fileID: 6116761994887682889, guid: 14d536837bafa214583b55e6543d9c75, type: 3}
+  attackSpell: {fileID: 3268407896318955953, guid: cb91ab3357ad45545804bde1354abe3d, type: 3}
+  strayDelay: 15
+  strayCoolTime: 15
+  strayPrefab: {fileID: 2960330917617857991, guid: c0b9d66c6780ee840bd7cf9cfb5509e0, type: 3}
 --- !u!136 &8775437893334837690
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -14,12 +14,14 @@ public class Goblins : Monster
     {
         if (this.isFollowingPlayer)
         {
+            FollowSetting();
+
             Move();
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance <= this.enemyAttackRange)
+        if (distance <= this.enemyAttackRange && this.enemyAttackRange > 0)
         {
             fsm.ChangeState(States.Attack);
         }
@@ -37,29 +39,23 @@ public class Goblins : Monster
 
     protected void Attack_Enter()
     {
-        this.enemyAnimator.SetTrigger("attackTrigger");
-        this.MyNavMesh.isStopped = true;
+
     }
 
     protected void Attack_Update()
     {
         this.transform.LookAt(targetPosition);
 
-        this.enemyAttackDelay -= Time.deltaTime;
-
         if (this.enemyAttackDelay < 0)
-            this.enemyAttackDelay = 0;
-        
-        if (this.enemyAttackDelay == 0)
         {
-            this.enemyAnimator.SetTrigger("attackTrigger");
-
-            this.enemyAttackDelay = this.enemyAttackSpeed;
+            this.enemyAttackDelay = this.enemyAttackSpeed;;
+            
+            Attack();
         }
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance > this.enemyAttackRange)
+        if (distance > this.enemyAttackRange && !this.isAttacking)
         {
             fsm.ChangeState(States.Follow);
         }
@@ -69,9 +65,6 @@ public class Goblins : Monster
     {
         if (this.fsm.NextState == States.Follow)
             this.enemyAnimator.SetTrigger("moveTrigger");
-
-        this.MyNavMesh.isStopped = false;
-        this.enemyAttackDelay = this.enemyAttackSpeed;
     }
 
     protected void Die_Enter()
@@ -91,9 +84,25 @@ public class Goblins : Monster
         
     }
 
+    protected void Attack()
+    {
+        this.enemyAnimator.SetTrigger("attackTrigger");
+    }
+
+    protected void ThrowAttackPrefab()
+    {
+        GameObject attack = Instantiate(this.attackPrefab, this.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+        Rigidbody rb = attack.GetComponent<Rigidbody>();
+
+        Vector3 movePosition = (targetPosition + new Vector3(0, 2, 0)) - attack.transform.position;
+        attack.transform.LookAt(targetPosition);
+        
+        rb.AddForce(movePosition, ForceMode.Impulse);
+    }
+
     protected override void SpawnExpObjet()
     {
-        GameObject expClone = Instantiate(StageManager.instance.expObject, this.transform.position , Quaternion.identity);
+        GameObject expClone = Instantiate(StageManager.instance.expObject, this.transform.position, Quaternion.identity);
         expClone.transform.parent = StageManager.instance.expClones.transform;
     }
 

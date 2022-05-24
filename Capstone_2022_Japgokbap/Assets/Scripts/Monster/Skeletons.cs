@@ -19,7 +19,7 @@ public class Skeletons : Monster
 
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance <= this.enemyAttackRange)
+        if (distance <= this.enemyAttackRange && this.enemyAttackDelay < 0)
         {
             fsm.ChangeState(States.Attack);
         }
@@ -44,7 +44,7 @@ public class Skeletons : Monster
     {
         float distance = Vector3.Distance(targetPosition, this.transform.position);
 
-        if (distance > this.enemyAttackRange)
+        if (distance > this.enemyAttackRange && !this.isAttacking)
         {
             fsm.ChangeState(States.Follow);
         }

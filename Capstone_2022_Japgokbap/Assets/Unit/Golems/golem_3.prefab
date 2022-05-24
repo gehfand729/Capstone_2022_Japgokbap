@@ -491,13 +491,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHp: 100
+  originHp: 0
   enemyOffensePower: 0
   enemyDefensePower: 0
   enemyExperience: 0
-  enemyAttackRange: 20
+  enemyAttackRange: 30
   enemyAttackDelay: 4
   enemyAttackSpeed: 4
   isFollowingPlayer: 0
+  attackPrefab: {fileID: 5988742365777917155, guid: c555b2a9e21be084e80509e691c0f1da, type: 3}
+  attackSpell: {fileID: 1985647806494085371, guid: ada83c576a76cce489fbea1e2b2cce3a, type: 3}
 --- !u!136 &6982846834037814901
 CapsuleCollider:
   m_ObjectHideFlags: 0
