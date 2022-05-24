@@ -116,7 +116,11 @@ public class PlayerController : MonoBehaviour
             moveDirZ = Input.GetAxisRaw("Vertical");
             inputDir = new Vector3(moveDirX, 0, moveDirZ).normalized;
 
+<<<<<<< Updated upstream
             rb.MovePosition(transform.position + inputDir*Time.deltaTime*playerMoveSpeed);
+=======
+            rb.MovePosition(transform.position + inputDir * Time.deltaTime * playerMoveSpeed);
+>>>>>>> Stashed changes
             playerAnimator.SetBool("isWalk",inputDir != Vector3.zero);
             PlayerRotate();
         }
