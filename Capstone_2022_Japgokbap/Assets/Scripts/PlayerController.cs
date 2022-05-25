@@ -42,8 +42,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public List<int> PlayerSkill = new List<int>();
     
     [Header("PlayerStatus")]
-    public int playerMaxHP;
-    public int playerCurrentHP;
+    public float playerMaxHP;
+    public float playerCurrentHP;
     public int playerOffensePower;
     public int playerDeffencePower;
     public float playerMoveSpeed;

@@ -446,7 +446,7 @@ public class StageManager : MonoBehaviour
     {
         if (bossCleared)
         {
-            fsm.ChangeState(States.Stage2);
+            fsm.ChangeState(States.Stage3);
         }
         else if (GameManager.instance.time == 0 && !bossCleared)
         {
