@@ -79,6 +79,8 @@ MonoBehaviour:
   enemyAttackDelay: 0
   enemyAttackSpeed: 0
   isFollowingPlayer: 0
+  isAttacking: 0
+  attackPrefab: {fileID: 0}
   hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
   hudPos: {fileID: 0}
 --- !u!136 &1666894579105827578

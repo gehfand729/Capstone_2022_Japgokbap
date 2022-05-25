@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Goblins : Monster
 {
+    bool isShooting;
+
     protected void Follow_Enter()
     {
         this.isFollowingPlayer = this.isFollowingPlayer ? false : true;
@@ -24,11 +26,6 @@ public class Goblins : Monster
         if (distance <= this.enemyAttackRange && this.enemyAttackRange > 0)
         {
             fsm.ChangeState(States.Attack);
-        }
-
-        if (this.enemyHp < 0)
-        {
-            fsm.ChangeState(States.Die);
         }
     }
 
@@ -71,7 +68,7 @@ public class Goblins : Monster
     {
         this.enemyHp = 0;
         SpawnExpObjet();
-        //Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     protected void Die_Update()
@@ -91,27 +88,18 @@ public class Goblins : Monster
 
     protected void ThrowAttackPrefab()
     {
+        isShooting = true;
+
         GameObject attack = Instantiate(this.attackPrefab, this.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
         Rigidbody rb = attack.GetComponent<Rigidbody>();
 
         Vector3 movePosition = (targetPosition + new Vector3(0, 2, 0)) - attack.transform.position;
         attack.transform.LookAt(targetPosition);
-        
+
+        attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower);
+        attack.transform.parent = this.transform;
         rb.AddForce(movePosition, ForceMode.Impulse);
-    }
 
-    protected override void SpawnExpObjet()
-    {
-        GameObject expClone = Instantiate(StageManager.instance.expObject, this.transform.position, Quaternion.identity);
-        expClone.transform.parent = StageManager.instance.expClones.transform;
-    }
-
-    protected override void GetDamaged(int damage)
-    {
-        GameObject hudText = Instantiate(hudDamageText);
-        hudText.transform.position = hudPos.position;
-        hudText.GetComponent<DamageTextTest>().damage = damage; 
-        Destroy(this.gameObject);
-        SpawnExpObjet();
+        Destroy(attack, 5f);
     }
 }

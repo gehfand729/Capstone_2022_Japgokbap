@@ -42,16 +42,16 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public List<int> PlayerSkill = new List<int>();
     
     [Header("PlayerStatus")]
-    [HideInInspector] public int playerMaxHP;
-    [HideInInspector] public int playerCurrentHP;
+    public int playerMaxHP;
+    public int playerCurrentHP;
     public int playerOffensePower;
     public int playerDeffencePower;
     public float playerMoveSpeed;
 
     [Header("PlayerLv")]
-    [HideInInspector] public int playerLv = 1;
-    [HideInInspector] public float playerCurrentExp = 0f;
-    [HideInInspector] public float playerLvUpExp = 100f;
+    public int playerLv;
+    public float playerCurrentExp;
+    public float playerLvUpExp;
     #endregion
 
     #region "Test"
@@ -78,7 +78,6 @@ public class PlayerController : MonoBehaviour
         #region "AwakeTest"
         //test
         //평타의 데미지 하드 코딩 상태;
-        combat.damage = 300;
         playerMaxHP = classJob.hp;
         playerCurrentHP = playerMaxHP;
         playerMoveSpeed = classJob.moveSpeed;
@@ -92,6 +91,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update() {
+        combat.damage = playerOffensePower;
+
         AttackToMouse();
         InputKey();
     }
@@ -178,6 +179,17 @@ public class PlayerController : MonoBehaviour
             }
         }else return;
     }
+    private void GetDamaged(int damage)
+    {
+        int defeatedDamage = damage - playerDeffencePower;
+
+        if (defeatedDamage < 0)
+        {
+            defeatedDamage = 0;
+        }
+
+        playerCurrentHP -= defeatedDamage;
+    }
     #endregion
 
     #region  "Public Methods"
@@ -199,13 +211,28 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region "CallBack"
+    
     private void OnCollisionEnter(Collision other) 
     {
-        if(other.transform.CompareTag("Monster"))
+        switch(other.transform.tag)
         {
-            playerCurrentHP -= 10;
+            case "Monster" :
+                GetDamaged(other.gameObject.GetComponent<Monster>().GetEnemyPower());
+            break;
         }
     }
+
+    /*
+    private void OnCollisionStay(Collision other) 
+    {        
+        switch(other.transform.tag)
+        {
+            case "Monster" :
+                Debug.Log("닿고있는데에");
+                GetDamaged(other.gameObject.GetComponent<Monster>().GetEnemyPower()/10);
+            break;
+        }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
@@ -215,7 +242,7 @@ public class PlayerController : MonoBehaviour
         // }
         switch(other.tag){
             case "EXP":
-                PlayerExpCalc(100.0f);
+                PlayerExpCalc(other.GetComponent<ExpObject>().CalcExp());
                 Destroy(other.gameObject);
             break;
             case "Potion":
@@ -225,6 +252,10 @@ public class PlayerController : MonoBehaviour
                     playerCurrentHP = playerMaxHP;
                     Debug.Log("Already CurrentHP is Full");
                 }
+                Destroy(other.gameObject);
+            break;
+            case "AttackPrefab" :
+                GetDamaged(other.gameObject.GetComponent<EnemyAttackHit>().GetDamage());
                 Destroy(other.gameObject);
             break;
         }

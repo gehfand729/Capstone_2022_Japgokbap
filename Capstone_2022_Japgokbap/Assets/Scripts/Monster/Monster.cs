@@ -37,11 +37,8 @@ public abstract class Monster : MonoBehaviour
     protected Vector3 targetPosition;
     protected Animator enemyAnimator;
 
-        #region "Test"
     //test
     [SerializeField] protected GameObject hudDamageText;
-    [SerializeField] protected Transform hudPos;
-    #endregion
 
     void Awake()
     {
@@ -53,8 +50,6 @@ public abstract class Monster : MonoBehaviour
 
         MyNavMesh = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
-
-        hudPos = transform.Find("HudDamage").gameObject.GetComponent<Transform>();
     }
 
     void Update()
@@ -64,6 +59,21 @@ public abstract class Monster : MonoBehaviour
         fsm.Driver.Update.Invoke();
 
         enemyAttackDelay -= Time.deltaTime;
+
+        if (enemyHp < 0)
+        {
+            fsm.ChangeState(States.Die);
+        }
+    }
+
+    public int GetExp()
+    {
+        return enemyExperience;
+    }
+
+    public int GetEnemyPower()
+    {
+        return enemyOffensePower;
     }
 
     protected void FollowSetting()
@@ -86,13 +96,29 @@ public abstract class Monster : MonoBehaviour
         MyNavMesh.velocity = Vector3.zero;
     }
 
+    protected void GetDamaged(int damage)
+    {
+        GameObject hudText = Instantiate(hudDamageText, transform.position + Vector3.up, Quaternion.identity);
+        int defeatedDamage = damage - enemyDefensePower;
+
+        if (defeatedDamage < 0)
+        {
+            defeatedDamage = 0;
+        }
+
+        hudText.GetComponent<DamageTextTest>().damage = defeatedDamage;
+        enemyHp -= defeatedDamage;
+    }
+
     protected void Move()
     {
         this.MyNavMesh.SetDestination(GameManager.instance.GetPlayerPosition());
     }
 
-    protected abstract void SpawnExpObjet();
-
-    // 파라미터로 int damage 전달해서 damage만큼 hp 감소시켜야 함
-    protected abstract void GetDamaged(int damage);
+    protected void SpawnExpObjet()
+    {
+        GameObject expClone = Instantiate(StageManager.instance.expObject, transform.position , Quaternion.identity);
+        expClone.GetComponent<ExpObject>().SetExp(enemyExperience);
+        expClone.transform.parent = StageManager.instance.expClones.transform;
+    }
 }

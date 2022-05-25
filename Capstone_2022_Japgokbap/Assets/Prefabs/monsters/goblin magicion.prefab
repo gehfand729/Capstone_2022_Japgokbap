@@ -43418,9 +43418,10 @@ GameObject:
   - component: {fileID: 4971319159835614277}
   - component: {fileID: 4584553173251777962}
   - component: {fileID: 278752255606101207}
+  - component: {fileID: 2803927320604786588}
   m_Layer: 0
   m_Name: goblin magicion
-  m_TagString: Untagged
+  m_TagString: AttackPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43449,12 +43450,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4971319159835614275}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 1}
+  m_Center: {x: 0.35, y: 0, z: 1}
 --- !u!54 &278752255606101207
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43471,6 +43472,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2803927320604786588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4971319159835614275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7e5998e7e703246b2ea824ba049b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5978952499978010270
 GameObject:
   m_ObjectHideFlags: 0

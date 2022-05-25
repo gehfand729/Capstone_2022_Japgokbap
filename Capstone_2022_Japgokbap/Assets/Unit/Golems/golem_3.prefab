@@ -490,16 +490,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e336aeecbec4f447a66563f8e748b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHp: 100
+  enemyHp: 500
   originHp: 0
-  enemyOffensePower: 0
-  enemyDefensePower: 0
+  enemyOffensePower: 200
+  enemyDefensePower: 100
   enemyExperience: 0
-  enemyAttackRange: 30
-  enemyAttackDelay: 4
+  enemyAttackRange: 40
+  enemyAttackDelay: 0
   enemyAttackSpeed: 4
   isFollowingPlayer: 0
+  isAttacking: 0
   attackPrefab: {fileID: 5988742365777917155, guid: c555b2a9e21be084e80509e691c0f1da, type: 3}
+  hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
   attackSpell: {fileID: 1985647806494085371, guid: ada83c576a76cce489fbea1e2b2cce3a, type: 3}
 --- !u!136 &6982846834037814901
 CapsuleCollider:

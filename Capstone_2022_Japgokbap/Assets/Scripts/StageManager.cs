@@ -306,6 +306,8 @@ public class StageManager : MonoBehaviour
 
     void Stage1_Exit()
     {
+        bossCleared = false;
+
         ClearChildObject(monsters1);
         ClearChildObject(monsters2);
         ClearChildObject(monsters3);
@@ -454,6 +456,8 @@ public class StageManager : MonoBehaviour
 
     void Stage2_Exit()
     {
+        bossCleared = false;
+
         ClearChildObject(monsters4);
         ClearChildObject(monsters5);
         ClearChildObject(monsters6);
@@ -596,6 +600,8 @@ public class StageManager : MonoBehaviour
 
     void Stage3_Exit()
     {
+        bossCleared = false;
+
         ClearChildObject(monsters8);
         ClearChildObject(monsters9);
         ClearChildObject(monsters10);

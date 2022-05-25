@@ -39,11 +39,6 @@ public class GolemBoss : Monster
         {
             SpawnStaryPrefab();
         }
-
-        if (this.enemyHp < 0)
-        {
-            fsm.ChangeState(States.Die);
-        }
     }
 
     protected void Follow_Exit()
@@ -90,7 +85,8 @@ public class GolemBoss : Monster
     {
         this.enemyHp = 0;
         SpawnExpObjet();
-        //Destroy(this.gameObject);
+        Destroy(this.gameObject);
+        StageManager.instance.bossCleared = true;
     }
 
     protected void Die_Update()
@@ -118,6 +114,7 @@ public class GolemBoss : Monster
         attack.transform.parent = this.transform;
 
         attack = Instantiate(this.attackPrefab, targetPosition + new Vector3(0,3,0), Quaternion.Euler(-90,0,0));
+        attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower);
         Destroy(attack, this.enemyAttackSpeed / 2);
     }
 
@@ -128,20 +125,5 @@ public class GolemBoss : Monster
         GameObject stary = Instantiate(strayPrefab, this.transform.position + new Vector3(0, 6, 0), Quaternion.identity);
         stary.transform.parent = this.transform;
         Destroy(stary, strayDelay);
-    }
-
-    protected override void SpawnExpObjet()
-    {
-        GameObject expClone = Instantiate(StageManager.instance.expObject, this.transform.position , Quaternion.identity);
-        expClone.transform.parent = StageManager.instance.expClones.transform;
-    }
-
-    protected override void GetDamaged(int damage)
-    {
-        GameObject hudText = Instantiate(hudDamageText);
-        hudText.transform.position = hudPos.position;
-        hudText.GetComponent<DamageTextTest>().damage = damage; 
-        Destroy(this.gameObject);
-        SpawnExpObjet();
     }
 }

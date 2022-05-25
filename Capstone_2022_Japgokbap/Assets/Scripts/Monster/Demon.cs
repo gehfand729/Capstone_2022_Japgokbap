@@ -12,6 +12,20 @@ public class Demon : Monster
     [SerializeField] protected float originSpeed;
     [SerializeField] protected float rushSpeed;
 
+    
+    [Header ("Pattern2 Info")]
+    [SerializeField] protected float fireFieldDelay;
+    [SerializeField] protected float fireFieldCooltime;
+    [SerializeField] protected GameObject fireFieldSpell;
+    [SerializeField] protected GameObject fireFieldPrefab;
+
+    [Header ("Pattern3 Info")]
+    [SerializeField] protected float breathDelay;
+    [SerializeField] protected float breathCooltime;
+    [SerializeField] protected GameObject breathSpell;
+    [SerializeField] protected GameObject breathPrefab;
+
+
     protected void Follow_Enter()
     {
         this.isFollowingPlayer = this.isFollowingPlayer ? false : true;
@@ -19,7 +33,7 @@ public class Demon : Monster
 
     protected void Follow_Update()
     {
-        rushDelay -= Time.deltaTime;
+        CoolTimeCast();
 
         if (this.isFollowingPlayer)
         {
@@ -41,11 +55,6 @@ public class Demon : Monster
 
             fsm.ChangeState(States.Pattern);
         }
-
-        if (this.enemyHp < 0)
-        {
-            fsm.ChangeState(States.Die);
-        }
     }
 
     protected void Follow_Exit()
@@ -60,7 +69,7 @@ public class Demon : Monster
 
     protected void Attack_Update()
     {
-        rushDelay -= Time.deltaTime;
+        CoolTimeCast();
 
         if (this.enemyAttackDelay < 0)
         {
@@ -106,6 +115,7 @@ public class Demon : Monster
     protected void Pattern_Exit()
     {
         this.MyNavMesh.speed = originSpeed;
+        this.enemyAttackDelay = 0;
         rushDelay = rushCooltime;
     }
 
@@ -116,7 +126,7 @@ public class Demon : Monster
 
     protected void Pattern1_Update()
     {
-        
+
     }
 
     protected void Pattern1_Exit()
@@ -131,7 +141,7 @@ public class Demon : Monster
 
     protected void Pattern2_Update()
     {
-        
+
     }
 
     protected void Pattern2_Exit()
@@ -143,7 +153,8 @@ public class Demon : Monster
     {
         this.enemyHp = 0;
         SpawnExpObjet();
-        //Destroy(this.gameObject);
+        Destroy(this.gameObject);
+        StageManager.instance.bossCleared = true;
     }
 
     protected void Die_Update()
@@ -160,18 +171,11 @@ public class Demon : Monster
     {
         this.enemyAnimator.SetTrigger("attackTrigger");
     }
-
-    protected override void SpawnExpObjet()
+    
+    protected void CoolTimeCast()
     {
-        GameObject expClone = Instantiate(StageManager.instance.expObject, this.transform.position , Quaternion.identity);
-        expClone.transform.parent = StageManager.instance.expClones.transform;
-    }
-
-    protected override void GetDamaged(int damage)
-    {
-        GameObject hudText = Instantiate(hudDamageText);
-        hudText.transform.position = hudPos.position;
-        hudText.GetComponent<DamageTextTest>().damage = damage; 
-        SpawnExpObjet();
+        rushDelay -= Time.deltaTime;
+        fireFieldDelay -= Time.deltaTime;
+        breathDelay -= Time.deltaTime;
     }
 }

@@ -121166,9 +121166,10 @@ GameObject:
   - component: {fileID: 3158941450123716223}
   - component: {fileID: 3158665205904704127}
   - component: {fileID: 3026362808402128103}
+  - component: {fileID: 1638581008957250924}
   m_Layer: 0
   m_Name: golemboss stary prefab
-  m_TagString: Untagged
+  m_TagString: AttackPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125990,6 +125991,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 1, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1638581008957250924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960330917617857991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7e5998e7e703246b2ea824ba049b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2960339957049228543
 GameObject:
   m_ObjectHideFlags: 0

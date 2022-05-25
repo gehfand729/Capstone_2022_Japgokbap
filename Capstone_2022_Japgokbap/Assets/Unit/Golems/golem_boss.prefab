@@ -3545,16 +3545,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ee9fe4b0dfd624789877b095ca8001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHp: 100
+  enemyHp: 800
   originHp: 0
-  enemyOffensePower: 0
-  enemyDefensePower: 0
+  enemyOffensePower: 200
+  enemyDefensePower: 100
   enemyExperience: 0
-  enemyAttackRange: 30
-  enemyAttackDelay: 5
+  enemyAttackRange: 50
+  enemyAttackDelay: 0
   enemyAttackSpeed: 5
   isFollowingPlayer: 0
+  isAttacking: 0
   attackPrefab: {fileID: 6116761994887682889, guid: 14d536837bafa214583b55e6543d9c75, type: 3}
+  hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
   attackSpell: {fileID: 3268407896318955953, guid: cb91ab3357ad45545804bde1354abe3d, type: 3}
   strayDelay: 15
   strayCoolTime: 15
