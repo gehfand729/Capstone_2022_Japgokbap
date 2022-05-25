@@ -6,7 +6,7 @@ using UnityEngine;
 public class ClassSO : ScriptableObject
 {
     public string className;
-    public int hp;
+    public float hp;
     public int offensePower;
     public int deffencePower;
     public float moveSpeed;

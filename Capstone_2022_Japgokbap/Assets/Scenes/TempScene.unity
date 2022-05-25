@@ -544,7 +544,7 @@ PrefabInstance:
       objectReference: {fileID: 3138829618167782496}
     - target: {fileID: 3820174900497407265, guid: ae42de4f2233a7343b8d2d5ada2bfec9, type: 3}
       propertyPath: archerMaxCount
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3820174900497407265, guid: ae42de4f2233a7343b8d2d5ada2bfec9, type: 3}
       propertyPath: round1ClearTime
@@ -564,7 +564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3820174900497407265, guid: ae42de4f2233a7343b8d2d5ada2bfec9, type: 3}
       propertyPath: magicianMaxCount
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3820174900497407265, guid: ae42de4f2233a7343b8d2d5ada2bfec9, type: 3}
       propertyPath: enemySpawner.Array.data[0]
@@ -1539,22 +1539,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 12045865, guid: c6bebeddcd63a7d47848ed32bc4be283, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 12045865, guid: c6bebeddcd63a7d47848ed32bc4be283, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238012170, guid: c6bebeddcd63a7d47848ed32bc4be283, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238012172, guid: c6bebeddcd63a7d47848ed32bc4be283, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3138829617314093701, guid: c6bebeddcd63a7d47848ed32bc4be283, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1570,6 +1554,14 @@ PrefabInstance:
     - target: {fileID: 3138829617314093701, guid: c6bebeddcd63a7d47848ed32bc4be283, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138829617593813985, guid: c6bebeddcd63a7d47848ed32bc4be283, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138829617593813985, guid: c6bebeddcd63a7d47848ed32bc4be283, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3138829617659923798, guid: c6bebeddcd63a7d47848ed32bc4be283, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

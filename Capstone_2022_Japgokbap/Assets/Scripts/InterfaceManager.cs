@@ -43,7 +43,11 @@ public class InterfaceManager : MonoBehaviour
         selectButtons = selectButtonsParent.GetComponentsInChildren<SelectButton>();
         skillBarsParent = GameObject.FindWithTag("UsableSkillBar");
         skillBars = skillBarsParent.GetComponentsInChildren<Button>();
-        playerHPBar.maxValue = playerController.playerMaxHP;
+        
+
+
+        //playerHPBar.maxValue = playerController.playerMaxHP;
+
     }
     private void Update()
     {
@@ -55,7 +59,7 @@ public class InterfaceManager : MonoBehaviour
 
     #region "Private Methods"
     private void CalHP(){
-        playerHPBar.value = playerController.playerCurrentHP;
+        playerHPBar.value = playerController.playerCurrentHP / playerController.playerMaxHP;
     }
 
     private void CalExp(){
