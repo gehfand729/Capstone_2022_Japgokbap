@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using System;
 using MonsterLove.StateMachine;
 
+using KeyType = System.String;
+
 [Serializable]
 public class StageData
 {
@@ -15,6 +17,7 @@ public class StageData
     public int[] monsterCount;
 }
 
+[DisallowMultipleComponent]
 public class StageManager : MonoBehaviour
 {
     #region "Pulbic"
@@ -46,18 +49,18 @@ public class StageManager : MonoBehaviour
     public StateMachine<States, StateDriverUnity> fsm;
 
     //public Dictionary<Byte, GameObject> m_pool = new Dictionary<byte, GameObject>();
-    public Queue<GameObject> skel_0_queue = new Queue<GameObject>();
-    public Queue<GameObject> skel_1_queue = new Queue<GameObject>();
-    public Queue<GameObject> skel_2_queue = new Queue<GameObject>();
-    public Queue<GameObject> skel_3_queue = new Queue<GameObject>();
-    public Queue<GameObject> goblin_0_queue = new Queue<GameObject>();
-    public Queue<GameObject> goblin_1_queue = new Queue<GameObject>();
-    public Queue<GameObject> goblin_2_queue = new Queue<GameObject>();
-    public Queue<GameObject> goblin_3_queue = new Queue<GameObject>();
-    public Queue<GameObject> golem_0_queue = new Queue<GameObject>();
-    public Queue<GameObject> golem_1_queue = new Queue<GameObject>();
-    public Queue<GameObject> golem_2_queue = new Queue<GameObject>();
-    public Queue<GameObject> golem_3_queue = new Queue<GameObject>();
+    public Stack<GameObject> skel_0 = new Stack<GameObject>();
+    public Stack<GameObject> skel_1 = new Stack<GameObject>();
+    public Stack<GameObject> skel_2 = new Stack<GameObject>();
+    public Stack<GameObject> skel_3 = new Stack<GameObject>();
+    public Stack<GameObject> goblin_0 = new Stack<GameObject>();
+    public Stack<GameObject> goblin_1 = new Stack<GameObject>();
+    public Stack<GameObject> goblin_2 = new Stack<GameObject>();
+    public Stack<GameObject> goblin_3 = new Stack<GameObject>();
+    public Stack<GameObject> golem_0 = new Stack<GameObject>();
+    public Stack<GameObject> golem_1 = new Stack<GameObject>();
+    public Stack<GameObject> golem_2 = new Stack<GameObject>();
+    public Stack<GameObject> golem_3 = new Stack<GameObject>();
 
     [Header ("Settings")]
     public float waitingTime;
@@ -153,27 +156,83 @@ public class StageManager : MonoBehaviour
     public int round4ClearTime;
     public GameObject monsters12;
 
+    /// <summary> 풀에서 꺼내오기 </summary>
+    public GameObject SpawnMonster(KeyType key, Transform parent)
+    {
+        // 키가 존재하지 않는 경우 null 리턴
+        if (!poolDict.TryGetValue(key, out var pool))
+        {
+            return null;
+        }
+
+        GameObject go;
+
+        // 1. 풀에 재고가 있는 경우 : 꺼내오기
+        if (pool.Count > 0)
+        {
+            go = pool.Pop();
+        }
+        // 2. 재고가 없는 경우 샘플로부터 복제
+        else
+        {
+            go = CloneFromSample(key);
+            clonePoolDict.Add(go, pool); // Clone-Stack 캐싱
+        }
+
+        go.transform.position = enemySpawner[spawnerCount++ % 3].transform.position;
+        go.SetActive(true);
+        go.transform.SetParent(parent);
+
+        return go;
+    }
+
+    /// <summary> 풀에 집어넣기 </summary>
+    public void DespawnMonster(GameObject go)
+    {
+        // 캐싱된 게임오브젝트가 아닌 경우 파괴
+        if (!clonePoolDict.TryGetValue(go, out var pool))
+        {
+            Destroy(go);
+            return;
+        }
+
+        // 집어넣기
+        go.transform.position = monsterPool.transform.position;
+        go.transform.parent = monsterPool.transform;
+        go.SetActive(false);
+        pool.Push(go);
+    }
+
     #endregion
 
     #region "Private"
 
     private static StageManager m_instance;
 
+    // 인스펙터에서 오브젝트 풀링 대상 정보 추가
+    [SerializeField] private List<MonsterPoolData> monsterPoolDataList = new List<MonsterPoolData>();
+
+    // Key - 복제용 오브젝트 원본
+    private Dictionary<KeyType, GameObject> sampleDict;
+
+    // Key - 풀 정보
+    private Dictionary<KeyType, MonsterPoolData> dataDict;
+
+    // Key - 풀
+    private Dictionary<KeyType, Stack<GameObject>> poolDict;
+
+    // 복제된 게임오브젝트 - 풀
+    private Dictionary<GameObject, Stack<GameObject>> clonePoolDict;
+
     [Header ("Spawners")]
     [SerializeField] private GameObject monsterPool;
     [SerializeField] private GameObject[] enemySpawner;
     [SerializeField] private GameObject bossSpawner;
 
-    [Header ("Monsters")]
-    [SerializeField] private GameObject[] skeletons;
-    [SerializeField] private GameObject[] goblins;
+    [Header ("Boss Monsters")]
     [SerializeField] private GameObject[] orc;
-    [SerializeField] private GameObject[] golems;
+    [SerializeField] private GameObject[] golem;
     [SerializeField] private GameObject[] demon;
-    [SerializeField] private GameObject[] specialMonsters;
-    [SerializeField] private int worriorMaxCount;
-    [SerializeField] private int archerMaxCount;
-    [SerializeField] private int magicianMaxCount;
 
     #endregion
     
@@ -184,9 +243,74 @@ public class StageManager : MonoBehaviour
         fsm.ChangeState(States.Ready);
     }
 
+    private void Start()
+    {
+        PoolInit();
+    }
+
     private void Update() 
     {
         fsm.Driver.Update.Invoke();
+    }
+
+    private void PoolInit()
+    {
+        int len = monsterPoolDataList.Count;
+        if (len == 0) return;
+
+        // 1. Dictionary 생성
+        sampleDict = new Dictionary<KeyType, GameObject>(len);
+        dataDict = new Dictionary<KeyType, MonsterPoolData>(len);
+        poolDict = new Dictionary<KeyType, Stack<GameObject>>(len);
+        clonePoolDict = new Dictionary<GameObject, Stack<GameObject>>(len * MonsterPoolData.INITIAL_COUNT);
+
+        // 2. Data로부터 새로운 Pool 오브젝트 정보 생성
+        foreach (var data in monsterPoolDataList)
+        {
+            PoolRegister(data);
+        }
+    }
+
+    /// <summary> Pool 데이터로부터 새로운 Pool 오브젝트 정보 등록 </summary>
+    private void PoolRegister(MonsterPoolData data)
+    {
+        // 중복 키는 등록 불가능
+        if (poolDict.ContainsKey(data.key))
+        {
+            return;
+        }
+
+        // 1. 샘플 게임오브젝트 생성, PoolObject 컴포넌트 존재 확인
+        GameObject sample = Instantiate(data.prefab, monsterPool.transform.position, Quaternion.identity);
+        sample.name = data.prefab.name;
+        sample.transform.parent = monsterPool.transform;
+        sample.SetActive(false);
+
+        // 2. Pool Dictionary에 풀 생성 + 풀에 미리 오브젝트들 만들어 담아놓기
+        Stack<GameObject> pool = new Stack<GameObject>(data.maxObjectCount);
+        for (int i = 0; i < data.initialObjectCount; i++)
+        {
+            GameObject clone = Instantiate(data.prefab, monsterPool.transform.position, Quaternion.identity);
+            clone.SetActive(false);
+            clone.transform.position = monsterPool.transform.position;
+            clone.transform.parent = monsterPool.transform;
+            pool.Push(clone);
+
+            clonePoolDict.Add(clone, pool); // Clone-Stack 캐싱
+        }
+
+        // 3. 딕셔너리에 추가
+        sampleDict.Add(data.key, sample);
+        dataDict.Add(data.key, data);
+        poolDict.Add(data.key, pool);
+    }
+
+    /// <summary> 샘플 오브젝트 복제하기 </summary>
+    private GameObject CloneFromSample(KeyType key)
+    {
+        if (!sampleDict.TryGetValue(key, out GameObject sample)) return null;
+
+        return Instantiate(sample);
     }
 
     IEnumerator Ready_Enter()
@@ -203,11 +327,6 @@ public class StageManager : MonoBehaviour
 
     void Ready_Exit()
     {
-        EarlySpawnMonster(skel_0_queue, skeletons[0], worriorMaxCount);
-        EarlySpawnMonster(skel_1_queue, skeletons[1], worriorMaxCount);
-        EarlySpawnMonster(skel_2_queue, skeletons[2], worriorMaxCount);
-        EarlySpawnMonster(skel_3_queue, skeletons[3], worriorMaxCount);
-
         roundInfoText.text = "Stage 1-1";
 
         GameManager.instance.SetTime(round1ClearTime);
@@ -217,14 +336,14 @@ public class StageManager : MonoBehaviour
     {
         for (int i = 0; i < count1; i++)
         {
-            SpawnMonster(skel_0_queue, monsters1);
+            SpawnMonster("Skeleton1", monsters1.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count2; i++)
         {
-            SpawnMonster(skel_1_queue, monsters1);
+            SpawnMonster("Skeleton2", monsters1.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -235,28 +354,28 @@ public class StageManager : MonoBehaviour
 
         for (int i = 0; i < count3; i++)
         {
-            SpawnMonster(skel_0_queue, monsters2);
+            SpawnMonster("Skeleton1", monsters2.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count4; i++)
         {
-            SpawnMonster(skel_1_queue, monsters2);
+            SpawnMonster("Skeleton2", monsters2.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count5; i++)
         {
-            SpawnMonster(skel_2_queue, monsters2);
+            SpawnMonster("Skeleton3", monsters2.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count6; i++)
         {
-            SpawnMonster(skel_3_queue, monsters2);
+            SpawnMonster("Skeleton4", monsters2.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -267,28 +386,28 @@ public class StageManager : MonoBehaviour
 
         for (int i = 0; i < count7; i++)
         {
-            SpawnMonster(skel_0_queue, monsters3);
+            SpawnMonster("Skeleton1", monsters3.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count7; i++)
         {
-            SpawnMonster(skel_1_queue, monsters3);
+            SpawnMonster("Skeleton2", monsters3.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count8; i++)
         {
-            SpawnMonster(skel_2_queue, monsters3);
+            SpawnMonster("Skeleton3", monsters3.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count9; i++)
         {
-            SpawnMonster(skel_3_queue, monsters3);
+            SpawnMonster("Skeleton4", monsters3.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -311,11 +430,6 @@ public class StageManager : MonoBehaviour
         ClearChildObject(monsters1);
         ClearChildObject(monsters2);
         ClearChildObject(monsters3);
-
-        EarlySpawnMonster(goblin_0_queue, goblins[0], worriorMaxCount);
-        EarlySpawnMonster(goblin_1_queue, goblins[1], archerMaxCount);
-        EarlySpawnMonster(goblin_2_queue, goblins[2], worriorMaxCount);
-        EarlySpawnMonster(goblin_3_queue, goblins[3], magicianMaxCount);
     }
 
     IEnumerator Stage2_Enter()
@@ -333,14 +447,14 @@ public class StageManager : MonoBehaviour
 
         for (int i = 0; i < count10; i++)
         {
-            SpawnMonster(goblin_0_queue, monsters4);
+            SpawnMonster("Goblin1", monsters4.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count11; i++)
         {
-            SpawnMonster(goblin_1_queue, monsters4);
+            SpawnMonster("Goblin2", monsters4.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -351,21 +465,21 @@ public class StageManager : MonoBehaviour
 
         for (int i = 0; i < count12; i++)
         {
-            SpawnMonster(goblin_0_queue, monsters5);
+            SpawnMonster("Goblin1", monsters5.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count13; i++)
         {
-            SpawnMonster(goblin_1_queue, monsters5);
+            SpawnMonster("Goblin2", monsters5.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count14; i++)
         {
-            SpawnMonster(goblin_2_queue, monsters5);
+            SpawnMonster("Goblin3", monsters5.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -376,28 +490,28 @@ public class StageManager : MonoBehaviour
 
         for (int i = 0; i < count15; i++)
         {
-            SpawnMonster(goblin_0_queue, monsters6);
+            SpawnMonster("Goblin1", monsters6.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count16; i++)
         {
-            SpawnMonster(goblin_1_queue, monsters6);
+            SpawnMonster("Goblin2", monsters6.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count17; i++)
         {
-            SpawnMonster(goblin_2_queue, monsters6);
+            SpawnMonster("Goblin3", monsters6.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count18; i++)
         {
-            SpawnMonster(goblin_3_queue, monsters6);
+            SpawnMonster("Goblin4", monsters6.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -408,28 +522,28 @@ public class StageManager : MonoBehaviour
 
         for (int i = 0; i < count19; i++)
         {
-            SpawnMonster(goblin_0_queue, monsters7);
+            SpawnMonster("Goblin1", monsters7.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count20; i++)
         {
-            SpawnMonster(goblin_1_queue, monsters7);
+            SpawnMonster("Goblin2", monsters7.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count21; i++)
         {
-            SpawnMonster(goblin_2_queue, monsters7);
+            SpawnMonster("Goblin3", monsters7.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count22; i++)
         {
-            SpawnMonster(goblin_3_queue, monsters7);
+            SpawnMonster("Goblin4", monsters7.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -462,11 +576,6 @@ public class StageManager : MonoBehaviour
         ClearChildObject(monsters5);
         ClearChildObject(monsters6);
         ClearChildObject(monsters7);
-
-        EarlySpawnMonster(golem_0_queue, golems[0], worriorMaxCount);
-        EarlySpawnMonster(golem_1_queue, golems[1], worriorMaxCount);
-        EarlySpawnMonster(golem_2_queue, golems[2], magicianMaxCount);
-        EarlySpawnMonster(golem_3_queue, golems[3], magicianMaxCount);
     }
 
     IEnumerator Stage3_Enter()
@@ -484,14 +593,14 @@ public class StageManager : MonoBehaviour
 
         for (int i = 0; i < count23; i++)
         {
-            SpawnMonster(golem_0_queue, monsters8);
+            SpawnMonster("Golem1", monsters8.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count24; i++)
         {
-            SpawnMonster(golem_1_queue, monsters8);
+            SpawnMonster("Golem2", monsters8.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -502,21 +611,21 @@ public class StageManager : MonoBehaviour
 
         for (int i = 0; i < count25; i++)
         {
-            SpawnMonster(golem_0_queue, monsters9);
+            SpawnMonster("Golem1", monsters9.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count26; i++)
         {
-            SpawnMonster(golem_1_queue, monsters9);
+            SpawnMonster("Golem2", monsters9.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count27; i++)
         {
-            SpawnMonster(golem_2_queue, monsters9);
+            SpawnMonster("Golem3", monsters9.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -527,21 +636,21 @@ public class StageManager : MonoBehaviour
 
         for (int i = 0; i < count28; i++)
         {
-            SpawnMonster(golem_1_queue, monsters10);
+            SpawnMonster("Golem2", monsters10.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count29; i++)
         {
-            SpawnMonster(golem_2_queue, monsters10);
+            SpawnMonster("Golem3", monsters10.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count30; i++)
         {
-            SpawnMonster(golem_3_queue, monsters10);
+            SpawnMonster("Golem4", monsters10.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -552,28 +661,28 @@ public class StageManager : MonoBehaviour
         
         for (int i = 0; i < count31; i++)
         {
-            SpawnMonster(golem_0_queue, monsters11);
+            SpawnMonster("Golem1", monsters11.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count32; i++)
         {
-            SpawnMonster(golem_1_queue, monsters11);
+            SpawnMonster("Golem2", monsters11.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count33; i++)
         {
-            SpawnMonster(golem_2_queue, monsters11);
+            SpawnMonster("Golem3", monsters11.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
 
         for (int i = 0; i < count34; i++)
         {
-            SpawnMonster(golem_3_queue, monsters11);
+            SpawnMonster("Golem4", monsters11.transform);
 
             yield return new WaitForSeconds(waitingTime);
         }
@@ -582,7 +691,7 @@ public class StageManager : MonoBehaviour
 
         roundInfoText.text = "Stage 3 Boss";
 
-        GameObject monster = Instantiate(golems[4], bossSpawner.transform.position, Quaternion.identity);
+        GameObject monster = Instantiate(golem[0], bossSpawner.transform.position, Quaternion.identity);
         monster.transform.parent = monsters11.transform;
     }
 
@@ -654,66 +763,38 @@ public class StageManager : MonoBehaviour
         //인게임 설정값 초기화
     }
 
-    public void EarlySpawnMonster(Queue<GameObject> queue, GameObject monster, int count)
-    {
-        for (int i = 0; i < count; i++)
-        {
-            GameObject t_monster = Instantiate(monster, monsterPool.transform.position, Quaternion.identity);
-
-            InsertMonsterInQueue(queue, t_monster);
-        }
-    }
-
     /*
-    public void InsertMonsterInDictionary(Byte code, GameObject monster)
+    public void InsertMonster(Stack<GameObject> stack, GameObject monster)
     {
-        m_pool.Add(code, monster);
-        monster.SetActive(false);
-    }
-
-    public GameObject GetMonsterInDictionary(Byte code)
-    {
-        m_pool.Remove(code);
-        GameObject monster;
-        if (m_pool.TryGetValue(code, out monster))
-        {
-            monster.SetActive(true);
-
-            return monster;
-        }
-        else
-        {
-            return null;
-        }
-    }
-    */
-
-    public void InsertMonsterInQueue(Queue<GameObject> queue, GameObject monster)
-    {
-        queue.Enqueue(monster);
+        stack.Push(monster);
         monster.transform.parent = monsterPool.transform;
         monster.SetActive(false);
     }
+    */
 
-    public GameObject GetMonsterInQueue(Queue<GameObject> queue)
+    /*
+    public GameObject GetMonster(Stack<GameObject> stack)
     {
-        GameObject monster = queue.Dequeue();
+        GameObject monster = stack.Pop();
 
         return monster;
     }
+    */
 
-    private void SpawnMonster(Queue<GameObject> queue, GameObject parent)
+    /*
+    private void SpawnMonster(Stack<GameObject> stack, GameObject parent)
     {
-        if (GetMonsterInQueue(queue) == null)
+        if (GetMonster(stack) == null)
         { 
             
         }
 
-        GameObject monster = GetMonsterInQueue(queue);
+        GameObject monster = GetMonster(stack);
         monster.transform.position = enemySpawner[spawnerCount++ % 3].transform.position;
         monster.SetActive(true);
         monster.transform.parent = parent.transform;
     }
+    */
 
     private void ClearChildObject(GameObject parent)
     {
@@ -724,7 +805,7 @@ public class StageManager : MonoBehaviour
             for (int i = 1; i < childList.Length; i++)
             {
                 if (childList[i] != transform)
-                    Destroy(childList[i].gameObject); // queue로 보내야함
+                    DespawnMonster(childList[i].gameObject);
             }
         }
     }

@@ -54,7 +54,7 @@ public class Skeletons : Monster
     {
         this.enemyHp = 0;
         SpawnExpObjet();
-        Destroy(this.gameObject);
+        StageManager.instance.DespawnMonster(this.gameObject);
     }
 
     protected void Die_Update()

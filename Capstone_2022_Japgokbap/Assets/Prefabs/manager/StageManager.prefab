@@ -55,84 +55,115 @@ MonoBehaviour:
   magicianInstance: {fileID: 153829307390509354, guid: e770ba99307278946b6792a64b768598, type: 3}
   expClones: {fileID: 0}
   expObject: {fileID: 5986583666806072436, guid: c935ed4a88fc4e64d8ceef2118340379, type: 3}
+  itemClones: {fileID: 0}
   round1ClearTime: 60
   monsters1: {fileID: 0}
-  count1: 3
-  count2: 3
+  count1: 0
+  count2: 0
   monsters2: {fileID: 0}
-  count3: 3
-  count4: 3
-  count5: 3
-  count6: 3
+  count3: 0
+  count4: 0
+  count5: 0
+  count6: 0
   monsters3: {fileID: 0}
-  count7: 3
-  count8: 3
-  count9: 3
+  count7: 0
+  count8: 0
+  count9: 0
   round2ClearTime: 60
   monsters4: {fileID: 0}
-  count10: 3
-  count11: 3
+  count10: 0
+  count11: 0
   monsters5: {fileID: 0}
-  count12: 3
-  count13: 3
-  count14: 3
+  count12: 0
+  count13: 0
+  count14: 0
   monsters6: {fileID: 0}
-  count15: 3
-  count16: 3
-  count17: 3
-  count18: 3
+  count15: 0
+  count16: 0
+  count17: 0
+  count18: 0
   monsters7: {fileID: 0}
-  count19: 3
-  count20: 3
-  count21: 3
-  count22: 3
+  count19: 0
+  count20: 0
+  count21: 0
+  count22: 0
   round3ClearTime: 60
   monsters8: {fileID: 0}
-  count23: 3
-  count24: 3
+  count23: 0
+  count24: 0
   monsters9: {fileID: 0}
-  count25: 3
-  count26: 3
-  count27: 3
+  count25: 0
+  count26: 0
+  count27: 0
   monsters10: {fileID: 0}
-  count28: 3
-  count29: 3
-  count30: 3
+  count28: 0
+  count29: 0
+  count30: 0
   monsters11: {fileID: 0}
-  count31: 3
-  count32: 3
-  count33: 3
-  count34: 3
+  count31: 0
+  count32: 0
+  count33: 0
+  count34: 0
   round4ClearTime: 60
   monsters12: {fileID: 0}
+  monsterPoolDataList:
+  - key: Skeleton1
+    prefab: {fileID: 4886527229725609321, guid: 4869629ee6ba3f14d8ebe7498e799f86, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Skeleton2
+    prefab: {fileID: 4886527229725609321, guid: 493bef09536156c4098f060fb48e35de, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Skeleton3
+    prefab: {fileID: 4886527229725609321, guid: b76dfcab8424d25449f82dcbedc315d0, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Skeleton4
+    prefab: {fileID: 4886527229725609321, guid: ceb82173a6538e745964d5c23f170081, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Goblin1
+    prefab: {fileID: 648038055200304200, guid: 072ea26c2fa4a174ab6773980f178714, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Goblin2
+    prefab: {fileID: 1279309720690504543, guid: c1f2ac0630b8e5840b5b071b56d536a8, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Goblin3
+    prefab: {fileID: 4852430825681746877, guid: 5b6c51ed0e53ef54eb57066b57ff1bb2, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Goblin4
+    prefab: {fileID: 6798427471389500733, guid: f8b3e9347704ed141a9fc4d0a7248783, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Golem1
+    prefab: {fileID: 8317598708007389879, guid: a0042e141058fd14a9fe838f3ed61e06, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Golem2
+    prefab: {fileID: 1213824403275960181, guid: 920d1ccdaa0b56640ad1da894b93e48a, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Golem3
+    prefab: {fileID: 802022641055171818, guid: 9c9ea1ced2271b341aaf0acf671c48a2, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
+  - key: Golem4
+    prefab: {fileID: 5659695503572505500, guid: 83a7c7815387fbe46a8c1147e6eafde4, type: 3}
+    initialObjectCount: 50
+    maxObjectCount: 150
   monsterPool: {fileID: 0}
   enemySpawner:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   bossSpawner: {fileID: 0}
-  skeletons:
-  - {fileID: 4886527229725609321, guid: 4869629ee6ba3f14d8ebe7498e799f86, type: 3}
-  - {fileID: 4886527229725609321, guid: 493bef09536156c4098f060fb48e35de, type: 3}
-  - {fileID: 4886527229725609321, guid: b76dfcab8424d25449f82dcbedc315d0, type: 3}
-  - {fileID: 4886527229725609321, guid: ceb82173a6538e745964d5c23f170081, type: 3}
-  goblins:
-  - {fileID: 648038055200304200, guid: 072ea26c2fa4a174ab6773980f178714, type: 3}
-  - {fileID: 4852430825681746877, guid: 5b6c51ed0e53ef54eb57066b57ff1bb2, type: 3}
-  - {fileID: 1279309720690504543, guid: c1f2ac0630b8e5840b5b071b56d536a8, type: 3}
-  - {fileID: 6798427471389500733, guid: f8b3e9347704ed141a9fc4d0a7248783, type: 3}
   orc:
   - {fileID: 5942504253472392294, guid: 14f3417ad62ad524eb461f94c6d032f3, type: 3}
-  golems:
-  - {fileID: 8317598708007389879, guid: a0042e141058fd14a9fe838f3ed61e06, type: 3}
-  - {fileID: 1213824403275960181, guid: 920d1ccdaa0b56640ad1da894b93e48a, type: 3}
-  - {fileID: 802022641055171818, guid: 9c9ea1ced2271b341aaf0acf671c48a2, type: 3}
-  - {fileID: 5659695503572505500, guid: 83a7c7815387fbe46a8c1147e6eafde4, type: 3}
+  golem:
   - {fileID: 9038102883696188368, guid: 79391eaf03a21c94eb6e80b2f15e1245, type: 3}
   demon:
   - {fileID: 6034001203851382877, guid: 2eed2e3bea7abb345bbfbd11b7710b01, type: 3}
-  specialMonsters:
-  - {fileID: 4886527229725609321, guid: d413e9966ba7d9a429411afc7d7491b1, type: 3}
-  worriorMaxCount: 30
-  archerMaxCount: 20
-  magicianMaxCount: 20

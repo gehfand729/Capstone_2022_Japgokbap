@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class Goblins : Monster
 {
-    bool isShooting;
-
     protected void Follow_Enter()
     {
         this.isFollowingPlayer = this.isFollowingPlayer ? false : true;
@@ -68,7 +66,7 @@ public class Goblins : Monster
     {
         this.enemyHp = 0;
         SpawnExpObjet();
-        Destroy(this.gameObject);
+        StageManager.instance.DespawnMonster(this.gameObject);
     }
 
     protected void Die_Update()
@@ -88,8 +86,6 @@ public class Goblins : Monster
 
     protected void ThrowAttackPrefab()
     {
-        isShooting = true;
-
         GameObject attack = Instantiate(this.attackPrefab, this.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
         Rigidbody rb = attack.GetComponent<Rigidbody>();
 
