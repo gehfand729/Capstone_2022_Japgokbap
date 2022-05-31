@@ -121,6 +121,7 @@ public class Orcs : Monster
         this.enemyHp = 0;
         SpawnExpObjet();
         Destroy(this.gameObject);
+        GameManager.instance.AddScore(this.enemyScore);
         StageManager.instance.bossCleared = true;
     }
 

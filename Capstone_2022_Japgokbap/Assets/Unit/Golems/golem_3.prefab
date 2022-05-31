@@ -494,7 +494,8 @@ MonoBehaviour:
   originHp: 0
   enemyOffensePower: 200
   enemyDefensePower: 100
-  enemyExperience: 0
+  enemyExperience: 65
+  enemyScore: 0
   enemyAttackRange: 40
   enemyAttackDelay: 0
   enemyAttackSpeed: 4

@@ -1639,6 +1639,7 @@ MonoBehaviour:
   enemyOffensePower: 200
   enemyDefensePower: 100
   enemyExperience: 0
+  enemyScore: 65
   enemyAttackRange: 40
   enemyAttackDelay: 0
   enemyAttackSpeed: 4

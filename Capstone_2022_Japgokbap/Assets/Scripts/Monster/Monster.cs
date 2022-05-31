@@ -21,11 +21,12 @@ public abstract class Monster : MonoBehaviour
     protected StateMachine<States, StateDriverUnity> fsm;
 
     [Header ("Enemy Stats")]
-    [SerializeField] protected int enemyHp;
+    [SerializeField] protected float enemyHp;
     [SerializeField] protected float originHp;
     [SerializeField] protected int enemyOffensePower;
     [SerializeField] protected int enemyDefensePower;
     [SerializeField] protected int enemyExperience;
+    [SerializeField] protected int enemyScore;
     [SerializeField] protected float enemyAttackRange;
     [SerializeField] protected float enemyAttackDelay;
     [SerializeField] protected float enemyAttackSpeed;
@@ -74,6 +75,16 @@ public abstract class Monster : MonoBehaviour
     public int GetEnemyPower()
     {
         return enemyOffensePower;
+    }
+
+    public float GetEnemyHp()
+    {
+        return enemyHp;
+    }
+
+    public float GetOriginHp()
+    {
+        return originHp;
     }
 
     protected void FollowSetting()

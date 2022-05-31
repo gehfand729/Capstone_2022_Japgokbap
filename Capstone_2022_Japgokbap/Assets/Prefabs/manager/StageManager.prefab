@@ -50,13 +50,14 @@ MonoBehaviour:
   roundCount: 1
   roundInfoText: {fileID: 0}
   bossCleared: 0
+  currentBoss: {fileID: 0}
   worriorInstance: {fileID: 2364408046984564666, guid: a0af58571d7ce104ea01d2863437c206, type: 3}
   arhcerInstance: {fileID: 8221040719977503401, guid: 679ea1af042d79a43be9766a0343d543, type: 3}
   magicianInstance: {fileID: 153829307390509354, guid: e770ba99307278946b6792a64b768598, type: 3}
   expClones: {fileID: 0}
   expObject: {fileID: 5986583666806072436, guid: c935ed4a88fc4e64d8ceef2118340379, type: 3}
   itemClones: {fileID: 0}
-  round1ClearTime: 60
+  round1ClearTime: 180
   monsters1: {fileID: 0}
   count1: 0
   count2: 0
@@ -69,7 +70,7 @@ MonoBehaviour:
   count7: 0
   count8: 0
   count9: 0
-  round2ClearTime: 60
+  round2ClearTime: 180
   monsters4: {fileID: 0}
   count10: 0
   count11: 0
@@ -87,7 +88,7 @@ MonoBehaviour:
   count20: 0
   count21: 0
   count22: 0
-  round3ClearTime: 60
+  round3ClearTime: 180
   monsters8: {fileID: 0}
   count23: 0
   count24: 0
@@ -160,10 +161,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   bossSpawner: {fileID: 0}
-  orc:
-  - {fileID: 5942504253472392294, guid: 14f3417ad62ad524eb461f94c6d032f3, type: 3}
-  golem:
-  - {fileID: 9038102883696188368, guid: 79391eaf03a21c94eb6e80b2f15e1245, type: 3}
-  demon:
-  - {fileID: 6034001203851382877, guid: 2eed2e3bea7abb345bbfbd11b7710b01, type: 3}
+  lich: {fileID: 7080880604689487154, guid: 983521408d3e18b4ead476a678d0bf68, type: 3}
+  orc: {fileID: 5942504253472392294, guid: 14f3417ad62ad524eb461f94c6d032f3, type: 3}
+  golem: {fileID: 9038102883696188368, guid: 79391eaf03a21c94eb6e80b2f15e1245, type: 3}
+  demon: {fileID: 6034001203851382877, guid: 2eed2e3bea7abb345bbfbd11b7710b01, type: 3}

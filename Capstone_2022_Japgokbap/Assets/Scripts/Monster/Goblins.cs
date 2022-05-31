@@ -66,6 +66,7 @@ public class Goblins : Monster
     {
         this.enemyHp = 0;
         SpawnExpObjet();
+        GameManager.instance.AddScore(this.enemyScore);
         StageManager.instance.DespawnMonster(this.gameObject);
     }
 

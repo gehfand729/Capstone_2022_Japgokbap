@@ -3472,7 +3472,7 @@ GameObject:
   - component: {fileID: 8775437893334837690}
   m_Layer: 0
   m_Name: golem_boss
-  m_TagString: Monster
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3550,6 +3550,7 @@ MonoBehaviour:
   enemyOffensePower: 200
   enemyDefensePower: 100
   enemyExperience: 0
+  enemyScore: 100
   enemyAttackRange: 50
   enemyAttackDelay: 0
   enemyAttackSpeed: 5

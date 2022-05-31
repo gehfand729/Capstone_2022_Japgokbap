@@ -188,7 +188,11 @@ public class LobbyManager : MonoBehaviour
         switch (error.Error)
         {
             case PlayFabErrorCode.InvalidEmailAddress:
+                statusText.text = "이메일 주소가 유효하지 않습니다";
+                break;
             case PlayFabErrorCode.InvalidPassword:
+                statusText.text = "비밀번호가 유효하지 않습니다";
+                break;
             case PlayFabErrorCode.InvalidEmailOrPassword:
                 statusText.text = "이메일이나 비밀번호가 유효하지 않습니다";
                 break;

@@ -8,6 +8,7 @@ public class InterfaceManager : MonoBehaviour
     #region "Private"
     private PlayerController playerController;
     private Text playerLv;
+    [SerializeField] private Text currentGameScore;
 
     [Header("SliderBar")]
     [SerializeField] private Slider playerHPBar;
@@ -30,7 +31,7 @@ public class InterfaceManager : MonoBehaviour
     #endregion
 
     #region "Public"
-    [HideInInspector] public SelectButton[] selectButtons;
+    public SelectButton[] selectButtons;
     #endregion
 
     private void Awake() {
@@ -49,6 +50,7 @@ public class InterfaceManager : MonoBehaviour
         CalHP();
         CalExp();
         CurrentLv();
+        CalScore();
         AddUsableBar();
     }
 
@@ -63,6 +65,11 @@ public class InterfaceManager : MonoBehaviour
 
     private void CurrentLv(){
         playerLv.text = string.Format("Level: "+ playerController.playerLv);
+    }
+
+    private void CalScore()
+    {
+        currentGameScore.text = string.Format("Score: " + GameManager.instance.gameScore);
     }
     #endregion
 

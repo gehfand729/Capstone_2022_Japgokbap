@@ -38,6 +38,7 @@ public class StageManager : MonoBehaviour
 
     public enum States
     {
+        Test, // for debugging
         Ready,
         Stage1,
         Stage2,
@@ -48,20 +49,6 @@ public class StageManager : MonoBehaviour
 
     public StateMachine<States, StateDriverUnity> fsm;
 
-    //public Dictionary<Byte, GameObject> m_pool = new Dictionary<byte, GameObject>();
-    public Stack<GameObject> skel_0 = new Stack<GameObject>();
-    public Stack<GameObject> skel_1 = new Stack<GameObject>();
-    public Stack<GameObject> skel_2 = new Stack<GameObject>();
-    public Stack<GameObject> skel_3 = new Stack<GameObject>();
-    public Stack<GameObject> goblin_0 = new Stack<GameObject>();
-    public Stack<GameObject> goblin_1 = new Stack<GameObject>();
-    public Stack<GameObject> goblin_2 = new Stack<GameObject>();
-    public Stack<GameObject> goblin_3 = new Stack<GameObject>();
-    public Stack<GameObject> golem_0 = new Stack<GameObject>();
-    public Stack<GameObject> golem_1 = new Stack<GameObject>();
-    public Stack<GameObject> golem_2 = new Stack<GameObject>();
-    public Stack<GameObject> golem_3 = new Stack<GameObject>();
-
     [Header ("Settings")]
     public float waitingTime;
     public int spawnerCount;
@@ -70,6 +57,7 @@ public class StageManager : MonoBehaviour
     public int roundCount;
     public Text roundInfoText;
     public bool bossCleared;
+    [SerializeField] private GameObject currentBoss;
 
     [Header ("Characters")]
     [SerializeField] private GameObject worriorInstance;
@@ -179,7 +167,7 @@ public class StageManager : MonoBehaviour
             clonePoolDict.Add(go, pool); // Clone-Stack 캐싱
         }
 
-        go.transform.position = enemySpawner[spawnerCount++ % 3].transform.position;
+        go.transform.position = enemySpawner[spawnerCount++ % enemySpawner.Length].transform.position;
         go.SetActive(true);
         go.transform.SetParent(parent);
 
@@ -230,9 +218,10 @@ public class StageManager : MonoBehaviour
     [SerializeField] private GameObject bossSpawner;
 
     [Header ("Boss Monsters")]
-    [SerializeField] private GameObject[] orc;
-    [SerializeField] private GameObject[] golem;
-    [SerializeField] private GameObject[] demon;
+    [SerializeField] private GameObject lich;
+    [SerializeField] private GameObject orc;
+    [SerializeField] private GameObject golem;
+    [SerializeField] private GameObject demon;
 
     #endregion
     
@@ -241,6 +230,7 @@ public class StageManager : MonoBehaviour
         fsm = new StateMachine<States, StateDriverUnity>(this);
 
         fsm.ChangeState(States.Ready);
+        //fsm.ChangeState(States.Ready); // for debugging
     }
 
     private void Start()
@@ -413,13 +403,33 @@ public class StageManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(10f);
+
+        roundInfoText.text = "Stage 1 Boss";
+
+        GameManager.instance.ActiveBossUi(true);
+        GameObject monster = Instantiate(lich, bossSpawner.transform.position, Quaternion.identity);
+        monster.transform.parent = monsters3.transform;
+        currentBoss = monster;
     }
 
     void Stage1_Update()
     {
-        if (GameManager.instance.time == 0)
+        if (!bossCleared)
         {
+            GameManager.instance.bossHpBar.value = currentBoss.GetComponent<Monster>().GetEnemyHp() / currentBoss.GetComponent<Monster>().GetOriginHp();
+        }
+        else if (bossCleared)
+        {
+            GameManager.instance.AddScore(Mathf.RoundToInt(GameManager.instance.time) * 50);
+            GameManager.instance.ActiveBossUi(false);
+
             fsm.ChangeState(States.Stage2);
+        }
+        else if (GameManager.instance.time == 0 && !bossCleared)
+        {
+            GameManager.instance.ActiveBossUi(false);
+
+            fsm.ChangeState(States.Finish);
         }
     }
 
@@ -552,18 +562,29 @@ public class StageManager : MonoBehaviour
 
         roundInfoText.text = "Stage 2 Boss";
 
-        GameObject monster = Instantiate(orc[0], bossSpawner.transform.position, Quaternion.identity);
+        GameManager.instance.ActiveBossUi(true);
+        GameObject monster = Instantiate(orc, bossSpawner.transform.position, Quaternion.identity);
         monster.transform.parent = monsters7.transform;
+        currentBoss = monster;
     }
 
     void Stage2_Update()
     {
-        if (bossCleared)
+        if (!bossCleared)
         {
+            GameManager.instance.bossHpBar.value = currentBoss.GetComponent<Monster>().GetEnemyHp() / currentBoss.GetComponent<Monster>().GetOriginHp();
+        }
+        else if (bossCleared)
+        {
+            GameManager.instance.AddScore(Mathf.RoundToInt(GameManager.instance.time) * 60);
+            GameManager.instance.ActiveBossUi(false);
+
             fsm.ChangeState(States.Stage3);
         }
         else if (GameManager.instance.time == 0 && !bossCleared)
         {
+            GameManager.instance.ActiveBossUi(false);
+
             fsm.ChangeState(States.Finish);
         }
     }
@@ -691,18 +712,28 @@ public class StageManager : MonoBehaviour
 
         roundInfoText.text = "Stage 3 Boss";
 
-        GameObject monster = Instantiate(golem[0], bossSpawner.transform.position, Quaternion.identity);
+        GameManager.instance.ActiveBossUi(true);
+        GameObject monster = Instantiate(golem, bossSpawner.transform.position, Quaternion.identity);
         monster.transform.parent = monsters11.transform;
+        currentBoss = monster;
     }
 
     void Stage3_Update()
     {
-        if (bossCleared)
+        if (!bossCleared)
         {
+            GameManager.instance.bossHpBar.value = currentBoss.GetComponent<Monster>().GetEnemyHp() / currentBoss.GetComponent<Monster>().GetOriginHp();
+        }
+        else if (bossCleared)
+        {
+            GameManager.instance.AddScore(Mathf.RoundToInt(GameManager.instance.time) * 70);
+            GameManager.instance.ActiveBossUi(false);
+
             fsm.ChangeState(States.BossStage);
         }
         else if (GameManager.instance.time == 0 && !bossCleared)
         {
+            GameManager.instance.ActiveBossUi(false);
             fsm.ChangeState(States.Finish);
         }
     }
@@ -730,21 +761,31 @@ public class StageManager : MonoBehaviour
 
         roundInfoText.text = "Final Boss";
 
-        GameObject monster = Instantiate(demon[0], bossSpawner.transform.position, Quaternion.identity);
+        GameManager.instance.ActiveBossUi(true);
+
+        GameObject monster = Instantiate(demon, bossSpawner.transform.position, Quaternion.identity);
         monster.transform.parent = monsters12.transform;
+        currentBoss = monster;
     }
 
     void BossStage_Update()
     {
-        if (bossCleared)
+        if (!bossCleared)
         {
+            GameManager.instance.bossHpBar.value = currentBoss.GetComponent<Monster>().GetEnemyHp() / currentBoss.GetComponent<Monster>().GetOriginHp();
+        }
+        else if (bossCleared)
+        {
+            GameManager.instance.ActiveBossUi(false);
+            GameManager.instance.AddScore(Mathf.RoundToInt(GameManager.instance.time) * 80);
+
             fsm.ChangeState(States.Finish);
         }
     }
 
     void BossStage_Exit()
     {
-        ClearChildObject(monsters12);
+        //ClearChildObject(monsters12);
     }
 
     void Finish_Enter()

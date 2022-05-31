@@ -17,6 +17,10 @@ public class AttackHit : MonoBehaviour
                 Debug.Log($"{Skill.skillName} : {skillDamage}");
                 other.SendMessage("GetDamaged", skillDamage);
             break;
+            case "Boss":
+                Debug.Log($"{Skill.skillName} : {skillDamage}");
+                other.SendMessage("GetDamaged", skillDamage);
+                break;
             case "Box":
                 Debug.Log("Crushed Box");
                 other.SendMessage("SpawnItem");

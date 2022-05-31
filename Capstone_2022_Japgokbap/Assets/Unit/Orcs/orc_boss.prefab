@@ -1405,7 +1405,7 @@ GameObject:
   - component: {fileID: 8708929910197334076}
   m_Layer: 0
   m_Name: orc_boss
-  m_TagString: Monster
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1484,6 +1484,7 @@ MonoBehaviour:
   enemyOffensePower: 200
   enemyDefensePower: 100
   enemyExperience: 30
+  enemyScore: 75
   enemyAttackRange: 13
   enemyAttackDelay: 0
   enemyAttackSpeed: 4

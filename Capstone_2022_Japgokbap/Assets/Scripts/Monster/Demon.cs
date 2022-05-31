@@ -153,6 +153,7 @@ public class Demon : Monster
     {
         this.enemyHp = 0;
         SpawnExpObjet();
+        GameManager.instance.AddScore(this.enemyScore);
         Destroy(this.gameObject);
         StageManager.instance.bossCleared = true;
     }

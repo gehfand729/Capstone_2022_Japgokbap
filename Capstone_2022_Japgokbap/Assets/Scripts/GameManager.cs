@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     #region "Pulbic"
 
     [HideInInspector] public GameObject playerInstance;
+
     //싱글톤
     public static GameManager instance
     {
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
     public int minute;
     public float second;
     public Text timerText;
+    public int gameScore;
+    public Slider bossHpBar;
 
     #endregion
 
@@ -37,28 +40,42 @@ public class GameManager : MonoBehaviour
 
     #region "Public Methods"
 
-    private void Start() 
-    {
-        playerInstance = FindObjectOfType<PlayerController>().gameObject;
-    }
-
-    private void Update() 
-    {
-        if (StageManager.instance.fsm.State != StageManager.States.Ready)
-        {
-            StartTimer();
-        }
-        
-    }
-
     public Vector3 GetPlayerPosition()
     {
         return playerInstance.transform.position;
     }
 
+    public void AddScore(int score)
+    {
+        gameScore += score;
+    }
+
     public void SetTime(int settime)
     {
         time = settime;
+    }
+
+    public void ActiveBossUi(bool isbool)
+    {
+        bossHpBar.gameObject.SetActive(isbool);
+    }
+
+    #endregion
+
+    #region "Unity Callbacks"
+
+    private void Start()
+    {
+        playerInstance = FindObjectOfType<PlayerController>().gameObject;
+    }
+
+    private void Update()
+    {
+        if (StageManager.instance.fsm.State != StageManager.States.Ready)
+        {
+            StartTimer();
+        }
+
     }
 
     #endregion

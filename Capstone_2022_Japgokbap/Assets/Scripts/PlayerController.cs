@@ -219,6 +219,9 @@ public class PlayerController : MonoBehaviour
             case "Monster" :
                 GetDamaged(other.gameObject.GetComponent<Monster>().GetEnemyPower());
             break;
+            case "Boss":
+                GetDamaged(other.gameObject.GetComponent<Monster>().GetEnemyPower());
+                break;
         }
     }
 

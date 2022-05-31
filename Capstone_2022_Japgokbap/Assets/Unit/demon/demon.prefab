@@ -1433,7 +1433,7 @@ GameObject:
   - component: {fileID: 7943304895959494620}
   m_Layer: 0
   m_Name: demon
-  m_TagString: Monster
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1507,11 +1507,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e177c6a694ffa6346a00ad3b9596599f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHp: 1000
+  enemyHp: 10000
   originHp: 0
   enemyOffensePower: 100
   enemyDefensePower: 100
   enemyExperience: 70
+  enemyScore: 150
   enemyAttackRange: 10
   enemyAttackDelay: 0
   enemyAttackSpeed: 5
