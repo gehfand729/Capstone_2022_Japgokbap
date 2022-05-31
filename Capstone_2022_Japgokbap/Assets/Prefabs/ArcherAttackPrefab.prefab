@@ -32,8 +32,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< Updated upstream
   - {fileID: 313737569632051319}
   - {fileID: 4703263023626672725}
+=======
+  - {fileID: 1315307454025694505}
+  - {fileID: 3571919531419494905}
+>>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -101,7 +106,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 30
   destoryTime: 2
+<<<<<<< Updated upstream
 --- !u!1001 &274763373992839068
+=======
+--- !u!1001 &1570155743429171906
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -114,7 +123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: 0
+=======
+      value: -0
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
       propertyPath: m_LocalPosition.y
@@ -122,7 +135,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< Updated upstream
       value: -8.97
+=======
+      value: -9
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
       propertyPath: m_LocalRotation.w
@@ -134,11 +151,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
       propertyPath: m_LocalRotation.y
+<<<<<<< Updated upstream
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+=======
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -158,12 +183,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
+<<<<<<< Updated upstream
 --- !u!4 &313737569632051319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
   m_PrefabInstance: {fileID: 274763373992839068}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2325565568568825320
+=======
+--- !u!4 &1315307454025694505 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 91b69b3b61057214295507a5ca9e1727, type: 3}
+  m_PrefabInstance: {fileID: 1570155743429171906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5805501378568267332
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -218,6 +252,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: arrow_particle 1 1
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 8060871747193303864, guid: c69c4ef571472c74aab8a9bd59137130, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -244,4 +279,12 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6990511710928097213, guid: c69c4ef571472c74aab8a9bd59137130, type: 3}
   m_PrefabInstance: {fileID: 2325565568568825320}
+=======
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c69c4ef571472c74aab8a9bd59137130, type: 3}
+--- !u!4 &3571919531419494905 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6990511710928097213, guid: c69c4ef571472c74aab8a9bd59137130, type: 3}
+  m_PrefabInstance: {fileID: 5805501378568267332}
+>>>>>>> Stashed changes
   m_PrefabAsset: {fileID: 0}

@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!1 &879417896
+=======
+--- !u!1 &480792553
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +12,17 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 879417897}
   - component: {fileID: 879417900}
   - component: {fileID: 879417899}
   - component: {fileID: 879417898}
+=======
+  - component: {fileID: 480792554}
+  - component: {fileID: 480792557}
+  - component: {fileID: 480792556}
+  - component: {fileID: 480792555}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -19,27 +30,45 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &879417897
+=======
+--- !u!4 &480792554
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 879417896}
   m_LocalRotation: {x: 0.18861021, y: -0, z: -0, w: 0.982052}
   m_LocalPosition: {x: -1.2349288, y: 3.061701, z: -7.374707}
+=======
+  m_GameObject: {fileID: 480792553}
+  m_LocalRotation: {x: 0.18861021, y: -0, z: -0, w: 0.982052}
+  m_LocalPosition: {x: -1.4190007, y: 3.0617056, z: -3.990489}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1.0274247, y: 1.0274246, z: 1.0274246}
   m_Children: []
   m_Father: {fileID: 819556842056574774}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 21.743, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!20 &879417900
+=======
+--- !u!20 &480792557
+>>>>>>> Stashed changes
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 879417896}
+=======
+  m_GameObject: {fileID: 480792553}
+>>>>>>> Stashed changes
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -76,21 +105,35 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+<<<<<<< Updated upstream
 --- !u!81 &879417899
+=======
+--- !u!81 &480792556
+>>>>>>> Stashed changes
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 879417896}
   m_Enabled: 1
 --- !u!114 &879417898
+=======
+  m_GameObject: {fileID: 480792553}
+  m_Enabled: 1
+--- !u!114 &480792555
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 879417896}
+=======
+  m_GameObject: {fileID: 480792553}
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c70d6774a4c10ba42aa337b258c2a763, type: 3}
@@ -112,9 +155,15 @@ GameObject:
   m_Component:
   - component: {fileID: 819556842056574774}
   - component: {fileID: 6755270040292441420}
+<<<<<<< Updated upstream
   - component: {fileID: 351840347}
   - component: {fileID: 351840346}
   - component: {fileID: 351840345}
+=======
+  - component: {fileID: 1337309590}
+  - component: {fileID: 1337309589}
+  - component: {fileID: 1337309588}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: archer
   m_TagString: Player
@@ -135,7 +184,11 @@ Transform:
   m_Children:
   - {fileID: 5120579958926444450}
   - {fileID: 4887428558361560525}
+<<<<<<< Updated upstream
   - {fileID: 879417897}
+=======
+  - {fileID: 480792554}
+>>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -158,7 +211,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< Updated upstream
 --- !u!54 &351840347
+=======
+--- !u!54 &1337309590
+>>>>>>> Stashed changes
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +231,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+<<<<<<< Updated upstream
 --- !u!136 &351840346
+=======
+--- !u!136 &1337309589
+>>>>>>> Stashed changes
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,11 +245,19 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
+<<<<<<< Updated upstream
   m_Radius: 0.18325672
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.7, z: -0.01674335}
 --- !u!114 &351840345
+=======
+  m_Radius: 0.17307694
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: -0.026923114}
+--- !u!114 &1337309588
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
