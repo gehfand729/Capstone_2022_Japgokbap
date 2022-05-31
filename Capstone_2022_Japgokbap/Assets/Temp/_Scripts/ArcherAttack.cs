@@ -17,8 +17,9 @@ public class ArcherAttack : Skill
     public override IEnumerator DoSkill()
     {
         PlayerController.lockBehaviour = true;
+        playerAnimator.SetTrigger("doShoot");
+
         yield return new WaitForSeconds(skillDuration);
-        //playerAnimator.SetTrigger("doSlash");
 
         GameObject instantePrefab = Instantiate(skillPrefab, playerTransform.position, playerTransform.rotation);
         //GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + playerTransform.forward, playerTransform.rotation);
