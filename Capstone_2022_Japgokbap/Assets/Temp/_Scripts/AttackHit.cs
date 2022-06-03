@@ -11,7 +11,7 @@ public class AttackHit : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
+        Debug.Log($"Collider Tag is {other.tag}");
         switch(other.tag){
             case "Monster":
                 Debug.Log($"{Skill.skillName} : {skillDamage}");

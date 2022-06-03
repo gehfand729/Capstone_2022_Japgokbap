@@ -16,17 +16,19 @@ public class _ContinuousShooting : Skill
     
     public override IEnumerator DoSkill()
     {
+        playerTransform.rotation = Quaternion.LookRotation(PlayerController.mouseDir);
         PlayerController.lockBehaviour = true;
-        yield return new WaitForSeconds(skillDuration);
         //playerAnimator.SetTrigger("doSlash");
 
-        GameObject test1 = Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
+        yield return new WaitForSeconds(skillDuration);
+
+        GameObject test1 = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
         yield return new WaitForSeconds(0.5f);
-        GameObject test2 = Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
+        GameObject test2 = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
         yield return new WaitForSeconds(0.5f);
-        GameObject test3 = Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
+        GameObject test3 = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
         
-        //GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + playerTransform.forward, playerTransform.rotation);
+        //GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + new Vector3(0, 3.0f, 0) + playerTransform.forward, playerTransform.rotation);
 
         // instantePrefab.transform.parent = this.transform;
         //spawnParticle.transform.parent = this.transform;

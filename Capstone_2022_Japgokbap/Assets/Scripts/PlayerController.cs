@@ -89,12 +89,19 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         Move();
     }
-
+    public static Vector3 mouseDir;
     private void Update() {
         combat.damage = playerOffensePower;
 
         AttackToMouse();
         InputKey();
+
+        //test
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit rayHit;
+        if(Physics.Raycast(ray, out rayHit)) {
+            mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
+        }
     }
 
     #region "Private Methods"
@@ -138,13 +145,13 @@ public class PlayerController : MonoBehaviour
             if(Input.GetMouseButtonDown(0)){
                 //행동 제한
                 lockBehaviour =true;
-                Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+                // Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
                 
-                RaycastHit rayHit;
-                if(Physics.Raycast(ray, out rayHit)) {
-                    Vector3 mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
-                    transform.rotation = Quaternion.LookRotation(mouseDir);
-                }
+                // RaycastHit rayHit;
+                // if(Physics.Raycast(ray, out rayHit)) {
+                //     Vector3 mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
+                transform.rotation = Quaternion.LookRotation(mouseDir);
+                // }
                 // attack.StartCoroutine(attack.Attack(attack.attackDelay));
                 GameObject instObject = Instantiate(combat.skillPrefab,transform.position, Quaternion.identity);
                 instObject.transform.parent = transform;

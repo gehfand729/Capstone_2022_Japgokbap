@@ -21,4 +21,10 @@ public class TestProjectile : MonoBehaviour
         this.gameObject.transform.position += dir * projectileSpeed * Time.deltaTime; 
         Destroy(this.gameObject, destoryTime);
     }
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.CompareTag("Monster")){
+            Debug.Log("ArrowDestroyTest");
+            Destroy(this.gameObject);
+        }
+    }
 }

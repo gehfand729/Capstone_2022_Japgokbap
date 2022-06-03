@@ -333,6 +333,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7242600476918272363, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}
+      propertyPath: skillList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7242600476918272363, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}
+      propertyPath: skillList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d6ee086714bfb95489a5c2a8285dcca1, type: 2}
+    - target: {fileID: -7242600476918272363, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}
+      propertyPath: skillList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: d39b0a37cae66c64a9e92de7ec67e7f6, type: 2}
+    - target: {fileID: -7242600476918272363, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}
+      propertyPath: skillList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 372744584b5adbc46a0b1b76d2164ad4, type: 2}
     - target: {fileID: 5759480657984908, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}
       propertyPath: m_Name
       value: archer

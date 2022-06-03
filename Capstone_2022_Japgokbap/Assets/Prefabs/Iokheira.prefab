@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillSO: {fileID: 11400000, guid: d39b0a37cae66c64a9e92de7ec67e7f6, type: 2}
   skillDamage: 0
-  skillPrefab: {fileID: 3011931783433927499, guid: c571d4ca468be4649ab86fbeb214ad13, type: 3}
+  skillPrefab: {fileID: 7404539966198696425, guid: 69b9e95d6eec816438fc07b4a2b406ee, type: 3}
   skillParticle: {fileID: 0}
   m_cooltime: 0
   animDelay: 2
