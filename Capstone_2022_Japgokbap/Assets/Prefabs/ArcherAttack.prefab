@@ -47,5 +47,5 @@ MonoBehaviour:
   skillDamage: 1
   skillPrefab: {fileID: 7139951906352003082, guid: 014a89200392de342949e35c0abc981f, type: 3}
   skillParticle: {fileID: 0}
-  skillDuration: 1
+  skillDuration: 0.3
   DestoryTime: 2

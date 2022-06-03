@@ -23,10 +23,10 @@ public class _MultiShot : Skill
         // instantPrefabs[arraySize] = Instantiate(skillPrefab, playerTransform.position, playerTransform.rotation);
         // GameObject instantPrefab = Instantiate(skillPrefab, playerTransform.position, playerTransform.rotation);
         // GameObject instantPrefab = Instantiate(skillPrefab, playerTransform.position, playerTransform.rotation);
-        GameObject test1 = Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
+        GameObject test1 = Instantiate(skillPrefab, playerTransform.position, playerTransform.rotation);
         test1.transform.Rotate(new Vector3(0,-30,0), Space.Self);
-        GameObject test2 = Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
-        GameObject test3 = Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
+        GameObject test2 = Instantiate(skillPrefab, playerTransform.position, playerTransform.rotation);
+        GameObject test3 = Instantiate(skillPrefab, playerTransform.position, playerTransform.rotation);
         test1.transform.Rotate(new Vector3(0,30,0), Space.Self);
         //GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + playerTransform.forward, playerTransform.rotation);
 

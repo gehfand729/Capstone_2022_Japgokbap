@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
 
     #region "Static"
     public static bool lockBehaviour =false;
+    public static Vector3 mouseDir;
+    public static Vector3 mouseVec;
     #endregion
 
     private void Awake() {
@@ -77,7 +79,6 @@ public class PlayerController : MonoBehaviour
 
         #region "AwakeTest"
         //test
-        //평타의 데미지 하드 코딩 상태;
         playerMaxHP = classJob.hp;
         playerCurrentHP = playerMaxHP;
         playerMoveSpeed = classJob.moveSpeed;
@@ -89,7 +90,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         Move();
     }
-    public static Vector3 mouseDir;
     private void Update() {
         combat.damage = playerOffensePower;
 
@@ -100,7 +100,8 @@ public class PlayerController : MonoBehaviour
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayHit;
         if(Physics.Raycast(ray, out rayHit)) {
-            mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
+            mouseVec = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z);
+            mouseDir = mouseVec - transform.position;
         }
     }
 
