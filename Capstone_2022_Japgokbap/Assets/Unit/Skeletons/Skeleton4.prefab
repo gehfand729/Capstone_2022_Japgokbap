@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 380958209652736124}
   - component: {fileID: 1556059041555597673}
   - component: {fileID: 1666894579105827578}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Skeleton4
   m_TagString: Monster
   m_Icon: {fileID: 0}

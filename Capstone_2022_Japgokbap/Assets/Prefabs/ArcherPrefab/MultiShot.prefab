@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillSO: {fileID: 11400000, guid: 372744584b5adbc46a0b1b76d2164ad4, type: 2}
   skillDamage: 2
-  skillPrefab: {fileID: 3369529327406432251, guid: 009d4bef4919cf84fa815608cc17ebd9, type: 3}
+  skillPrefab: {fileID: 6724015303122205924, guid: 92cc60f10e0aaaa4da9c7dd7a9c76281, type: 3}
   skillParticle: {fileID: 0}
   skillDuration: 2
   DestoryTime: 2

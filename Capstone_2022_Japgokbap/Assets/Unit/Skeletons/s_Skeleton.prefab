@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 380958209652736124}
   - component: {fileID: 1556059041555597673}
   - component: {fileID: 1666894579105827578}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: s_Skeleton
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -75,6 +75,7 @@ MonoBehaviour:
   enemyOffensePower: 0
   enemyDefensePower: 0
   enemyExperience: 0
+  enemyScore: 0
   enemyAttackRange: 0
   enemyAttackDelay: 0
   enemyAttackSpeed: 0
@@ -82,7 +83,6 @@ MonoBehaviour:
   isAttacking: 0
   attackPrefab: {fileID: 0}
   hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
-  hudPos: {fileID: 0}
 --- !u!136 &1666894579105827578
 CapsuleCollider:
   m_ObjectHideFlags: 0

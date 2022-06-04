@@ -46,6 +46,6 @@ MonoBehaviour:
   skillSO: {fileID: 11400000, guid: d6ee086714bfb95489a5c2a8285dcca1, type: 2}
   skillDamage: 1
   skillPrefab: {fileID: 7139951906352003082, guid: 014a89200392de342949e35c0abc981f, type: 3}
-  skillParticle: {fileID: 0}
+  skillParticle: {fileID: 100006, guid: de9afd7f27d217447bbe4cf6139dfe68, type: 3}
   skillDuration: 1
   DestoryTime: 2
