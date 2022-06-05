@@ -6,20 +6,29 @@ public class AttackHit : MonoBehaviour
 {
     int skillDamage;
     [SerializeField] SkillSO Skill;
+
+    private float TimeLeft = 1.0f;
+    private float nextTime = 0.0f;
     private void Awake() {
         skillDamage = Skill.damage;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.tag);
+        Debug.Log($"Collider Tag is {other.tag}");
         switch(other.tag){
             case "Monster":
                 Debug.Log($"{Skill.skillName} : {skillDamage}");
-                other.SendMessage("GetDamaged", skillDamage);
+                if(Time.time > nextTime){
+                    nextTime = Time.time + TimeLeft;
+                    other.SendMessage("GetDamaged", skillDamage);
+                }
             break;
             case "Boss":
                 Debug.Log($"{Skill.skillName} : {skillDamage}");
-                other.SendMessage("GetDamaged", skillDamage);
+                if(Time.time > nextTime){
+                    nextTime = Time.time + TimeLeft;
+                    other.SendMessage("GetDamaged", skillDamage);
+                }
                 break;
             case "Box":
                 Debug.Log("Crushed Box");

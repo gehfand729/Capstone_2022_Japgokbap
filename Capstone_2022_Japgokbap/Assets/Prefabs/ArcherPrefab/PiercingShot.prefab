@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1871978317639250311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8144092075350910318}
+  - component: {fileID: 3222373238680548794}
+  m_Layer: 0
+  m_Name: PiercingShot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8144092075350910318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871978317639250311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3865640618549219949}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3222373238680548794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871978317639250311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89afc7a3eb9118445a7369f03337db18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillSO: {fileID: 11400000, guid: e1e20d7942e010f49ac44681ba6bad74, type: 2}
+  skillDamage: 0
+  skillPrefab: {fileID: 7139951906352003082, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+  skillParticle: {fileID: 0}
+  skillDuration: 0.3
+  DestoryTime: 3
+--- !u!1001 &8260510332067431242
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8144092075350910318}
+    m_Modifications:
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139951906352003082, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_Name
+      value: PiercingShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139951906352003082, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_TagString
+      value: PiercingShot
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+--- !u!4 &3865640618549219949 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+  m_PrefabInstance: {fileID: 8260510332067431242}
+  m_PrefabAsset: {fileID: 0}

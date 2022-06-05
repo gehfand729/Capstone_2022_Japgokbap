@@ -8,17 +8,27 @@ public class TestProjectile : MonoBehaviour
     [SerializeField] private float projectileSpeed = 10;
     [SerializeField] private float destoryTime = 2;
     private Vector3 projectileDir;
+    private Rigidbody tRigid;
+
     private void Awake() {
         playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         projectileDir = playerTransform.transform.forward;
+        tRigid = GetComponent<Rigidbody>();
     }
     private void Update()
     {
         ProjectileFunc(projectileDir);
     }
 
-    public void ProjectileFunc(Vector3 dir){
-        this.gameObject.transform.position += dir * projectileSpeed * Time.deltaTime; 
+    private void ProjectileFunc(Vector3 dir){
+        tRigid.velocity = dir.normalized * projectileSpeed; 
         Destroy(this.gameObject, destoryTime);
+    }
+    private void OnTriggerEnter(Collider other) {
+        if(!this.gameObject.CompareTag("PiercingShot")){
+            if(other.gameObject.CompareTag("Monster")||other.gameObject.CompareTag("Boss")){
+                Destroy(this.gameObject);
+            }
+        }
     }
 }

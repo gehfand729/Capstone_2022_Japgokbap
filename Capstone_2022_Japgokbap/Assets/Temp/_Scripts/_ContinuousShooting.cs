@@ -11,29 +11,31 @@ public class _ContinuousShooting : Skill
     private void Start() {
         StopCoroutine(DoSkill());
         StartCoroutine(DoSkill());
-
     }
     
     public override IEnumerator DoSkill()
     {
-        PlayerController.lockBehaviour = true;
-        yield return new WaitForSeconds(skillDuration);
-        //playerAnimator.SetTrigger("doSlash");
+        if(readySkill){
+            playerTransform.rotation = Quaternion.LookRotation(PlayerController.mouseDir);
+            PlayerController.lockBehaviour = true;
+            playerAnimator.SetTrigger("doTripleShot");
+            GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + new Vector3(0, 3.0f, 0) + playerTransform.forward*3, playerTransform.rotation);
 
-        GameObject test1 = Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.5f);
-        GameObject test2 = Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.5f);
-        GameObject test3 = Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
-        
-        //GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + playerTransform.forward, playerTransform.rotation);
+            yield return new WaitForSeconds(skillDuration);
 
-        // instantePrefab.transform.parent = this.transform;
-        //spawnParticle.transform.parent = this.transform;
+            GameObject test1 = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
+            yield return new WaitForSeconds(0.5f);
+            GameObject test2 = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
+            yield return new WaitForSeconds(0.5f);
+            GameObject test3 = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
 
-        
-        PlayerController.lockBehaviour = false;
+            // instantePrefab.transform.parent = this.transform;
+            spawnParticle.transform.parent = this.transform;
 
-        Destroy(this.gameObject, DestoryTime);
+            
+            PlayerController.lockBehaviour = false;
+
+            Destroy(this.gameObject, DestoryTime);
+        }
     }
 }

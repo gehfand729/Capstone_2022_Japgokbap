@@ -9,18 +9,19 @@ public class ArcherAttack : Skill
     [SerializeField] private float DestoryTime;
 
     private void Start() {
-        Debug.Log("test");
         StopCoroutine(DoSkill());
         StartCoroutine(DoSkill());
     }
     
     public override IEnumerator DoSkill()
     {
+        playerTransform.rotation = Quaternion.LookRotation(PlayerController.mouseDir);
         PlayerController.lockBehaviour = true;
+        playerAnimator.SetTrigger("doShoot");
         yield return new WaitForSeconds(skillDuration);
-        //playerAnimator.SetTrigger("doSlash");
 
-        GameObject instantePrefab = Instantiate(skillPrefab, playerTransform.position, playerTransform.rotation);
+
+        GameObject instantePrefab = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
         //GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + playerTransform.forward, playerTransform.rotation);
 
         // instantePrefab.transform.parent = this.transform;

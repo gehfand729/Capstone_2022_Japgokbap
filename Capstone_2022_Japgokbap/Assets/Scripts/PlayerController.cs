@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
 
     #region "Static"
     public static bool lockBehaviour =false;
+    public static Vector3 mouseDir;
+    public static Vector3 mouseVec;
     #endregion
 
     private void Awake() {
@@ -77,7 +79,6 @@ public class PlayerController : MonoBehaviour
 
         #region "AwakeTest"
         //test
-        //평타의 데미지 하드 코딩 상태;
         playerMaxHP = classJob.hp;
         playerCurrentHP = playerMaxHP;
         playerMoveSpeed = classJob.moveSpeed;
@@ -89,12 +90,19 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         Move();
     }
-
     private void Update() {
         combat.damage = playerOffensePower;
 
         AttackToMouse();
         InputKey();
+
+        //test
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit rayHit;
+        if(Physics.Raycast(ray, out rayHit)) {
+            mouseVec = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z);
+            mouseDir = mouseVec - transform.position;
+        }
     }
 
     #region "Private Methods"
@@ -138,13 +146,13 @@ public class PlayerController : MonoBehaviour
             if(Input.GetMouseButtonDown(0)){
                 //행동 제한
                 lockBehaviour =true;
-                Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+                // Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
                 
-                RaycastHit rayHit;
-                if(Physics.Raycast(ray, out rayHit)) {
-                    Vector3 mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
-                    transform.rotation = Quaternion.LookRotation(mouseDir);
-                }
+                // RaycastHit rayHit;
+                // if(Physics.Raycast(ray, out rayHit)) {
+                //     Vector3 mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
+                transform.rotation = Quaternion.LookRotation(mouseDir);
+                // }
                 // attack.StartCoroutine(attack.Attack(attack.attackDelay));
                 GameObject instObject = Instantiate(combat.skillPrefab,transform.position, Quaternion.identity);
                 instObject.transform.parent = transform;
