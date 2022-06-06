@@ -249,6 +249,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(other.gameObject);
             break;
             case "Potion":
+                //potion의 고유 hp로 바꿔야함.
                 playerCurrentHP += 10;
                 Debug.Log("CurrentHP has recovered");
                 if(playerCurrentHP >= playerMaxHP){
