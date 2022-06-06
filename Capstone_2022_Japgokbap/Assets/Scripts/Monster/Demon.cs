@@ -12,16 +12,20 @@ public class Demon : Monster
     [SerializeField] protected float originSpeed;
     [SerializeField] protected float rushSpeed;
 
-    
-    [Header ("Pattern2 Info")]
+
+    [Header("Pattern2 Info")]
+    [SerializeField] protected bool isFireFielding;
     [SerializeField] protected float fireFieldDelay;
     [SerializeField] protected float fireFieldCooltime;
+    [SerializeField] protected float fireFieldRange;
     [SerializeField] protected GameObject fireFieldSpell;
     [SerializeField] protected GameObject fireFieldPrefab;
 
-    [Header ("Pattern3 Info")]
+    [Header("Pattern3 Info")]
+    [SerializeField] protected bool isBreathing;
     [SerializeField] protected float breathDelay;
     [SerializeField] protected float breathCooltime;
+    [SerializeField] protected float breathRange;
     [SerializeField] protected GameObject breathSpell;
     [SerializeField] protected GameObject breathPrefab;
 
@@ -54,6 +58,20 @@ public class Demon : Monster
             rushDelay = 0;
 
             fsm.ChangeState(States.Pattern);
+        }
+
+        if (distance < this.fireFieldRange && fireFieldDelay < 0)
+        {
+            fireFieldDelay = fireFieldCooltime;
+
+            fsm.ChangeState(States.Pattern2);
+        }
+
+        if (distance < this.breathRange && breathDelay < 0)
+        {
+            breathDelay = breathCooltime;
+
+            fsm.ChangeState(States.Pattern3);
         }
     }
 
@@ -119,34 +137,46 @@ public class Demon : Monster
         rushDelay = rushCooltime;
     }
 
-    protected void Pattern1_Enter()
-    {
-        
-    }
-
-    protected void Pattern1_Update()
-    {
-
-    }
-
-    protected void Pattern1_Exit()
-    {
-        
-    }
-
     protected void Pattern2_Enter()
     {
-        
+        AttackSetting();
+
+        isFireFielding = true;
+        this.enemyAnimator.SetTrigger("firefieldTrigger");
     }
 
     protected void Pattern2_Update()
     {
-
+        if (!isFireFielding)
+        {
+            fsm.ChangeState(States.Follow);
+        }
     }
 
     protected void Pattern2_Exit()
     {
-        
+        FollowSetting();
+    }
+
+    protected void Pattern3_Enter()
+    {
+        AttackSetting();
+
+        isBreathing = true;
+        this.enemyAnimator.SetTrigger("firebreathTrigger");
+    }
+
+    protected void Pattern3_Update()
+    {
+        if (!isBreathing)
+        {
+            fsm.ChangeState(States.Follow);
+        }
+    }
+
+    protected void Pattern3_Exit()
+    {
+        FollowSetting();
     }
 
     protected void Die_Enter()
@@ -178,5 +208,37 @@ public class Demon : Monster
         rushDelay -= Time.deltaTime;
         fireFieldDelay -= Time.deltaTime;
         breathDelay -= Time.deltaTime;
+    }
+
+    protected void FireField()
+    {
+        GameObject attack = Instantiate(fireFieldPrefab,
+            this.transform.position + (GameManager.instance.GetPlayerPosition() - this.transform.position).normalized * 23f,
+            Quaternion.identity);
+        attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower);
+        Destroy(attack, this.enemyAttackSpeed / 2);
+    }
+
+    protected void FireBreath()
+    {
+        GameObject attack = Instantiate(breathPrefab,
+            this.transform.position + (GameManager.instance.GetPlayerPosition() - this.transform.position).normalized * 23f,
+            Quaternion.identity);
+
+        Vector3 dir = GameManager.instance.GetPlayerPosition() - attack.transform.position;
+        dir.y = 0f;
+
+        Quaternion rot = Quaternion.LookRotation(dir.normalized);
+
+        attack.transform.rotation = rot;
+    }
+    protected void FinishedBreath()
+    {
+        isBreathing = false;
+    }
+
+    protected void FinishedFireField()
+    {
+        isFireFielding = false;
     }
 }

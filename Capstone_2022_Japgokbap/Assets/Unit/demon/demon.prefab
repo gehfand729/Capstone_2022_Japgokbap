@@ -1525,14 +1525,18 @@ MonoBehaviour:
   rushRange: 13
   originSpeed: 0
   rushSpeed: 15
-  fireFieldDelay: 0
-  fireFieldCooltime: 0
+  isFireFielding: 0
+  fireFieldDelay: 5
+  fireFieldCooltime: 20
+  fireFieldRange: 22
   fireFieldSpell: {fileID: 0}
-  fireFieldPrefab: {fileID: 0}
-  breathDelay: 0
-  breathCooltime: 0
-  breathSpell: {fileID: 0}
-  breathPrefab: {fileID: 0}
+  fireFieldPrefab: {fileID: 5146818378276678359, guid: b8f72f916a137b14392bbb5b5f49d43a, type: 3}
+  isBreathing: 0
+  breathDelay: 15
+  breathCooltime: 15
+  breathRange: 20
+  breathSpell: {fileID: 8843693658147587140, guid: 03be153fd2890bf458ad0bb2883c7ef0, type: 3}
+  breathPrefab: {fileID: 4022313762282724948, guid: f5d5a9b24c7ad3449829f656a5c6bc6a, type: 3}
 --- !u!136 &7943304895959494620
 CapsuleCollider:
   m_ObjectHideFlags: 0

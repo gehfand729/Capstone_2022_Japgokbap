@@ -27,6 +27,16 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private GetPlayerCombinedInfoRequestParams InfoRequestParams;
     private PlayfabManager m_authService = PlayfabManager.Instance;
 
+    [Header ("Lobby Settings")]
+    [SerializeField] private bool isLoginSuccessed;
+    private bool isCharacterTouched;
+    [SerializeField] private GameObject mainCamera;
+    [SerializeField] private GameObject[] cameraPoints;
+    [SerializeField] private GameObject characterSelectedUi;
+    [SerializeField] private float smoothTime;
+    private Vector3 velocity = Vector3.zero;
+
+
     #endregion
 
     #region Public
@@ -81,6 +91,12 @@ public class LobbyManager : MonoBehaviour
         m_authService.Authenticate();
     }
 
+    public void Update() 
+    {
+        if (isLoginSuccessed)
+            OnCharacterSelected();
+    }
+
     #endregion
 
     #region Public Methods
@@ -107,7 +123,7 @@ public class LobbyManager : MonoBehaviour
         //게임 시작
         //현재는 디버깅을 위해 씬 로딩
         //실제 구현 시 매칭 시작
-        LoadingSceneManager.LoadScene("SpawnTestScene");
+        LoadingSceneManager.LoadScene("GameScene");
     }
 
     //디바이스 아이디 등을 통해 게스트로 로그인
@@ -173,6 +189,9 @@ public class LobbyManager : MonoBehaviour
     //로비로 이동
     private void OnLoginSuccess(PlayFab.ClientModels.LoginResult result)
     {
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+
+        isLoginSuccessed = true;
         Debug.LogFormat("{0} 으로 로그인하였습니다", result.PlayFabId);
         statusText.text = "";
         loginPanel.SetActive(false);
@@ -227,6 +246,54 @@ public class LobbyManager : MonoBehaviour
          * never see any UI for Authentication.
          * 
          */
+    }
+
+    private void OnCharacterSelected()
+    {
+        if (Input.GetMouseButtonDown(0) && !isCharacterTouched)
+        {
+            RaycastHit hit = new RaycastHit();
+
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            {
+                switch (hit.collider.name)
+                {
+                    case "Worrior" :
+                        isCharacterTouched = true;
+                        mainCamera.transform.position = cameraPoints[1].transform.position;
+                        break;
+                    case "Archer" :
+                        break;
+                    case "Magacian" :
+                        break;
+                    default :
+                        return;
+                }
+
+                characterSelectedUi.SetActive(true);
+            }
+        } 
+        else if (Input.GetMouseButtonDown(0) && isCharacterTouched)
+        {
+            RaycastHit hit = new RaycastHit();
+
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            {
+                switch (hit.collider.name)
+                {
+                    case "Worrior" :
+                    case "Archer" :
+                    case "Magacian" :
+                        isCharacterTouched = false;
+                        mainCamera.transform.position = cameraPoints[0].transform.position;
+                        break;
+                    default :
+                        return;    
+                }
+
+                characterSelectedUi.SetActive(false);
+            }   
+        }   
     }
 
     #endregion

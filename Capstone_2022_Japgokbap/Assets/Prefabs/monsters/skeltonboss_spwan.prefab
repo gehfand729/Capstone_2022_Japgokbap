@@ -9541,6 +9541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5569422600512780434}
+  - component: {fileID: 2905811012580082388}
   m_Layer: 0
   m_Name: skeltonboss_spwan
   m_TagString: Untagged
@@ -9556,11 +9557,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4885406171349288090}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 572.1, y: 11.956841, z: 482.6148}
-  m_LocalScale: {x: 48.1525, y: 48.152534, z: 48.152534}
+  m_LocalPosition: {x: 572.1, y: 12, z: 482.6148}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children:
   - {fileID: 3647692893626196580}
   - {fileID: 3647692893256297108}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2905811012580082388
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885406171349288090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.66983306, y: 0.69734025, z: 0.07006476}
+  m_Center: {x: -0.0062984787, y: 0.15132824, z: -0.19288321}
