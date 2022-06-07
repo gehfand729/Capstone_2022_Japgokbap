@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 5
-  skillList: []
+  skillList:
+  - {fileID: 11400000, guid: d39b0a37cae66c64a9e92de7ec67e7f6, type: 2}
+  - {fileID: 11400000, guid: e1e20d7942e010f49ac44681ba6bad74, type: 2}
+  - {fileID: 11400000, guid: 03d07d6b7955a3745b501d76c87a051b, type: 2}
   PlayerSkill: 
   playerMaxHP: 0
   playerCurrentHP: 0

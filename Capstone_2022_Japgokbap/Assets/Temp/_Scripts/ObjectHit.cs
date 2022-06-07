@@ -9,7 +9,7 @@ public class ObjectHit : MonoBehaviour
 
     private void SpawnItem(){
         Destroy(this.gameObject);
-        GameObject itemClone = Instantiate(item, this.transform.position , Quaternion.identity);
+        GameObject itemClone = Instantiate(item, this.transform.position , Quaternion.AngleAxis(90.0f, Vector3.left));
         itemClone.transform.parent = StageManager.instance.itemClones.transform;
     }
 }

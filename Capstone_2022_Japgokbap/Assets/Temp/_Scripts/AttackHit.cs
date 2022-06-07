@@ -12,16 +12,16 @@ public class AttackHit : MonoBehaviour
     private void Awake() {
         skillDamage = Skill.damage;
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log($"Collider Tag is {other.tag}");
         switch(other.tag){
             case "Monster":
                 Debug.Log($"{Skill.skillName} : {skillDamage}");
-                if(Time.time > nextTime){
+                //if(Time.time > nextTime){
                     nextTime = Time.time + TimeLeft;
                     other.SendMessage("GetDamaged", skillDamage);
-                }
+                //}
             break;
             case "Boss":
                 Debug.Log($"{Skill.skillName} : {skillDamage}");
@@ -33,7 +33,8 @@ public class AttackHit : MonoBehaviour
             case "Box":
                 Debug.Log("Crushed Box");
                 other.SendMessage("SpawnItem");
-            break;
+                break;
         }
+        return;
     }
 }

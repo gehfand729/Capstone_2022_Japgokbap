@@ -63,6 +63,8 @@ public abstract class Monster : MonoBehaviour
 
         if (enemyHp < 0)
         {
+            BoxSpawnManager.killedEnemyCount++;
+            Debug.Log($"Killed Count is {BoxSpawnManager.killedEnemyCount}");
             fsm.ChangeState(States.Die);
         }
     }

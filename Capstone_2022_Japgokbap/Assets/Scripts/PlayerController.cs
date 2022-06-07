@@ -210,12 +210,6 @@ public class PlayerController : MonoBehaviour
             interfaceManager.ActiveSelectAbillity();
         }
     }
-
-    public bool SkillCheck(int skillNumber){
-        if(PlayerSkill.Contains(skillNumber)){
-            return true;
-        }else return false;
-    }
     #endregion
 
     #region "CallBack"

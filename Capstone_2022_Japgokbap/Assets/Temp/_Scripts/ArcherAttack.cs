@@ -15,7 +15,6 @@ public class ArcherAttack : Skill
     
     public override IEnumerator DoSkill()
     {
-        playerTransform.rotation = Quaternion.LookRotation(PlayerController.mouseDir);
         PlayerController.lockBehaviour = true;
         playerAnimator.SetTrigger("doShoot");
         yield return new WaitForSeconds(skillDuration);
