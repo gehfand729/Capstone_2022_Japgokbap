@@ -69,6 +69,7 @@ public class StageManager : MonoBehaviour
     public GameObject expObject;
     //test
     public GameObject itemClones;
+    public GameObject enemyPrefabs;
 
     [Header ("1-1")]
     public int round1ClearTime;

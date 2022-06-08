@@ -36,6 +36,13 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private float smoothTime;
     private Vector3 velocity = Vector3.zero;
 
+    [Header("Buttons")]
+    [SerializeField] private GameObject changeUsernameButton;
+    [SerializeField] private GameObject changeUsernameInput;
+    [SerializeField] private GameObject showLeaderboardButton;
+    [SerializeField] private GameObject showShopButton;
+    [SerializeField] private GameObject showInventoryButton;
+    [SerializeField] private GameObject showSettingButton;
 
     #endregion
 
@@ -179,6 +186,18 @@ public class LobbyManager : MonoBehaviour
 
         // Show panels
         registerPanel.SetActive(false);
+    }
+
+    public void OnChangeUsernameButtonClicked()
+    {
+        if ( m_authService.AuthType == Authtypes.Silent)
+        {
+            // 게스트 로그인 시 닉변 안됨
+        }
+        else
+        {
+            changeUsernameInput.SetActive(true);
+        }
     }
 
     #endregion

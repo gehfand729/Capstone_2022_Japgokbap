@@ -105,9 +105,16 @@ public class Lich : Monster
 
     protected void SpawnSkeletons()
     {
-        Instantiate(s_skeleton, spawnPos1.transform.position, Quaternion.identity);
-        Instantiate(s_skeleton, spawnPos2.transform.position, Quaternion.identity);
-        Instantiate(s_skeleton, spawnPos3.transform.position, Quaternion.identity);
-        Instantiate(s_skeleton, spawnPos4.transform.position, Quaternion.identity);
+        GameObject monster = Instantiate(s_skeleton, spawnPos1.transform.position, Quaternion.identity);
+        monster.transform.parent = StageManager.instance.monsters3.transform;
+
+        monster = Instantiate(s_skeleton, spawnPos2.transform.position, Quaternion.identity);
+        monster.transform.parent = StageManager.instance.monsters3.transform;
+
+        monster = Instantiate(s_skeleton, spawnPos3.transform.position, Quaternion.identity);
+        monster.transform.parent = StageManager.instance.monsters3.transform;
+
+        monster = Instantiate(s_skeleton, spawnPos4.transform.position, Quaternion.identity);
+        monster.transform.parent = StageManager.instance.monsters3.transform;
     }
 }

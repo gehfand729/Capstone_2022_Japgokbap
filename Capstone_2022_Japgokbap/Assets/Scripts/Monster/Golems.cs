@@ -92,10 +92,11 @@ public class Golems : Monster
         GameObject attack = Instantiate(attackSpell, this.transform.position + (targetPosition - this.transform.position).normalized * 8f + new Vector3(0, 4f, 0), Quaternion.identity);
         attack.transform.LookAt(targetPosition);
         attack.transform.parent = this.transform;
+        Destroy(attack, this.enemyAttackSpeed);
 
-        attack = Instantiate(this.attackPrefab, targetPosition + new Vector3(0,1,0), Quaternion.Euler(-90,0,0));
+        attack = Instantiate(attackPrefab, this.transform.position + new Vector3(0,1,0), Quaternion.Euler(-90,0,0));
         attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower);
         attack.transform.parent = this.transform;
-        Destroy(attack, this.enemyAttackSpeed / 2);
+        Destroy(attack, this.enemyAttackSpeed);
     }
 }
