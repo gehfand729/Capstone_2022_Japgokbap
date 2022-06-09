@@ -56,6 +56,10 @@ public class LobbyManager : MonoBehaviour
 
     #endregion
 
+    #region "Temp"
+    public static string selectName;
+    #endregion
+
     #region Unity Callbacks
 
     public void Awake()
@@ -123,7 +127,8 @@ public class LobbyManager : MonoBehaviour
         //게임 시작
         //현재는 디버깅을 위해 씬 로딩
         //실제 구현 시 매칭 시작
-        LoadingSceneManager.LoadScene("GameScene");
+        //LoadingSceneManager.LoadScene("GameScene");
+        LoadingSceneManager.LoadScene("TempScene");
     }
 
     //디바이스 아이디 등을 통해 게스트로 로그인
@@ -256,15 +261,23 @@ public class LobbyManager : MonoBehaviour
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
+                Debug.Log($"select is {hit.collider.name}");
+
                 switch (hit.collider.name)
                 {
-                    case "Worrior" :
+                    case "Warrior" :
                         isCharacterTouched = true;
                         mainCamera.transform.position = cameraPoints[1].transform.position;
+                        selectName = hit.collider.name;
                         break;
                     case "Archer" :
+                        isCharacterTouched = true;
+                        Debug.Log($"select is {hit.collider.name}");
+                        mainCamera.transform.position = cameraPoints[2].transform.position;
+                        selectName = hit.collider.name;
                         break;
                     case "Magacian" :
+                        selectName = hit.collider.name;
                         break;
                     default :
                         return;
@@ -281,7 +294,7 @@ public class LobbyManager : MonoBehaviour
             {
                 switch (hit.collider.name)
                 {
-                    case "Worrior" :
+                    case "Warrior" :
                     case "Archer" :
                     case "Magacian" :
                         isCharacterTouched = false;

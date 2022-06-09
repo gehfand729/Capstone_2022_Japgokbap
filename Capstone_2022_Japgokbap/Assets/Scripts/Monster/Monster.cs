@@ -40,6 +40,8 @@ public abstract class Monster : MonoBehaviour
 
     //test
     [SerializeField] protected GameObject hudDamageText;
+    private float TimeLeft = 1.0f;
+    private float nextTime = 0.0f;
 
     void Awake()
     {
@@ -111,16 +113,19 @@ public abstract class Monster : MonoBehaviour
 
     protected void GetDamaged(int damage)
     {
-        GameObject hudText = Instantiate(hudDamageText, transform.position + Vector3.up, Quaternion.identity);
-        int defeatedDamage = damage - enemyDefensePower;
+        if(Time.time > nextTime){
+            nextTime = Time.time + TimeLeft;
+            GameObject hudText = Instantiate(hudDamageText, transform.position + Vector3.up, Quaternion.identity);
+            int defeatedDamage = damage - enemyDefensePower;
 
-        if (defeatedDamage < 0)
-        {
-            defeatedDamage = 0;
+            if (defeatedDamage < 0)
+            {
+                defeatedDamage = 0;
+            }
+
+            hudText.GetComponent<DamageTextTest>().damage = defeatedDamage;
+            enemyHp -= defeatedDamage;
         }
-
-        hudText.GetComponent<DamageTextTest>().damage = defeatedDamage;
-        enemyHp -= defeatedDamage;
     }
 
     protected void Move()

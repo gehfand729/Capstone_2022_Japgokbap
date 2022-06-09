@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class InterfaceManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class InterfaceManager : MonoBehaviour
 
     [Header("SelectAbillity")]
     [SerializeField] private GameObject selectAbillityPanel;
+    [SerializeField] private GameObject skillExplainPanel;
 
     [Header("UseableSkillBar")]
     [SerializeField] private Text[] skillBarLevels;
@@ -23,11 +25,13 @@ public class InterfaceManager : MonoBehaviour
     private GameObject skillBarsParent;
 
     [Header("SkillList")]
-    [SerializeField] private List<SkillSO> skillsByClass = new List<SkillSO>();
+    [SerializeField] private List<SkillSO> warriorSkills = new List<SkillSO>();
+    [SerializeField] private List<SkillSO> archerSkills = new List<SkillSO>();
     private List<SkillSO> skillsOfChoices = new List<SkillSO>();
     private GameObject selectButtonsParent;
     private RandomSkillSystem RSS;
     [SerializeField] private List<SkillSO> selectedSkillList = new List<SkillSO>();
+    [SerializeField] private List<SkillSO> skillsByClass;
 
     #endregion
 
@@ -38,13 +42,22 @@ public class InterfaceManager : MonoBehaviour
     private void Awake() {
         playerLv = GameObject.FindWithTag("PlayerLv").GetComponent<Text>();
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        
         //스킬 랜덤 시스템관련
         RSS = GetComponent<RandomSkillSystem>();
         selectButtonsParent = GameObject.FindWithTag("Canvas").transform.Find("SelectAbillityPanel").gameObject;
         selectButtons = selectButtonsParent.GetComponentsInChildren<SelectButton>();
         skillBarsParent = GameObject.FindWithTag("UsableSkillBar");
         skillBars = skillBarsParent.GetComponentsInChildren<Button>();
+        skillExplainPanel = GameObject.FindWithTag("Canvas").transform.Find("SkillExplainPanel").gameObject;
+
+        switch(LobbyManager.selectName){
+            case "Warrior":
+                skillsByClass = warriorSkills;
+            break;
+            case "Archer":
+                skillsByClass = archerSkills;
+            break;
+        }
     }
     private void Update()
     {
@@ -53,6 +66,7 @@ public class InterfaceManager : MonoBehaviour
         CurrentLv();
         CalScore();
         AddUsableBar();
+        // PopUpExplain();
     }
 
     #region "Private Methods"
@@ -91,6 +105,11 @@ public class InterfaceManager : MonoBehaviour
         Debug.Log($"SelectAbillityTest{selectButtons.Length}");
     }
 
+    public void PopUpExplain(SkillSO test){
+        skillExplainPanel.SetActive(true);
+        skillExplainPanel.transform.GetComponentInChildren<Text>().text = test.skillDescription;
+    }
+
     public void AddAbillity(int selectNumber){
         switch (selectNumber)
         {
@@ -126,6 +145,7 @@ public class InterfaceManager : MonoBehaviour
             break;
         }
         selectAbillityPanel.SetActive(false);
+        skillExplainPanel.SetActive(false);
         Time.timeScale = 1;
     }
     public void AddUsableBar(){

@@ -12,29 +12,45 @@ public class AttackHit : MonoBehaviour
     private void Awake() {
         skillDamage = Skill.damage;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log($"Collider Tag is {other.tag}");
-        switch(other.tag){
-            case "Monster":
-                Debug.Log($"{Skill.skillName} : {skillDamage}");
-                //if(Time.time > nextTime){
-                    nextTime = Time.time + TimeLeft;
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     switch(other.tag){
+    //         case "Monster":
+    //             Debug.Log($"{Skill.skillName} : {skillDamage}");
+    //             //if(Time.time > nextTime){
+    //                 other.SendMessage("GetDamaged", skillDamage);
+    //             //}
+    //         break;
+    //         case "Boss":
+    //             Debug.Log($"{Skill.skillName} : {skillDamage}");
+    //                 other.SendMessage("GetDamaged", skillDamage);
+    //             break;
+    //         case "Box":
+    //             Debug.Log("Crushed Box");
+    //             other.SendMessage("SpawnItem");
+    //             break;
+    //     }
+    //     return;
+    // }
+    private void OnTriggerStay(Collider other) {
+            switch(other.tag){
+                case "Monster":
+                    Debug.Log($"{Skill.skillName} : {skillDamage}");
                     other.SendMessage("GetDamaged", skillDamage);
-                //}
-            break;
-            case "Boss":
-                Debug.Log($"{Skill.skillName} : {skillDamage}");
-                if(Time.time > nextTime){
-                    nextTime = Time.time + TimeLeft;
-                    other.SendMessage("GetDamaged", skillDamage);
-                }
                 break;
-            case "Box":
-                Debug.Log("Crushed Box");
-                other.SendMessage("SpawnItem");
-                break;
-        }
+                case "Boss":
+                    Debug.Log($"{Skill.skillName} : {skillDamage}");
+                    if(Time.time > nextTime){
+                        nextTime = Time.time + TimeLeft;
+                        other.SendMessage("GetDamaged", skillDamage);
+                    }
+                    break;
+                case "Box":
+                    Debug.Log("Crushed Box");
+                    other.SendMessage("SpawnItem");
+                    break;
+            }
+//        }
         return;
     }
 }

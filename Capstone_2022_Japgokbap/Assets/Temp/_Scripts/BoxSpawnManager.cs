@@ -19,11 +19,14 @@ public class BoxSpawnManager : MonoBehaviour
     #endregion
 
     private void Awake(){
-        playerTsf = GameObject.FindWithTag("Player").GetComponent<Transform>();
-
         needCount = 10;
 
         randomRange = 25.0f;
+    }
+
+    private void Start(){
+        playerTsf = GameObject.FindWithTag("Player").GetComponent<Transform>();
+
     }
 
     private void Update()
