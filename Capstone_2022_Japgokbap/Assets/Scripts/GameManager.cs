@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
 
     private static GameManager m_instance;
 
+    //temp
+    [SerializeField] private List<ClassSO> classList = new List<ClassSO>();
+
     #endregion
 
     #region "Public Methods"
@@ -63,6 +66,18 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region "Unity Callbacks"
+
+    //temp
+    private void Awake(){
+        switch(LobbyManager.selectName){
+            case "Warrior":
+                Instantiate(classList[1].classPrefab, new Vector3(613, 11, 544), Quaternion.identity);
+            break;
+            case "Archer":
+                Instantiate(classList[0].classPrefab, new Vector3(613, 11, 544), Quaternion.identity);
+            break;
+        }
+    }
 
     private void Start()
     {

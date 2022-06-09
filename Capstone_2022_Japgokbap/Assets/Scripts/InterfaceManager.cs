@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class InterfaceManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class InterfaceManager : MonoBehaviour
 
     [Header("SelectAbillity")]
     [SerializeField] private GameObject selectAbillityPanel;
+    [SerializeField] private GameObject skillExplainPanel;
 
     [Header("UseableSkillBar")]
     [SerializeField] private Text[] skillBarLevels;
@@ -23,10 +25,13 @@ public class InterfaceManager : MonoBehaviour
     private GameObject skillBarsParent;
 
     [Header("SkillList")]
-    [SerializeField] private List<SkillSO> skillsByClass = new List<SkillSO>();
+    [SerializeField] private List<SkillSO> warriorSkills = new List<SkillSO>();
+    [SerializeField] private List<SkillSO> archerSkills = new List<SkillSO>();
     private List<SkillSO> skillsOfChoices = new List<SkillSO>();
     private GameObject selectButtonsParent;
     private RandomSkillSystem RSS;
+    [SerializeField] private List<SkillSO> selectedSkillList = new List<SkillSO>();
+    [SerializeField] private List<SkillSO> skillsByClass;
 
     #endregion
 
@@ -37,13 +42,22 @@ public class InterfaceManager : MonoBehaviour
     private void Awake() {
         playerLv = GameObject.FindWithTag("PlayerLv").GetComponent<Text>();
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        
         //스킬 랜덤 시스템관련
         RSS = GetComponent<RandomSkillSystem>();
         selectButtonsParent = GameObject.FindWithTag("Canvas").transform.Find("SelectAbillityPanel").gameObject;
         selectButtons = selectButtonsParent.GetComponentsInChildren<SelectButton>();
         skillBarsParent = GameObject.FindWithTag("UsableSkillBar");
         skillBars = skillBarsParent.GetComponentsInChildren<Button>();
+        skillExplainPanel = GameObject.FindWithTag("Canvas").transform.Find("SkillExplainPanel").gameObject;
+
+        switch(LobbyManager.selectName){
+            case "Warrior":
+                skillsByClass = warriorSkills;
+            break;
+            case "Archer":
+                skillsByClass = archerSkills;
+            break;
+        }
     }
     private void Update()
     {
@@ -52,6 +66,7 @@ public class InterfaceManager : MonoBehaviour
         CurrentLv();
         CalScore();
         AddUsableBar();
+        // PopUpExplain();
     }
 
     #region "Private Methods"
@@ -71,61 +86,47 @@ public class InterfaceManager : MonoBehaviour
     {
         currentGameScore.text = string.Format("Score: " + GameManager.instance.gameScore);
     }
+
+    private void ChoicedSkillManage(SkillSO test){
+        if(!selectedSkillList.Contains(test)){
+            selectedSkillList.Add(test);
+        }else return;
+    }
     #endregion
 
     #region "Public Methods"
     
     public void ActiveSelectAbillity(){
         selectAbillityPanel.SetActive(true);
-        RSS.RandomSkillSys(skillsByClass, skillsOfChoices);
+        if(playerController.skillList.Count < 3){
+            RSS.RandomSkillSys(skillsByClass, skillsOfChoices);
+        }else RSS.RandomSkillSys(selectedSkillList, skillsOfChoices);
         Time.timeScale = 0;
         Debug.Log($"SelectAbillityTest{selectButtons.Length}");
     }
 
+    public void PopUpExplain(SkillSO test){
+        skillExplainPanel.SetActive(true);
+        skillExplainPanel.transform.GetComponentInChildren<Text>().text = test.skillDescription;
+    }
+
     public void AddAbillity(int selectNumber){
-        Debug.Log($"SelectAbillityTest123{selectButtons.Length}");
-        switch (selectNumber)
-        {
-            case 1:
-            Debug.Log($"Test{selectButtons.Length}");
-
-            if(selectButtons[0].skill.skillPrefab != null){
-                Debug.Log("testNull");
+        if(!selectButtons[selectNumber].skill.isPassive){
+            if(!playerController.skillList.Contains(selectButtons[selectNumber].skill)){
+                playerController.skillList.Add(selectButtons[selectNumber].skill);
+                ChoicedSkillManage(selectButtons[selectNumber].skill);
             }
-            break;
-            // if(selectButtons[0].skill.skillPrefab != null){
-            //     Debug.Log("SelectTest");
-            //     if(!playerController.skillList.Contains(selectButtons[0].skill)){
-            //         playerController.skillList.Add(selectButtons[0].skill);
-            //     }
-            //     playerController.skillList.Find(x => x.skillCode == selectButtons[0].skill.skillCode).skillLevel += 1;
-            //     playerController.skillList.Find(x => x.skillCode == selectButtons[0].skill.skillCode).damage = playerController.skillList.Find(x => x.skillCode == selectButtons[0].skill.skillCode).baseDamage *playerController.skillList.Find(x => x.skillCode == selectButtons[0].skill.skillCode).skillLevel;
-            //     }else playerController.playerOffensePower += selectButtons[0].skill.enhancementStatus;
-            //     break;
-            case 2:
-            Debug.Log($"Test{selectButtons.Length}");
-
-            if(selectButtons[1].skill.skillPrefab != null){
-                if(!playerController.skillList.Contains(selectButtons[1].skill)){
-                    playerController.skillList.Add(selectButtons[1].skill);
-                }
-                playerController.skillList.Find(x => x.skillCode == selectButtons[1].skill.skillCode).skillLevel += 1;
-                playerController.skillList.Find(x => x.skillCode == selectButtons[1].skill.skillCode).damage = playerController.skillList.Find(x => x.skillCode == selectButtons[1].skill.skillCode).baseDamage *playerController.skillList.Find(x => x.skillCode == selectButtons[1].skill.skillCode).skillLevel;
-                }else playerController.playerOffensePower += selectButtons[1].skill.enhancementStatus;
-                break;
-            case 3:
-            Debug.Log($"Test{selectButtons.Length}");
-
-            if(selectButtons[2].skill.skillPrefab != null){
-                if(!playerController.skillList.Contains(selectButtons[2].skill)){
-                    playerController.skillList.Add(selectButtons[2].skill);
-                }
-                playerController.skillList.Find(x => x.skillCode == selectButtons[2].skill.skillCode).skillLevel += 1;
-                playerController.skillList.Find(x => x.skillCode == selectButtons[2].skill.skillCode).damage = playerController.skillList.Find(x => x.skillCode == selectButtons[2].skill.skillCode).baseDamage *playerController.skillList.Find(x => x.skillCode == selectButtons[2].skill.skillCode).skillLevel;
-                }else playerController.playerOffensePower += selectButtons[2].skill.enhancementStatus;
-                break;
+            playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).skillLevel += 1;
+            playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).damage = playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).baseDamage *playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).skillLevel;
+        }else {
+            if(selectButtons[selectNumber].skill.skillName == "근력강화"){
+                playerController.playerOffensePower += selectButtons[selectNumber].skill.enhancementStatus;
+            }else if(selectButtons[selectNumber].skill.skillName == "방어력 강화"){
+                playerController.playerDeffencePower += selectButtons[selectNumber].skill.enhancementStatus;
+            }
         }
         selectAbillityPanel.SetActive(false);
+        skillExplainPanel.SetActive(false);
         Time.timeScale = 1;
     }
     public void AddUsableBar(){

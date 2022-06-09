@@ -48,16 +48,30 @@ MonoBehaviour:
   playerHPBar: {fileID: 0}
   playerExpBar: {fileID: 0}
   selectAbillityPanel: {fileID: 0}
+  skillExplainPanel: {fileID: 0}
   skillBarLevels:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  skillsByClass:
-  - {fileID: 11400000, guid: 09e561993bae20a4597f83f10a00862d, type: 2}
-  - {fileID: 11400000, guid: cd9055148b43aee4993539aff385f78d, type: 2}
+  warriorSkills:
+  - {fileID: 11400000, guid: e29b51e7e3b305640a6bb5c99de64542, type: 2}
   - {fileID: 11400000, guid: 0bfe4c5308a1de448b82e65bcee7378b, type: 2}
   - {fileID: 11400000, guid: 4096800dfb919ea4c8b70b1d88668b15, type: 2}
   - {fileID: 11400000, guid: 5f4adb5955cd7624ea9f0106bdd69ef0, type: 2}
+  - {fileID: 11400000, guid: cd9055148b43aee4993539aff385f78d, type: 2}
+  - {fileID: 11400000, guid: 09e561993bae20a4597f83f10a00862d, type: 2}
+  archerSkills:
+  - {fileID: 11400000, guid: 03d07d6b7955a3745b501d76c87a051b, type: 2}
+  - {fileID: 11400000, guid: d6ee086714bfb95489a5c2a8285dcca1, type: 2}
+  - {fileID: 11400000, guid: d39b0a37cae66c64a9e92de7ec67e7f6, type: 2}
+  - {fileID: 11400000, guid: 372744584b5adbc46a0b1b76d2164ad4, type: 2}
+  - {fileID: 11400000, guid: e1e20d7942e010f49ac44681ba6bad74, type: 2}
+  - {fileID: 11400000, guid: 0bfe4c5308a1de448b82e65bcee7378b, type: 2}
+  - {fileID: 11400000, guid: e29b51e7e3b305640a6bb5c99de64542, type: 2}
+  selectedSkillList:
+  - {fileID: 11400000, guid: 0bfe4c5308a1de448b82e65bcee7378b, type: 2}
+  - {fileID: 11400000, guid: e29b51e7e3b305640a6bb5c99de64542, type: 2}
+  skillsByClass: []
   selectButtons: []
 --- !u!114 &3843726472443132525
 MonoBehaviour:
