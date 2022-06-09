@@ -3561,7 +3561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352817849}
   m_LocalRotation: {x: 0.057016708, y: -0.043053336, z: -0.006231326, w: 0.9974251}
-  m_LocalPosition: {x: 517.16, y: 39.13, z: 526.83}
+  m_LocalPosition: {x: 517.05, y: 26.24, z: 525.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1432812402}
@@ -7196,7 +7196,7 @@ GameObject:
   - component: {fileID: 6604642414614605126}
   - component: {fileID: 1998223395}
   m_Layer: 0
-  m_Name: Worrior
+  m_Name: Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
