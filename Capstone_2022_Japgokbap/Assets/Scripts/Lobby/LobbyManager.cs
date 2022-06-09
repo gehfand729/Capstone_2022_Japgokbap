@@ -63,6 +63,10 @@ public class LobbyManager : MonoBehaviour
 
     #endregion
 
+    #region "Temp"
+    public static string selectName;
+    #endregion
+
     #region Unity Callbacks
 
     public void Awake()
@@ -277,15 +281,18 @@ public class LobbyManager : MonoBehaviour
             {
                 switch (hit.collider.name)
                 {
-                    case "Worrior" :
+                    case "Warrior":
                         isCharacterTouched = true;
                         mainCamera.transform.position = cameraPoints[1].transform.position;
+                        selectName = hit.collider.name;
                         break;
                     case "Archer" :
                         isCharacterTouched = true;
                         mainCamera.transform.position = cameraPoints[2].transform.position;
+                        selectName = hit.collider.name;
                         break;
                     case "Magacian" :
+                        selectName = hit.collider.name;
                         break;
                     default :
                         return;
@@ -302,7 +309,7 @@ public class LobbyManager : MonoBehaviour
             {
                 switch (hit.collider.name)
                 {
-                    case "Worrior" :
+                    case "Warrior" :
                     case "Archer" :
                     case "Magacian" :
                         isCharacterTouched = false;
