@@ -13,6 +13,7 @@ public class SkillSO : ScriptableObject
     public int damage;
     public GameObject skillPrefab;
     
+    public bool isPassive;
     public string skillDescription;
     public int enhancementStatus;
 

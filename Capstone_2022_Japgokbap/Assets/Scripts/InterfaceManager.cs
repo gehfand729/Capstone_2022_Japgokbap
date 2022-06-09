@@ -111,38 +111,19 @@ public class InterfaceManager : MonoBehaviour
     }
 
     public void AddAbillity(int selectNumber){
-        switch (selectNumber)
-        {
-            case 1:
-                if(selectButtons[0].skill.skillPrefab != null){
-                    if(!playerController.skillList.Contains(selectButtons[0].skill)){
-                        playerController.skillList.Add(selectButtons[0].skill);
-                        ChoicedSkillManage(selectButtons[0].skill);
-                    }
-                    playerController.skillList.Find(x => x.skillCode == selectButtons[0].skill.skillCode).skillLevel += 1;
-                    playerController.skillList.Find(x => x.skillCode == selectButtons[0].skill.skillCode).damage = playerController.skillList.Find(x => x.skillCode == selectButtons[0].skill.skillCode).baseDamage *playerController.skillList.Find(x => x.skillCode == selectButtons[0].skill.skillCode).skillLevel;
-                }else playerController.playerOffensePower += selectButtons[0].skill.enhancementStatus;
-            break;
-            case 2:
-            if(selectButtons[1].skill.skillPrefab != null){
-                if(!playerController.skillList.Contains(selectButtons[1].skill)){
-                    playerController.skillList.Add(selectButtons[1].skill);
-                    ChoicedSkillManage(selectButtons[1].skill);
-                }
-                playerController.skillList.Find(x => x.skillCode == selectButtons[1].skill.skillCode).skillLevel += 1;
-                playerController.skillList.Find(x => x.skillCode == selectButtons[1].skill.skillCode).damage = playerController.skillList.Find(x => x.skillCode == selectButtons[1].skill.skillCode).baseDamage *playerController.skillList.Find(x => x.skillCode == selectButtons[1].skill.skillCode).skillLevel;
-                }else playerController.playerOffensePower += selectButtons[1].skill.enhancementStatus;
-                break;
-            case 3:
-                if(selectButtons[2].skill.skillPrefab != null){
-                    if(!playerController.skillList.Contains(selectButtons[2].skill)){
-                        playerController.skillList.Add(selectButtons[2].skill);
-                        ChoicedSkillManage(selectButtons[2].skill);
-                    }
-                    playerController.skillList.Find(x => x.skillCode == selectButtons[2].skill.skillCode).skillLevel += 1;
-                    playerController.skillList.Find(x => x.skillCode == selectButtons[2].skill.skillCode).damage = playerController.skillList.Find(x => x.skillCode == selectButtons[2].skill.skillCode).baseDamage *playerController.skillList.Find(x => x.skillCode == selectButtons[2].skill.skillCode).skillLevel;
-                }else playerController.playerOffensePower += selectButtons[2].skill.enhancementStatus;
-            break;
+        if(!selectButtons[selectNumber].skill.isPassive){
+            if(!playerController.skillList.Contains(selectButtons[selectNumber].skill)){
+                playerController.skillList.Add(selectButtons[selectNumber].skill);
+                ChoicedSkillManage(selectButtons[selectNumber].skill);
+            }
+            playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).skillLevel += 1;
+            playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).damage = playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).baseDamage *playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).skillLevel;
+        }else {
+            if(selectButtons[selectNumber].skill.skillName == "근력강화"){
+                playerController.playerOffensePower += selectButtons[selectNumber].skill.enhancementStatus;
+            }else if(selectButtons[selectNumber].skill.skillName == "방어력 강화"){
+                playerController.playerDeffencePower += selectButtons[selectNumber].skill.enhancementStatus;
+            }
         }
         selectAbillityPanel.SetActive(false);
         skillExplainPanel.SetActive(false);

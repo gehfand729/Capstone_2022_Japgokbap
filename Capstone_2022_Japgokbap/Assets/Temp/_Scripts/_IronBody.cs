@@ -8,6 +8,7 @@ public class _IronBody : Skill
     [SerializeField] private float animDelay;
 
     [SerializeField] private float skillDuration;
+    private PlayerController playerctrl;
 
     private void Start() {
         StopCoroutine(DoSkill());
@@ -18,18 +19,22 @@ public class _IronBody : Skill
     }
     public override IEnumerator DoSkill(){
         if(readySkill){
+            PlayerController playerctrl = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            int originStat = playerctrl.playerDeffencePower;
+
             readySkill = false;
             PlayerController.lockBehaviour = true;
             // playerAnimator.SetTrigger("XAttack");
             yield return new WaitForSeconds(animDelay);
 
             GameObject spawnParticle = Instantiate(skillParticle, playerTransform.transform.position + new Vector3(0, 1.3f, 0), Quaternion.identity);
-            Debug.Log("ironBody Particle test");
             spawnParticle.transform.parent = this.transform;
+
+            playerctrl.playerDeffencePower += skillSO.enhancementStatus * skillSO.skillLevel;
             PlayerController.lockBehaviour = false;
 
             yield return new WaitForSeconds(skillDuration);
-            
+            playerctrl.playerDeffencePower = originStat;
             Destroy(spawnParticle);
 
         }
