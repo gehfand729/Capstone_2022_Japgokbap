@@ -127,8 +127,7 @@ public class LobbyManager : MonoBehaviour
         //게임 시작
         //현재는 디버깅을 위해 씬 로딩
         //실제 구현 시 매칭 시작
-        //LoadingSceneManager.LoadScene("GameScene");
-        LoadingSceneManager.LoadScene("TempScene");
+        LoadingSceneManager.LoadScene("GameScene");
     }
 
     //디바이스 아이디 등을 통해 게스트로 로그인
@@ -272,7 +271,6 @@ public class LobbyManager : MonoBehaviour
                         break;
                     case "Archer" :
                         isCharacterTouched = true;
-                        Debug.Log($"select is {hit.collider.name}");
                         mainCamera.transform.position = cameraPoints[2].transform.position;
                         selectName = hit.collider.name;
                         break;
