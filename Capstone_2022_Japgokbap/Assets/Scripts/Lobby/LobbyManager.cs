@@ -282,6 +282,8 @@ public class LobbyManager : MonoBehaviour
                         mainCamera.transform.position = cameraPoints[1].transform.position;
                         break;
                     case "Archer" :
+                        isCharacterTouched = true;
+                        mainCamera.transform.position = cameraPoints[2].transform.position;
                         break;
                     case "Magacian" :
                         break;
