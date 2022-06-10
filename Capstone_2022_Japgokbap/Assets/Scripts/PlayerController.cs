@@ -20,25 +20,25 @@ public class PlayerController : MonoBehaviour
     [Header("Rotate")]
     [SerializeField] private float rotateSpeed = 5.0f;
 
-    #region "TempSkills"
-    //스킬과 일반 공격 관련
-    ////Attack은 스크립트 분리하였음.
-    private WarriorBuff1 buff1;
-    private WarriorBuff2 buff2;
-    private PlayerAttack attack;
-    #endregion "TempSkills"
+    //attack
+    [Header("Attack")]
+    [SerializeField] private SkillSO combat;
+    
 
     private Rigidbody rb;
 
-    //키 입력을 Dict와 delegate 사용하여 구현하기 위함.
+    
     private Dictionary<KeyCode, Action> keyDictionary;
     private InterfaceManager interfaceManager;
 
-    [Header("SkillList")]
-    public List<SkillSO> skillList = new List<SkillSO>();
+    private bool deadCheck = false;
     #endregion
 
     #region "Public"
+
+    [Header("SkillList")]
+    public List<SkillSO> skillList = new List<SkillSO>();
+    public ClassSO classJob;
     [HideInInspector] public List<int> PlayerSkill = new List<int>();
     
     [Header("PlayerStatus")]
@@ -54,10 +54,6 @@ public class PlayerController : MonoBehaviour
     public float playerLvUpExp;
     #endregion
 
-    #region "Test"
-    public ClassSO classJob;
-    #endregion
-
     #region "Static"
     public static bool lockBehaviour =false;
     public static Vector3 mouseDir;
@@ -69,7 +65,6 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         interfaceManager = GameObject.FindWithTag("InterfaceManager").GetComponent<InterfaceManager>();
-        attack = GetComponent<PlayerAttack>();
         keyDictionary = new Dictionary<KeyCode, Action>
         {
             { KeyCode.Q, Skill_Q },
@@ -139,53 +134,35 @@ public class PlayerController : MonoBehaviour
     }
 
     //마우스로 공격하는 함수
-    //test
-    [SerializeField] SkillSO combat;
     private void AttackToMouse(){     
         if(!lockBehaviour){
             if(Input.GetMouseButtonDown(0)){
                 //행동 제한
                 lockBehaviour =true;
-                // Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
                 
-                // RaycastHit rayHit;
-                // if(Physics.Raycast(ray, out rayHit)) {
-                //     Vector3 mouseDir = new Vector3(rayHit.point.x, transform.position.y, rayHit.point.z) - transform.position;
                 transform.rotation = Quaternion.LookRotation(mouseDir);
-                // }
-                // attack.StartCoroutine(attack.Attack(attack.attackDelay));
                 GameObject instObject = Instantiate(combat.skillPrefab,transform.position, Quaternion.identity);
                 instObject.transform.parent = transform;
             }
         }
     }
     private void Skill_Q(){
-        if(skillList[0] != null){
-            if(!lockBehaviour)
-            {
-                GameObject instObject = Instantiate(skillList[0].skillPrefab);
-                instObject.transform.parent = transform;
-            }
-        }else return;
+        if(skillList[0] == null) return;
+        if(lockBehaviour) return;
+        GameObject instObject = Instantiate(skillList[0].skillPrefab);
+        instObject.transform.parent = transform;
     }
     private void Skill_E(){
-        if(skillList[1] != null){
-            if(!lockBehaviour)
-            {
-                GameObject instObject = Instantiate(skillList[1].skillPrefab);
-                instObject.transform.parent = transform;
-            
-            }
-        }else return;
+        if(skillList[1] == null) return;
+        if(lockBehaviour) return;
+        GameObject instObject = Instantiate(skillList[1].skillPrefab);
+        instObject.transform.parent = transform;
     }
     private void Skill_R(){
-        if(skillList[2] != null){
-            if(!lockBehaviour)
-            {
-                GameObject instObject = Instantiate(skillList[2].skillPrefab);
-                instObject.transform.parent = transform;
-            }
-        }else return;
+        if(skillList[2] == null) return;
+        if(lockBehaviour) return;
+        GameObject instObject = Instantiate(skillList[2].skillPrefab);
+        instObject.transform.parent = transform;
     }
     private void GetDamaged(int damage)
     {
@@ -197,6 +174,12 @@ public class PlayerController : MonoBehaviour
         }
 
         playerCurrentHP -= defeatedDamage;
+
+        if(deadCheck) return;
+        if(playerCurrentHP <= 0){
+            deadCheck = true;
+            playerAnimator.SetTrigger("Death");
+        }
     }
     #endregion
 

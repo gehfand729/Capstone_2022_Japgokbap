@@ -33,6 +33,8 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private List<SkillSO> selectedSkillList = new List<SkillSO>();
     [SerializeField] private List<SkillSO> skillsByClass;
 
+
+    private GameObject leaderBoard;
     #endregion
 
     #region "Public"
@@ -49,7 +51,7 @@ public class InterfaceManager : MonoBehaviour
         skillBarsParent = GameObject.FindWithTag("UsableSkillBar");
         skillBars = skillBarsParent.GetComponentsInChildren<Button>();
         skillExplainPanel = GameObject.FindWithTag("Canvas").transform.Find("SkillExplainPanel").gameObject;
-
+        leaderBoard = GameObject.FindWithTag("Canvas").transform.Find("LeaderBoard").gameObject;
         switch(LobbyManager.selectName){
             case "Warrior":
                 skillsByClass = warriorSkills;
@@ -66,7 +68,7 @@ public class InterfaceManager : MonoBehaviour
         CurrentLv();
         CalScore();
         AddUsableBar();
-        // PopUpExplain();
+        ActiveLeaderBoard();
     }
 
     #region "Private Methods"
@@ -91,6 +93,23 @@ public class InterfaceManager : MonoBehaviour
         if(!selectedSkillList.Contains(test)){
             selectedSkillList.Add(test);
         }else return;
+    }
+
+    private void ActiveLeaderBoard(){
+        if(Input.GetKeyDown(KeyCode.Tab)){
+            leaderBoard.SetActive(true);
+        }
+        if(Input.GetKeyUp(KeyCode.Tab)){
+            leaderBoard.SetActive(false);
+        }
+        if(playerController.playerCurrentHP <= 0){
+            StartCoroutine(DeadLeaderBoard());
+        }
+    }
+
+    private IEnumerator DeadLeaderBoard(){
+        yield return new WaitForSeconds(3.0f);
+        leaderBoard.SetActive(true);
     }
     #endregion
 
