@@ -3,6 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public class ClearInfomation
+{
+    string className;
+    int clearRound; // 1-2면 1
+    int clearWave; // 1-2면 2
+    int clearMinute;
+    int clearSecond;
+    int clearScore;
+    int clearLevel;
+}
+
 public class GameManager : MonoBehaviour
 {
     #region "Pulbic"

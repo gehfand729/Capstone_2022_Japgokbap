@@ -35,6 +35,8 @@ public class InterfaceManager : MonoBehaviour
 
 
     private GameObject leaderBoard;
+    [SerializeField] private GameObject gameoverPanel;
+
     #endregion
 
     #region "Public"
@@ -52,7 +54,7 @@ public class InterfaceManager : MonoBehaviour
         skillBars = skillBarsParent.GetComponentsInChildren<Button>();
         skillExplainPanel = GameObject.FindWithTag("Canvas").transform.Find("SkillExplainPanel").gameObject;
         leaderBoard = GameObject.FindWithTag("Canvas").transform.Find("LeaderBoard").gameObject;
-        switch(LobbyManager.selectName){
+        switch (LobbyManager.selectName){
             case "Warrior":
                 skillsByClass = warriorSkills;
             break;
@@ -109,6 +111,16 @@ public class InterfaceManager : MonoBehaviour
 
     private IEnumerator DeadLeaderBoard(){
         yield return new WaitForSeconds(3.0f);
+        Image image = leaderBoard.GetComponent<Image>();
+        Color color = image.color;
+        color.a = 1f;
+        image.color = color;
+
+        image = gameoverPanel.GetComponent<Image>();
+        color = image.color;
+
+        //fade out
+
         leaderBoard.SetActive(true);
     }
     #endregion
