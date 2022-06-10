@@ -19,6 +19,7 @@ TagManager:
   - testPotion
   - Boss
   - PiercingShot
+  - LeaderBoard
   layers:
   - Default
   - TransparentFX
