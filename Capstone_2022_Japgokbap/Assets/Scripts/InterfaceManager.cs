@@ -127,6 +127,7 @@ public class InterfaceManager : MonoBehaviour
         image.color = new Color(255, 255, 255, 1f);
 
         //fade out
+        gameoverPanel.SetActive(true);
         image = gameoverPanel.GetComponent<Image>();
         StartCoroutine(Fadeout(image));
 
@@ -197,7 +198,7 @@ public class InterfaceManager : MonoBehaviour
         clearStage.text = string.Format("클리어한 스테이지 : "
             + info.clearStage + "-" + info.clearRound);
         clearTime.text = string.Format("플레이한 시간 : " 
-            + info.clearMinute + "분 " + info.clearSecond);
+            + info.clearMinute + "분 " + info.clearSecond + "초");
         clearLevel.text = string.Format("최종 레벨 : " + info.clearLevel);
         finalScore.text = string.Format("최종 점수 : " + info.clearScore);
     }
