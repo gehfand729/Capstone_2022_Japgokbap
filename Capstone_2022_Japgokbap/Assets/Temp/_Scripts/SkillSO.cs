@@ -12,6 +12,8 @@ public class SkillSO : ScriptableObject
     public int baseDamage = 0;
     public int damage;
     public GameObject skillPrefab;
+    public float skillCooltime;
+    public bool coolCheck;
     
     public bool isPassive;
     public string skillDescription;
@@ -20,5 +22,6 @@ public class SkillSO : ScriptableObject
     private void OnEnable() {
         skillLevel = 0;
         damage = 0;
+        coolCheck = true;
     }
 }

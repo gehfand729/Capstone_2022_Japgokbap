@@ -19,5 +19,9 @@ MonoBehaviour:
   baseDamage: 300
   damage: 0
   skillPrefab: {fileID: 4131891160570470766, guid: ff0cf110fe24d944da3cde58faea4e5f, type: 3}
-  skillDescription: "\uBE14\uB808\uC774\uB4DC \uC2A4\uD1B0"
+  skillCooltime: 25
+  coolCheck: 1
+  isPassive: 0
+  skillDescription: "\uC774\uB3D9\uD558\uBA74\uC11C \uD68C\uC804\uACF5\uACA9\uC744
+    \uC2DC\uC804\uD55C\uB2E4"
   enhancementStatus: 0

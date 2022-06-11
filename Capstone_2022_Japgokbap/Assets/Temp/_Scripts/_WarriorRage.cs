@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _IronBody : Skill
+public class _WarriorRage : Skill
 {
     [SerializeField] private float m_cooltime;
     [SerializeField] private float animDelay;
@@ -20,24 +20,24 @@ public class _IronBody : Skill
     }
     public override IEnumerator DoSkill(){
         if(skillSO.coolCheck){
-            Destroy(this.gameObject, m_cooltime);
+            Destroy(this.gameObject, m_cooltime + 1.0f);
             PlayerController playerctrl = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-            int originStat = playerctrl.playerDeffencePower;
+            int enhanceStat = skillSO.enhancementStatus * skillSO.skillLevel;
 
             skillSO.coolCheck = false;
             PlayerController.lockBehaviour = true;
-            playerAnimator.SetTrigger("doIronBody");
+            playerAnimator.SetTrigger("doRage");
             yield return new WaitForSeconds(animDelay);
 
             GameObject spawnParticle = Instantiate(skillParticle, playerTransform.transform.position + new Vector3(0, 1.3f, 0), Quaternion.identity);
             spawnParticle.transform.parent = this.transform;
 
-            playerctrl.playerDeffencePower += skillSO.enhancementStatus * skillSO.skillLevel;
+            playerctrl.playerOffensePower += enhanceStat;
             PlayerController.lockBehaviour = false;
 
             yield return new WaitForSeconds(skillDuration);
-            playerctrl.playerDeffencePower = originStat;
-            
+            playerctrl.playerOffensePower -= enhanceStat;
+            Destroy(spawnParticle);
         }
     }
 }

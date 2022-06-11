@@ -244,5 +244,14 @@ public class InterfaceManager : MonoBehaviour
             skillBarLevels[i].text = string.Format("Lv."+ playerController.skillList[i].skillLevel);
         }
     }
+
+    public IEnumerator CoolSlot(float skillCool, int slotNum){
+        float leftTime = skillCool;
+        while (leftTime > 0.0f){
+            leftTime -= Time.deltaTime;
+            skillBars[slotNum].image.fillAmount = 1.0f - (leftTime / skillCool);
+            yield return new WaitForFixedUpdate();
+        }
+    }
     #endregion
 }

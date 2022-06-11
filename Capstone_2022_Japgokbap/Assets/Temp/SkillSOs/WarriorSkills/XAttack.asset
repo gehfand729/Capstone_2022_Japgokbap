@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: XAttack
   m_EditorClassIdentifier: 
   skillCode: W004
-  skillName: XAttack
+  skillName: "\uACF5\uAC04\uAC00\uB974\uAE30"
   skillImage: {fileID: 21300000, guid: 0c136515f7aa49e43ba0840df48c1f4d, type: 3}
   skillLevel: 0
   baseDamage: 300
   damage: 0
   skillPrefab: {fileID: 8791075249115662829, guid: 84027556b11ccd5459fae3bac53b15e5, type: 3}
-  skillDescription: "X\uC5B4\uD0DD"
+  skillCooltime: 10
+  coolCheck: 1
+  isPassive: 0
+  skillDescription: "\uACF5\uAC04\uC744 \uAC00\uB974\uB294 \uACF5\uACA9\uC744 \uC2DC\uC804\uD558\uC5EC
+    \uC801\uC5D0\uAC8C \uD53C\uD574\uB97C \uC785\uD78C\uB2E4."
   enhancementStatus: 0

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8144092075350910318}
-  - component: {fileID: 3222373238680548794}
+  - component: {fileID: 184862003910700486}
   m_Layer: 0
   m_Name: PiercingShot
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3222373238680548794
+--- !u!114 &184862003910700486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,13 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1871978317639250311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89afc7a3eb9118445a7369f03337db18, type: 3}
+  m_Script: {fileID: 11500000, guid: d432e105d9e62bc428953000db21555a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skillSO: {fileID: 11400000, guid: e1e20d7942e010f49ac44681ba6bad74, type: 2}
   skillDamage: 0
   skillPrefab: {fileID: 7139951906352003082, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
   skillParticle: {fileID: 0}
+  m_cooltime: 0
   skillDuration: 0.3
   DestoryTime: 3
 --- !u!1001 &8260510332067431242

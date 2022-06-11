@@ -25,10 +25,9 @@ public class TestProjectile : MonoBehaviour
         Destroy(this.gameObject, destoryTime);
     }
     private void OnTriggerEnter(Collider other) {
-        if(!this.gameObject.CompareTag("PiercingShot")){
-            if(other.gameObject.CompareTag("Monster")||other.gameObject.CompareTag("Boss")){
-                Destroy(this.gameObject);
-            }
+        if(this.gameObject.CompareTag("PiercingShot")) return;
+        if(other.gameObject.CompareTag("Monster")||other.gameObject.CompareTag("Boss")){
+            Destroy(this.gameObject);
         }
     }
 }

@@ -9,6 +9,8 @@ public class _SeismWave : Skill
     [SerializeField] private float skillDuration;
     
     private void Start() {
+        m_cooltime = skillSO.skillCooltime;
+
         StopCoroutine(DoSkill());
         StartCoroutine(DoSkill());
     }
@@ -17,8 +19,10 @@ public class _SeismWave : Skill
     }
     public override IEnumerator DoSkill()
     {
-        if(readySkill){
-            readySkill = false;
+        if(skillSO.coolCheck){
+            Destroy(this.gameObject, m_cooltime + 1.0f);
+
+            skillSO.coolCheck = false;
             PlayerController.lockBehaviour = true;
             playerAnimator.SetTrigger("doSeismWave");
             yield return new WaitForSeconds(animDelay);
@@ -31,7 +35,7 @@ public class _SeismWave : Skill
             yield return new WaitForSeconds(skillDuration);
 
             PlayerController.lockBehaviour = false;
-            Destroy(this.gameObject);
+            Destroy(instantePrefab);
         } 
     }
 }

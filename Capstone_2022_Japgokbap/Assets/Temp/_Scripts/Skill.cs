@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Skill : MonoBehaviour {
-    protected bool readySkill = true;
     protected float realtime = 0.0f;
     protected Animator playerAnimator;
     protected Transform playerTransform;
@@ -21,11 +20,11 @@ public abstract class Skill : MonoBehaviour {
 
     public void CoolTimeCheck(float skillCooltime)
     {
-        if (!readySkill) {
+        if (!skillSO.coolCheck) {
             if (realtime <= skillCooltime) {
                 realtime += Time.deltaTime;
             } else {
-                readySkill = true;
+                skillSO.coolCheck = true;
                 realtime = 0.0f;
             }
         }
