@@ -38,11 +38,24 @@ public class LobbyManager : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] private GameObject changeUsernameButton;
-    [SerializeField] private GameObject changeUsernameInput;
     [SerializeField] private GameObject showLeaderboardButton;
     [SerializeField] private GameObject showShopButton;
     [SerializeField] private GameObject showInventoryButton;
     [SerializeField] private GameObject showSettingButton;
+
+    [Header("Login Panels")]
+    [SerializeField] private GameObject settingPanel;
+    [SerializeField] private GameObject inventoryPanel;
+    [SerializeField] private GameObject shopPanel;
+    [SerializeField] private GameObject leaderboardPanel;
+
+    [Header("Change Usernames")]
+    [SerializeField] private GameObject changeUsernameInput;
+    [SerializeField] private Text changeUsernameInputText;
+    [SerializeField] private GameObject changeUsernameSureButton;
+    [SerializeField] private GameObject changeUsernamePanel;
+    [SerializeField] private Text guestChangeUsernameText;
+
 
     #endregion
 
@@ -194,14 +207,45 @@ public class LobbyManager : MonoBehaviour
 
     public void OnChangeUsernameButtonClicked()
     {
+        changeUsernamePanel.SetActive(true);
+
         if ( m_authService.AuthType == Authtypes.Silent)
         {
             // 게스트 로그인 시 닉변 안됨
+            Destroy(changeUsernamePanel, 3f);
         }
         else
         {
+            guestChangeUsernameText.gameObject.SetActive(false);
+
             changeUsernameInput.SetActive(true);
+            changeUsernameSureButton.SetActive(true);
         }
+    }
+
+    public void ChangeUsernameButtonClicked()
+    {
+        if (changeUsernameInputText.text != string.Empty)
+        {
+            PlayFabClientAPI.UpdateUserTitleDisplayName(new UpdateUserTitleDisplayNameRequest
+            {
+                DisplayName = changeUsernameInputText.text
+            }, result => {
+                Debug.Log("The player's display name is now: " + result.DisplayName);
+                userName.text = result.DisplayName;
+                changeUsernamePanel.SetActive(false);
+            }, error => Debug.LogError(error.GenerateErrorReport()));
+        }
+    }
+
+    public void OnActivePanelsButtonClicked(GameObject panel)
+    {
+        panel.SetActive(true);
+    }
+
+    public void OnDeactivePanelsButtonClicked(GameObject panel)
+    {
+        panel.SetActive(false);
     }
 
     #endregion
@@ -219,7 +263,30 @@ public class LobbyManager : MonoBehaviour
         statusText.text = "";
         loginPanel.SetActive(false);
         lobbyPanel.SetActive(true);
-        userName.text = result.InfoResultPayload.AccountInfo.Username ?? result.PlayFabId;
+
+        if (m_authService.AuthType == Authtypes.Silent)
+        {
+            userName.text = result.InfoResultPayload.AccountInfo.Username ?? result.PlayFabId;
+
+            return;
+        }
+
+        var request = new GetAccountInfoRequest { };
+        PlayFabClientAPI.GetAccountInfo(request, GetAccountSuccess
+            , error =>
+                Debug.LogError(error.GenerateErrorReport()));
+    }
+
+    private void GetAccountSuccess(GetAccountInfoResult result)
+    {
+        if (result.AccountInfo.TitleInfo.DisplayName != null)
+        {
+            userName.text = result.AccountInfo.TitleInfo.DisplayName;
+        }
+        else
+        {
+            OnChangeUsernameButtonClicked();
+        }
     }
 
     //로그인 에러 발생 처리
