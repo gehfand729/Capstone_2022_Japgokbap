@@ -33,9 +33,17 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private List<SkillSO> selectedSkillList = new List<SkillSO>();
     [SerializeField] private List<SkillSO> skillsByClass;
 
-
-    private GameObject leaderBoard;
+    [Header("When Game Ended")]
+    [SerializeField] private GameObject leaderBoard;
+    [SerializeField] private Text clearClass;
+    [SerializeField] private Text clearStage;
+    [SerializeField] private Text clearTime;
+    [SerializeField] private Text clearLevel;
+    [SerializeField] private Text finalScore;
+    [SerializeField] private Text canGetGold;
     [SerializeField] private GameObject gameoverPanel;
+    private bool isFaded;
+    [SerializeField] private GameObject youdiedImage;
 
     #endregion
 
@@ -53,7 +61,7 @@ public class InterfaceManager : MonoBehaviour
         skillBarsParent = GameObject.FindWithTag("UsableSkillBar");
         skillBars = skillBarsParent.GetComponentsInChildren<Button>();
         skillExplainPanel = GameObject.FindWithTag("Canvas").transform.Find("SkillExplainPanel").gameObject;
-        leaderBoard = GameObject.FindWithTag("Canvas").transform.Find("LeaderBoard").gameObject;
+
         switch (LobbyManager.selectName){
             case "Warrior":
                 skillsByClass = warriorSkills;
@@ -101,10 +109,14 @@ public class InterfaceManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Tab)){
             leaderBoard.SetActive(true);
         }
+
         if(Input.GetKeyUp(KeyCode.Tab)){
             leaderBoard.SetActive(false);
         }
-        if(playerController.playerCurrentHP <= 0){
+
+        if(playerController.playerCurrentHP <= 0 && !isFaded){
+            isFaded = true;
+
             StartCoroutine(DeadLeaderBoard());
         }
     }
@@ -112,16 +124,82 @@ public class InterfaceManager : MonoBehaviour
     private IEnumerator DeadLeaderBoard(){
         yield return new WaitForSeconds(3.0f);
         Image image = leaderBoard.GetComponent<Image>();
-        Color color = image.color;
-        color.a = 1f;
-        image.color = color;
-
-        image = gameoverPanel.GetComponent<Image>();
-        color = image.color;
+        image.color = new Color(255, 255, 255, 1f);
 
         //fade out
+        image = gameoverPanel.GetComponent<Image>();
+        StartCoroutine(Fadeout(image));
 
+        yield return new WaitForSeconds(2.0f);
+
+        youdiedImage.SetActive(true);
+
+        yield return new WaitForSeconds(2.0f);
+
+        image = youdiedImage.GetComponent<Image>();
+        StartCoroutine(Fadeout(image));
+        youdiedImage.SetActive(false);
+
+        yield return new WaitForSeconds(1.0f);
+
+        SetLeaderBoard();
         leaderBoard.SetActive(true);
+
+        yield return new WaitForSeconds(1.0f);
+
+        clearClass.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+
+        clearStage.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+
+        clearTime.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+
+        clearLevel.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+
+        finalScore.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+
+        canGetGold.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+
+        canGetGold.text = string.Format("획득한 골드 : ?");
+    }
+
+    private IEnumerator Fadeout(Image image)
+    {
+        float fadeAlpha = 0;
+
+        while (fadeAlpha < 1.0f)
+        {
+            fadeAlpha += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            image.color = new Color(0, 0, 0, fadeAlpha);
+        }
+    }
+
+    private void SetLeaderBoard()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        ClearInfomation info =  new ClearInfomation();
+        info.className = player.name;
+        info.clearStage = StageManager.instance.stageCount;
+        info.clearRound = StageManager.instance.roundCount;
+        info.clearMinute = ((int)GameManager.instance.fullTIme / 60 % 60);
+        info.clearSecond = ((int)GameManager.instance.fullTIme % 60);
+        info.clearScore = GameManager.instance.gameScore;
+        info.clearLevel = player.GetComponent<PlayerController>().playerLv;
+
+        clearClass.text = string.Format("직업 : " + info.className);
+        clearStage.text = string.Format("클리어한 스테이지 : "
+            + info.clearStage + "-" + info.clearRound);
+        clearTime.text = string.Format("플레이한 시간 : " 
+            + info.clearMinute + "분 " + info.clearSecond);
+        clearLevel.text = string.Format("최종 레벨 : " + info.clearLevel);
+        finalScore.text = string.Format("최종 점수 : " + info.clearScore);
     }
     #endregion
 

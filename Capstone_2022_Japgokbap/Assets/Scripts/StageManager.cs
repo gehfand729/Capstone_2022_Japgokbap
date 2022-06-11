@@ -342,6 +342,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 1-2";
+        roundCount = 2;
 
         for (int i = 0; i < count3; i++)
         {
@@ -374,6 +375,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 1-3";
+        roundCount = 3;
 
         for (int i = 0; i < count7; i++)
         {
@@ -406,6 +408,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 1 Boss";
+        roundCount = 4;
 
         GameManager.instance.ActiveBossUi(true);
         GameObject monster = Instantiate(lich, bossSpawner.transform.position, Quaternion.identity);
@@ -455,6 +458,8 @@ public class StageManager : MonoBehaviour
         GameManager.instance.SetTime(round2ClearTime);
         
         roundInfoText.text = "Stage 2-1";
+        stageCount = 2;
+        roundCount = 1;
 
         for (int i = 0; i < count10; i++)
         {
@@ -473,6 +478,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 2-2";
+        roundCount = 2;
 
         for (int i = 0; i < count12; i++)
         {
@@ -498,6 +504,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 2-3";
+        roundCount = 3;
 
         for (int i = 0; i < count15; i++)
         {
@@ -530,6 +537,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 2-4";
+        roundCount = 4;
 
         for (int i = 0; i < count19; i++)
         {
@@ -562,6 +570,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 2 Boss";
+        roundCount = 5;
 
         GameManager.instance.ActiveBossUi(true);
         GameObject monster = Instantiate(orc, bossSpawner.transform.position, Quaternion.identity);
@@ -580,7 +589,7 @@ public class StageManager : MonoBehaviour
             GameManager.instance.AddScore(Mathf.RoundToInt(GameManager.instance.time) * 60);
             GameManager.instance.ActiveBossUi(false);
 
-            fsm.ChangeState(States.Stage3);
+            fsm.ChangeState(States.BossStage);
         }
         else if (GameManager.instance.time == 0 && !bossCleared)
         {
@@ -612,6 +621,8 @@ public class StageManager : MonoBehaviour
         GameManager.instance.SetTime(round3ClearTime);
 
         roundInfoText.text = "Stage 3-1";
+        stageCount = 3;
+        roundCount = 1;
 
         for (int i = 0; i < count23; i++)
         {
@@ -630,6 +641,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 3-2";
+        roundCount = 2;
 
         for (int i = 0; i < count25; i++)
         {
@@ -655,6 +667,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 3-3";
+        roundCount = 3;
 
         for (int i = 0; i < count28; i++)
         {
@@ -680,7 +693,8 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 3-4";
-        
+        roundCount = 4;
+
         for (int i = 0; i < count31; i++)
         {
             SpawnMonster("Golem1", monsters11.transform);
@@ -712,6 +726,7 @@ public class StageManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         roundInfoText.text = "Stage 3 Boss";
+        roundCount = 5;
 
         GameManager.instance.ActiveBossUi(true);
         GameObject monster = Instantiate(golem, bossSpawner.transform.position, Quaternion.identity);
@@ -761,6 +776,7 @@ public class StageManager : MonoBehaviour
         GameManager.instance.SetTime(round4ClearTime);
 
         roundInfoText.text = "Final Boss";
+        roundCount = 6;
 
         GameManager.instance.ActiveBossUi(true);
 

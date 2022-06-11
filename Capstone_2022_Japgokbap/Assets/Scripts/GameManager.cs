@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class ClearInfomation
 {
-    string className;
-    int clearRound; // 1-2면 1
-    int clearWave; // 1-2면 2
-    int clearMinute;
-    int clearSecond;
-    int clearScore;
-    int clearLevel;
+    public string className { get; set; }
+    public int clearStage { get; set; }// 1-2면 1
+    public int clearRound { get; set; } // 1-2면 2
+    public int clearMinute { get; set; }
+    public int clearSecond { get; set; }
+    public int clearScore { get; set; }
+    public int clearLevel { get; set; }
 }
 
 public class GameManager : MonoBehaviour
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public float fullTIme;
     public float time;
     public int minute;
     public float second;
@@ -97,6 +98,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        fullTIme += Time.deltaTime;
+
         if (StageManager.instance.fsm.State != StageManager.States.Ready)
         {
             StartTimer();
