@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 5
+  combat: {fileID: 11400000, guid: 596de0ae419339b49b3d4c71059a54c9, type: 2}
   skillList: []
+  classJob: {fileID: 11400000, guid: 73019ddffd7d50246966aba9e9a6fc58, type: 2}
   PlayerSkill: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -109,8 +111,6 @@ MonoBehaviour:
   playerLv: 1
   playerCurrentExp: 0
   playerLvUpExp: 100
-  classJob: {fileID: 11400000, guid: 73019ddffd7d50246966aba9e9a6fc58, type: 2}
-  combat: {fileID: 11400000, guid: 596de0ae419339b49b3d4c71059a54c9, type: 2}
 --- !u!1 &196875390315178408
 GameObject:
   m_ObjectHideFlags: 0

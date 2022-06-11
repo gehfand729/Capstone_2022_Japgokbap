@@ -10,6 +10,8 @@ public class _Iokheira : Skill
     private Vector3 MousePos;
     
     private void Start() {
+        m_cooltime = skillSO.skillCooltime;
+
         StopCoroutine(DoSkill());
         StartCoroutine(DoSkill());
     }
@@ -18,10 +20,12 @@ public class _Iokheira : Skill
     }
     public override IEnumerator DoSkill()
     {
-        if(readySkill){
+        if(skillSO.coolCheck){
+            Destroy(this.gameObject, m_cooltime + 1.0f);
+
             playerTransform.rotation = Quaternion.LookRotation(PlayerController.mouseDir);
             MousePos = PlayerController.mouseVec;
-            readySkill = false;
+            skillSO.coolCheck = false;
             PlayerController.lockBehaviour = true;
             playerAnimator.SetTrigger("doRain");
             yield return new WaitForSeconds(animDelay);
@@ -34,7 +38,6 @@ public class _Iokheira : Skill
             //spawnParticle.transform.parent = this.transform;
             yield return new WaitForSeconds(skillDuration);
 
-            Destroy(this.gameObject);
             Destroy(instantePrefab);
         } 
     }

@@ -32,6 +32,12 @@ public class PlayerController : MonoBehaviour
     private InterfaceManager interfaceManager;
 
     private bool deadCheck = false;
+
+    private bool readySkill;
+    private float realtime;
+    private bool QCoolTimeCheck = true;
+    private bool ECoolTimeCheck = true;
+    private bool RCoolTimeCheck = true;
     #endregion
 
     #region "Public"
@@ -58,6 +64,7 @@ public class PlayerController : MonoBehaviour
     public static bool lockBehaviour =false;
     public static Vector3 mouseDir;
     public static Vector3 mouseVec;
+
     #endregion
 
     private void Awake() {
@@ -149,20 +156,27 @@ public class PlayerController : MonoBehaviour
     private void Skill_Q(){
         if(skillList[0] == null) return;
         if(lockBehaviour) return;
+        if(!skillList[0].coolCheck) return;
+        Debug.Log(skillList[0].coolCheck);
         GameObject instObject = Instantiate(skillList[0].skillPrefab);
         instObject.transform.parent = transform;
+        StartCoroutine(interfaceManager.CoolSlot(skillList[0].skillCooltime, 0));
     }
     private void Skill_E(){
         if(skillList[1] == null) return;
         if(lockBehaviour) return;
+        if(!skillList[1].coolCheck) return;
         GameObject instObject = Instantiate(skillList[1].skillPrefab);
         instObject.transform.parent = transform;
+        StartCoroutine(interfaceManager.CoolSlot(skillList[1].skillCooltime, 1));
     }
     private void Skill_R(){
         if(skillList[2] == null) return;
         if(lockBehaviour) return;
+        if(!skillList[2].coolCheck) return;
         GameObject instObject = Instantiate(skillList[2].skillPrefab);
         instObject.transform.parent = transform;
+        StartCoroutine(interfaceManager.CoolSlot(skillList[2].skillCooltime, 2));
     }
     private void GetDamaged(int damage)
     {
@@ -196,7 +210,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region "CallBack"
-    
+
     private void OnCollisionEnter(Collision other) 
     {
         switch(other.transform.tag)

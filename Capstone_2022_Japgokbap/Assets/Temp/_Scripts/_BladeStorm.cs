@@ -8,6 +8,8 @@ public class _BladeStorm : Skill
     [SerializeField] private float skillDuration;
     
     private void Start() {
+        m_cooltime = skillSO.skillCooltime;
+
         StopCoroutine(DoSkill());
         StartCoroutine(DoSkill());
     }
@@ -16,8 +18,9 @@ public class _BladeStorm : Skill
     }
     public override IEnumerator DoSkill()
     {
-        if(readySkill){
-            readySkill = false;
+        if(skillSO.coolCheck){
+            Destroy(this.gameObject, m_cooltime + 1.0f);
+            skillSO.coolCheck = false;
             playerAnimator.SetTrigger("doBladeStorm");
 
             GameObject instantePrefab= Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
@@ -28,7 +31,10 @@ public class _BladeStorm : Skill
             yield return new WaitForSeconds(skillDuration);
 
             PlayerController.lockBehaviour = false;
-            Destroy(this.gameObject);
+            Destroy(instantePrefab);
         } 
     }
+    // public void DestroyThis(){
+    //     Destroy(this.gameObject);
+    // }
 }
