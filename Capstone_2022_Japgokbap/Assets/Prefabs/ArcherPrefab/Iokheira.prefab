@@ -50,3 +50,4 @@ MonoBehaviour:
   m_cooltime: 0
   animDelay: 2
   skillDuration: 10
+  arrowPrefab: {fileID: 8702706627783733255, guid: 1021e07c7ff37a24bbe0ad36ab64ba1e, type: 3}

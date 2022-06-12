@@ -47,4 +47,4 @@ MonoBehaviour:
   skillDamage: 0
   skillPrefab: {fileID: 8220244649824807838, guid: f349992537235624c934c46bf56254ab, type: 3}
   skillParticle: {fileID: 5288328550908618982, guid: 07eb39d3410ff4446b74f799bc7b620c, type: 3}
-  skillDuration: 0.65
+  skillDuration: 0.45

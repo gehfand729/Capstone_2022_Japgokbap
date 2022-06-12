@@ -7,10 +7,17 @@ public class AttackHit : MonoBehaviour
     int skillDamage;
     [SerializeField] SkillSO Skill;
 
+    private PlayerController playerController;
+
     private float TimeLeft = 1.0f;
     private float nextTime = 0.0f;
-    private void Awake() {
-        skillDamage = Skill.damage;
+    private void Start() {
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        if(Skill.skillLevel == 0){
+            skillDamage = 0;
+            return;
+        }
+        skillDamage = Skill.baseDamage + Skill.skillLevel * 5 + playerController.playerOffensePower;
     }
     // private void OnTriggerEnter(Collider other)
     // {

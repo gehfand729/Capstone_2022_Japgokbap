@@ -16,8 +16,11 @@ MonoBehaviour:
   skillName: "\uAE30\uBCF8\uACF5\uACA9"
   skillImage: {fileID: 0}
   skillLevel: 0
-  baseDamage: 100
+  baseDamage: 450
   damage: 0
   skillPrefab: {fileID: 7404829128309792422, guid: 5290d5a4b5116554c959781e97440225, type: 3}
+  skillCooltime: 0
+  coolCheck: 1
+  isPassive: 0
   skillDescription: "\uAD81\uC218 \uAE30\uBCF8\uACF5\uACA9"
   enhancementStatus: 0

@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
         Move();
     }
     private void Update() {
-        combat.damage = playerOffensePower;
+        // combat.damage = playerOffensePower;
 
         AttackToMouse();
         InputKey();
