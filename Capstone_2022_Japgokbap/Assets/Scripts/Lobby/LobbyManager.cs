@@ -33,7 +33,6 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject[] cameraPoints;
     [SerializeField] private GameObject characterSelectedUi;
-    [SerializeField] private float smoothTime;
     private Vector3 velocity = Vector3.zero;
 
     [Header("Buttons")]

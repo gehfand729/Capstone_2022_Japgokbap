@@ -52,7 +52,6 @@ public class Skeletons : Monster
 
     protected void Die_Enter()
     {
-        this.enemyHp = 0;
         SpawnExpObjet();
         GameManager.instance.AddScore(this.enemyScore);
         StageManager.instance.DespawnMonster(this.gameObject);

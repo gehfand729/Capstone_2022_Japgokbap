@@ -374,7 +374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &214382068
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1281,7 +1281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &409160170
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2977,7 +2977,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 34
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 50
     m_Alignment: 4
@@ -6773,7 +6773,6 @@ MonoBehaviour:
   - {fileID: 1352817849}
   - {fileID: 607692232}
   characterSelectedUi: {fileID: 713955800}
-  smoothTime: 0.3
   changeUsernameButton: {fileID: 500881772}
   showLeaderboardButton: {fileID: 1400125372}
   showShopButton: {fileID: 573968049}

@@ -49,6 +49,8 @@ public class StageManager : MonoBehaviour
 
     public StateMachine<States, StateDriverUnity> fsm;
 
+    public int debugCount;
+
     [Header ("Settings")]
     public float waitingTime;
     public int spawnerCount;
@@ -186,6 +188,7 @@ public class StageManager : MonoBehaviour
         }
 
         // 집어넣기
+        go.GetComponent<Monster>().InitState();
         go.transform.position = monsterPool.transform.position;
         go.transform.parent = monsterPool.transform;
         go.SetActive(false);
@@ -329,15 +332,23 @@ public class StageManager : MonoBehaviour
         {
             SpawnMonster("Skeleton1", monsters1.transform);
 
+            debugCount += 1;
+
             yield return new WaitForSeconds(waitingTime);
         }
+
+        debugCount = 0;
 
         for (int i = 0; i < count2; i++)
         {
             SpawnMonster("Skeleton2", monsters1.transform);
 
+            debugCount += 1;
+
             yield return new WaitForSeconds(waitingTime);
         }
+
+        debugCount = 0;
 
         yield return new WaitForSeconds(10f);
 

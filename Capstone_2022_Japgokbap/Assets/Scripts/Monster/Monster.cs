@@ -32,6 +32,7 @@ public abstract class Monster : MonoBehaviour
     [SerializeField] protected float enemyAttackSpeed;
     [SerializeField] protected bool isFollowingPlayer;
     [SerializeField] protected bool isAttacking;
+    [SerializeField] protected string currentState;
 
     [SerializeField] protected GameObject attackPrefab;
     
@@ -57,6 +58,8 @@ public abstract class Monster : MonoBehaviour
 
     void Update()
     {
+        currentState = fsm.State.ToString();
+
         targetPosition = GameManager.instance.GetPlayerPosition();
 
         fsm.Driver.Update.Invoke();
@@ -69,6 +72,12 @@ public abstract class Monster : MonoBehaviour
             Debug.Log($"Killed Count is {BoxSpawnManager.killedEnemyCount}");
             fsm.ChangeState(States.Die);
         }
+    }
+
+    public void InitState()
+    {
+        fsm.ChangeState(States.Follow);
+        enemyHp = originHp;
     }
 
     public int GetExp()
