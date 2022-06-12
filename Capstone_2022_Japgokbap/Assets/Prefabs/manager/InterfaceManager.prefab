@@ -73,7 +73,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0bfe4c5308a1de448b82e65bcee7378b, type: 2}
   - {fileID: 11400000, guid: e29b51e7e3b305640a6bb5c99de64542, type: 2}
   skillsByClass: []
+  leaderBoard: {fileID: 0}
+  clearClass: {fileID: 0}
+  clearStage: {fileID: 0}
+  clearTime: {fileID: 0}
+  clearLevel: {fileID: 0}
+  finalScore: {fileID: 0}
+  canGetGold: {fileID: 0}
   gameoverPanel: {fileID: 0}
+  youdiedImage: {fileID: 0}
   selectButtons: []
 --- !u!114 &3843726472443132525
 MonoBehaviour:

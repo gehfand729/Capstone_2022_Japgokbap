@@ -19,6 +19,9 @@ MonoBehaviour:
   baseDamage: 0
   damage: 0
   skillPrefab: {fileID: 0}
+  skillCooltime: 0
+  coolCheck: 1
   isPassive: 1
-  skillDescription: "\uACF5\uACA9\uB825\uC744 10 \uC0C1\uC2B9 \uC2DC\uD0A8\uB2E4."
+  skillDescription: "\uBC29\uC5B4\uB825\uC744 \uC601\uAD6C\uD788 10 \uC0C1\uC2B9
+    \uC2DC\uD0A8\uB2E4."
   enhancementStatus: 10

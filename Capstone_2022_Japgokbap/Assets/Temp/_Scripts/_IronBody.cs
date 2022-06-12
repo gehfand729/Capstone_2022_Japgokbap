@@ -20,7 +20,7 @@ public class _IronBody : Skill
     }
     public override IEnumerator DoSkill(){
         if(skillSO.coolCheck){
-            Destroy(this.gameObject, m_cooltime);
+            Destroy(this.gameObject, m_cooltime + 1.0f);
             PlayerController playerctrl = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
             int originStat = playerctrl.playerDeffencePower;
 
@@ -33,6 +33,7 @@ public class _IronBody : Skill
             spawnParticle.transform.parent = this.transform;
 
             playerctrl.playerDeffencePower += skillSO.enhancementStatus * skillSO.skillLevel;
+            yield return new WaitForSeconds(1.42f);
             PlayerController.lockBehaviour = false;
 
             yield return new WaitForSeconds(skillDuration);
