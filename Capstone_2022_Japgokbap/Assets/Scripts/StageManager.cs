@@ -233,8 +233,8 @@ public class StageManager : MonoBehaviour
     {
         fsm = new StateMachine<States, StateDriverUnity>(this);
 
-        //fsm.ChangeState(States.Ready);
-        fsm.ChangeState(States.Stage2); // for debugging
+        fsm.ChangeState(States.Ready);
+        //fsm.ChangeState(States.Stage2); // for debugging
     }
 
     private void Start()
