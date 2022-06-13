@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3158199913554318687}
   - component: {fileID: 3158116923491637231}
   - component: {fileID: 2923974671479466843}
+  - component: {fileID: 5883289798551097199}
   m_Layer: 0
   m_Name: Magic fire pro violet
-  m_TagString: Untagged
+  m_TagString: AttackPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4974,6 +4975,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &5883289798551097199
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958912735316379751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0.06530285, y: 0, z: -6.047884}
 --- !u!1 &2958944926126699911
 GameObject:
   m_ObjectHideFlags: 0
@@ -4986,9 +5000,10 @@ GameObject:
   - component: {fileID: 3158864113204129879}
   - component: {fileID: 3157605721214127677}
   - component: {fileID: 2924663483392071145}
+  - component: {fileID: 6377879661617482453}
   m_Layer: 0
   m_Name: Magic fire pro red
-  m_TagString: Untagged
+  m_TagString: AttackPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9948,6 +9963,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &6377879661617482453
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958944926126699911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: -5.731697, y: 0, z: -1.9310083}
 --- !u!1 &2959035986789808011
 GameObject:
   m_ObjectHideFlags: 0
@@ -53304,9 +53332,10 @@ GameObject:
   - component: {fileID: 3158796024388360321}
   - component: {fileID: 3158573135208260079}
   - component: {fileID: 2924035215367657211}
+  - component: {fileID: 4233065751053617865}
   m_Layer: 0
   m_Name: Magic fire pro blue
-  m_TagString: Untagged
+  m_TagString: AttackPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58266,6 +58295,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &4233065751053617865
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959524631664342667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 3.998293, y: 0, z: 4.5381527}
 --- !u!1 &2959537728778357801
 GameObject:
   m_ObjectHideFlags: 0
@@ -67910,9 +67952,10 @@ GameObject:
   - component: {fileID: 3158733104456937561}
   - component: {fileID: 3157861482039169917}
   - component: {fileID: 2924954059148772473}
+  - component: {fileID: 4867787058997881332}
   m_Layer: 0
   m_Name: Magic fire pro green
-  m_TagString: Untagged
+  m_TagString: AttackPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72872,6 +72915,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &4867787058997881332
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959702490647632285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: -3.607686, y: 0, z: 4.8544545}
 --- !u!1 &2959724711722599375
 GameObject:
   m_ObjectHideFlags: 0
@@ -101779,9 +101835,10 @@ GameObject:
   - component: {fileID: 2961302506952471081}
   - component: {fileID: 3146067384031593789}
   - component: {fileID: 3158634216461754957}
+  - component: {fileID: 1215344381554957027}
   m_Layer: 0
   m_Name: SubFire
-  m_TagString: Untagged
+  m_TagString: AttackPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101814,7 +101871,7 @@ ParticleSystem:
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -106584,6 +106641,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!135 &1215344381554957027
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959983378322027339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0.12860107, y: -1.085557, z: -0.07380676}
 --- !u!1 &2960274044259349761
 GameObject:
   m_ObjectHideFlags: 0
@@ -121165,7 +121235,6 @@ GameObject:
   - component: {fileID: 2961546217487074355}
   - component: {fileID: 3158941450123716223}
   - component: {fileID: 3158665205904704127}
-  - component: {fileID: 3026362808402128103}
   - component: {fileID: 1638581008957250924}
   m_Layer: 0
   m_Name: golemboss stary prefab
@@ -125978,19 +126047,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!65 &3026362808402128103
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960330917617857991}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 15, y: 1, z: 15}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1638581008957250924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126015,9 +126071,10 @@ GameObject:
   - component: {fileID: 3159090019998537047}
   - component: {fileID: 3158701006286318763}
   - component: {fileID: 2924233363078730815}
+  - component: {fileID: 8781885156835381230}
   m_Layer: 0
   m_Name: Magic fire pro orange
-  m_TagString: Untagged
+  m_TagString: AttackPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130977,6 +131034,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &8781885156835381230
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960339957049228543}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 5.7720604, y: 0, z: -1.8067904}
 --- !u!1 &2960343311151549047
 GameObject:
   m_ObjectHideFlags: 0

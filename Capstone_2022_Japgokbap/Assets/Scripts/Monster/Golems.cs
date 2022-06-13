@@ -41,6 +41,9 @@ public class Golems : Monster
 
     protected void Attack_Update()
     {
+        if (!this.enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            this.transform.LookAt(targetPosition);
+
         if (this.enemyAttackDelay < 0)
         {
             this.enemyAttackDelay = this.enemyAttackSpeed;;
@@ -82,20 +85,26 @@ public class Golems : Monster
     protected void Attack()
     {
         //Quaternion.Lerp(this.transform.rotation, GameManager.instance.playerInstance.transform.rotation, Time.deltaTime);
-        this.transform.LookAt(targetPosition);
         this.enemyAnimator.SetTrigger("attackTrigger");
     }
 
-    protected void ThrowAttackPrefab()
+    protected IEnumerator ThrowAttackPrefab()
     {
-        GameObject attack = Instantiate(attackSpell, this.transform.position + (targetPosition - this.transform.position).normalized * 8f + new Vector3(0, 4f, 0), Quaternion.identity);
+        GameObject attack = Instantiate(attackSpell, targetPosition + new Vector3(0, 1, 0), Quaternion.Euler(-90, 0, 0));
         attack.transform.LookAt(targetPosition);
-        attack.transform.parent = this.transform;
+        attack.transform.parent = StageManager.instance.enemyPrefabs.transform;
         Destroy(attack, this.enemyAttackSpeed);
 
-        attack = Instantiate(attackPrefab, this.transform.position + new Vector3(0,1,0), Quaternion.Euler(-90,0,0));
+        yield return new WaitForSeconds(1.5f);
+
+        SpawnAttackPrefab(attack);
+    }
+
+    protected void SpawnAttackPrefab(GameObject spell)
+    {
+        GameObject attack = Instantiate(attackPrefab, spell.transform.position + new Vector3(0, 1, 0), Quaternion.Euler(-90, 0, 0));
         attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower);
-        attack.transform.parent = this.transform;
+        attack.transform.parent = StageManager.instance.enemyPrefabs.transform;
         Destroy(attack, this.enemyAttackSpeed);
     }
 }

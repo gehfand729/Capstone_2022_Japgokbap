@@ -3556,11 +3556,12 @@ MonoBehaviour:
   enemyAttackSpeed: 5
   isFollowingPlayer: 0
   isAttacking: 0
+  currentState: 
   attackPrefab: {fileID: 6116761994887682889, guid: 14d536837bafa214583b55e6543d9c75, type: 3}
   hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
   attackSpell: {fileID: 3268407896318955953, guid: cb91ab3357ad45545804bde1354abe3d, type: 3}
   strayDelay: 15
-  strayCoolTime: 15
+  strayCoolTime: 25
   strayPrefab: {fileID: 2960330917617857991, guid: c0b9d66c6780ee840bd7cf9cfb5509e0, type: 3}
 --- !u!136 &8775437893334837690
 CapsuleCollider:

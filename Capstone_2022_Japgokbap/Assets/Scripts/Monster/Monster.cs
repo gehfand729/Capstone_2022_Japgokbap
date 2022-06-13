@@ -64,7 +64,10 @@ public abstract class Monster : MonoBehaviour
 
         fsm.Driver.Update.Invoke();
 
-        enemyAttackDelay -= Time.deltaTime;
+        if (enemyAttackRange != 0f)
+        {
+            enemyAttackDelay -= Time.deltaTime;
+        }
 
         if (enemyHp < 0)
         {

@@ -14,8 +14,6 @@ public class Goblins : Monster
     {
         if (this.isFollowingPlayer)
         {
-            FollowSetting();
-
             Move();
         }
 
