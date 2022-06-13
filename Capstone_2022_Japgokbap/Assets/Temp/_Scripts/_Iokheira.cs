@@ -23,13 +23,14 @@ public class _Iokheira : Skill
     {
         if(skillSO.coolCheck){
             Destroy(this.gameObject, m_cooltime + 1.0f);
-
             playerTransform.rotation = Quaternion.LookRotation(PlayerController.mouseDir);
             MousePos = PlayerController.mouseVec;
             skillSO.coolCheck = false;
             PlayerController.lockBehaviour = true;
             playerAnimator.SetTrigger("doRain");
             yield return new WaitForSeconds(0.8f);
+            GetComponent<AudioSource>().Play();
+
             GameObject shootArrow = Instantiate(arrowPrefab, playerTransform.position + Vector3.up, Quaternion.identity);
 
             yield return new WaitForSeconds(animDelay - 1.4f);

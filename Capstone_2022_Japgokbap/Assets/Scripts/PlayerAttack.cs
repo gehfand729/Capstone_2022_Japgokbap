@@ -8,6 +8,7 @@ public class PlayerAttack : Skill{
     [SerializeField] private float skillDuration;
 
     private void Start() {
+        skillSO.skillLevel = 1;
         StopCoroutine(DoSkill());
         StartCoroutine(DoSkill());
     }

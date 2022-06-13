@@ -21,6 +21,7 @@ public class _BladeStorm : Skill
         if(skillSO.coolCheck){
             Destroy(this.gameObject, m_cooltime + 1.0f);
             skillSO.coolCheck = false;
+            PlayerController.attackLock = true;
             playerAnimator.SetTrigger("doBladeStorm");
 
             GameObject instantePrefab= Instantiate(skillPrefab, playerTransform.position, Quaternion.identity);
@@ -29,8 +30,8 @@ public class _BladeStorm : Skill
             instantePrefab.transform.parent = this.transform;
             spawnParticle.transform.parent = this.transform;
             yield return new WaitForSeconds(skillDuration);
+            PlayerController.attackLock = false;
 
-            PlayerController.lockBehaviour = false;
             Destroy(instantePrefab);
         } 
     }

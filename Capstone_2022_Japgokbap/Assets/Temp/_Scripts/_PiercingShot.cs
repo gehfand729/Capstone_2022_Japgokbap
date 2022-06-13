@@ -32,7 +32,7 @@ public class _PiercingShot : Skill
             playerAnimator.SetTrigger("doPiercing");
             yield return new WaitForSeconds(skillDuration);
 
-
+            GetComponent<AudioSource>().Play();
             GameObject instantePrefab = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
             //GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + playerTransform.forward, playerTransform.rotation);
 
