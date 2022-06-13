@@ -29,7 +29,7 @@ public class _PiercingShot : Skill
 
             playerTransform.rotation = Quaternion.LookRotation(PlayerController.mouseDir);
             PlayerController.lockBehaviour = true;
-            playerAnimator.SetTrigger("doPiercing");
+            playerAnimator.SetTrigger("doShoot");
             yield return new WaitForSeconds(skillDuration);
 
 
@@ -38,7 +38,7 @@ public class _PiercingShot : Skill
 
             // instantePrefab.transform.parent = this.transform;
             //spawnParticle.transform.parent = this.transform;
-            yield return new WaitForSeconds(1.0f);
+
             
             PlayerController.lockBehaviour = false;
         }

@@ -48,5 +48,5 @@ MonoBehaviour:
   skillPrefab: {fileID: 3628086227882583089, guid: 749cc74afe83e894aab9da6b73b3e7a3, type: 3}
   skillParticle: {fileID: 8177509200838468481, guid: db7e3c2b6614d3e46bf082b2609d1c8e, type: 3}
   m_cooltime: 0
-  animDelay: 1.543
-  skillDuration: 1.23
+  animDelay: 2
+  skillDuration: 2

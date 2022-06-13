@@ -49,7 +49,7 @@ MonoBehaviour:
   skillPrefab: {fileID: 7139951906352003082, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
   skillParticle: {fileID: 0}
   m_cooltime: 0
-  skillDuration: 1.5
+  skillDuration: 0.3
   DestoryTime: 3
 --- !u!1001 &8260510332067431242
 PrefabInstance:
@@ -58,42 +58,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8144092075350910318}
     m_Modifications:
-    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.0045389733
-      objectReference: {fileID: 0}
-    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.3207547
-      objectReference: {fileID: 0}
-    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.13287756
-      objectReference: {fileID: 0}
-    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
-      propertyPath: InitialModule.startColor.minColor.b
-      value: 0.042881675
-      objectReference: {fileID: 0}
-    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
-      propertyPath: InitialModule.startColor.minColor.g
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
-      propertyPath: InitialModule.startColor.minColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1733798852736658489, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
-      propertyPath: m_Size.z
-      value: 6.9728847
-      objectReference: {fileID: 0}
-    - target: {fileID: 1733798852736658489, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
-      propertyPath: m_Center.x
-      value: 0.012519042
-      objectReference: {fileID: 0}
-    - target: {fileID: 1733798852736658489, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
-      propertyPath: m_Center.z
-      value: 3.161104
-      objectReference: {fileID: 0}
     - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -140,6 +104,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7139951906352003082, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
       propertyPath: m_Name
+      value: PiercingShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139951906352003082, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_TagString
       value: PiercingShot
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -33,7 +33,6 @@ public class _WarriorRage : Skill
             spawnParticle.transform.parent = this.transform;
 
             playerctrl.playerOffensePower += enhanceStat;
-            yield return new WaitForSeconds(0.8f);
             PlayerController.lockBehaviour = false;
 
             yield return new WaitForSeconds(skillDuration);

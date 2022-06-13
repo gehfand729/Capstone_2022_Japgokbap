@@ -40,7 +40,7 @@ public class _ContinuousShooting : Skill
 
             // instantePrefab.transform.parent = this.transform;
             spawnParticle.transform.parent = this.transform;
-            yield return new WaitForSeconds(0.45f);
+
             
             PlayerController.lockBehaviour = false;
        }

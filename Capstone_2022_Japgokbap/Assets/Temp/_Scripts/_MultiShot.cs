@@ -33,7 +33,6 @@ public class _MultiShot : Skill
 
             GameObject test1 = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
             
-            yield return new WaitForSeconds(0.5f);
             PlayerController.lockBehaviour = false;
 
             // Destroy(this.gameObject, DestoryTime);

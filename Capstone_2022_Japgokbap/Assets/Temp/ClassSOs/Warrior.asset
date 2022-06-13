@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   className: Warrior
   hp: 1000
-  offensePower: 10
+  offensePower: 800
   deffencePower: 55
   moveSpeed: 10
   classPrefab: {fileID: 2364408046984564666, guid: a0af58571d7ce104ea01d2863437c206, type: 3}

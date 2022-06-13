@@ -79,7 +79,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SpaceCut
-  m_Speed: 1.64
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 180500375209936659}
@@ -349,7 +349,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SeismWave
-  m_Speed: 1.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8307774521893749455}
@@ -1190,7 +1190,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Slash
-  m_Speed: 1.85
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4550103397467107947}

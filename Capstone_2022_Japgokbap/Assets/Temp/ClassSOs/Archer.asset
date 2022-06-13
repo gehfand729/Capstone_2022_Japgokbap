@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   className: Archer
   hp: 900
-  offensePower: 10
+  offensePower: 450
   deffencePower: 40
   moveSpeed: 11
   classPrefab: {fileID: 5759480657984908, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}

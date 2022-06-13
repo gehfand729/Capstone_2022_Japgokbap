@@ -9,7 +9,6 @@ public class ArcherAttack : Skill
     [SerializeField] private float DestoryTime;
 
     private void Start() {
-        skillSO.skillLevel = 1;
         StopCoroutine(DoSkill());
         StartCoroutine(DoSkill());
     }
@@ -20,9 +19,14 @@ public class ArcherAttack : Skill
         playerAnimator.SetTrigger("doShoot");
         yield return new WaitForSeconds(skillDuration);
 
-        GameObject instantePrefab = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
-        yield return new WaitForSeconds(0.5f);
 
+        GameObject instantePrefab = Instantiate(skillPrefab, playerTransform.position + new Vector3(0, 3.0f, 0), playerTransform.rotation);
+        //GameObject spawnParticle = Instantiate(skillParticle, playerTransform.position + playerTransform.forward, playerTransform.rotation);
+
+        // instantePrefab.transform.parent = this.transform;
+        //spawnParticle.transform.parent = this.transform;
+
+        
         PlayerController.lockBehaviour = false;
 
         Destroy(this.gameObject, DestoryTime);
