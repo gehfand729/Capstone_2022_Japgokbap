@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8144092075350910318}
   - component: {fileID: 184862003910700486}
+  - component: {fileID: -8292493471382791173}
   m_Layer: 0
   m_Name: PiercingShot
   m_TagString: Untagged
@@ -49,8 +50,104 @@ MonoBehaviour:
   skillPrefab: {fileID: 7139951906352003082, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
   skillParticle: {fileID: 0}
   m_cooltime: 0
-  skillDuration: 0.3
+  skillDuration: 1.5
   DestoryTime: 3
+--- !u!82 &-8292493471382791173
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871978317639250311}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c39f011e122707f49b8c5dbaae76c860, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &8260510332067431242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,6 +155,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8144092075350910318}
     m_Modifications:
+    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.0045389733
+      objectReference: {fileID: 0}
+    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.13287756
+      objectReference: {fileID: 0}
+    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.042881675
+      objectReference: {fileID: 0}
+    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 124626467069968447, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733798852736658489, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_Size.z
+      value: 6.9728847
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733798852736658489, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_Center.x
+      value: 0.012519042
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733798852736658489, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
+      propertyPath: m_Center.z
+      value: 3.161104
+      objectReference: {fileID: 0}
     - target: {fileID: 5117982298949570855, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -107,8 +240,8 @@ PrefabInstance:
       value: PiercingShot
       objectReference: {fileID: 0}
     - target: {fileID: 7139951906352003082, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}
-      propertyPath: m_TagString
-      value: PiercingShot
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 793b7fd9b690919489fd3d53ca203ee6, type: 3}

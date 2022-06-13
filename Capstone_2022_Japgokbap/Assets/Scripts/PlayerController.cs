@@ -6,6 +6,7 @@ using System;
 public class PlayerController : MonoBehaviour
 {
     #region "Private"
+    private bool isAlive = true;
     private Camera _camera;
     private Animator playerAnimator;
 
@@ -38,6 +39,8 @@ public class PlayerController : MonoBehaviour
     private bool QCoolTimeCheck = true;
     private bool ECoolTimeCheck = true;
     private bool RCoolTimeCheck = true;
+
+    private AudioSource sound_Step;
     #endregion
 
     #region "Public"
@@ -64,6 +67,7 @@ public class PlayerController : MonoBehaviour
     public static bool lockBehaviour =false;
     public static Vector3 mouseDir;
     public static Vector3 mouseVec;
+    public static bool attackLock = false;
 
     #endregion
 
@@ -72,6 +76,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         interfaceManager = GameObject.FindWithTag("InterfaceManager").GetComponent<InterfaceManager>();
+        sound_Step = GetComponent<AudioSource>();
         keyDictionary = new Dictionary<KeyCode, Action>
         {
             { KeyCode.Q, Skill_Q },
@@ -90,13 +95,16 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        if(!isAlive) return;
         Move();
     }
     private void Update() {
-        combat.damage = playerOffensePower;
-
-        AttackToMouse();
-        InputKey();
+        // combat.damage = playerOffensePower;
+        if(!isAlive) return;
+        if(!attackLock){
+            AttackToMouse();
+            InputKey();
+        }
 
         //test
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
@@ -122,15 +130,14 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move(){
-        if(!lockBehaviour){
-            moveDirX = Input.GetAxisRaw("Horizontal");
-            moveDirZ = Input.GetAxisRaw("Vertical");
-            inputDir = new Vector3(moveDirX, 0, moveDirZ).normalized;
+        if(lockBehaviour) return;
+        moveDirX = Input.GetAxisRaw("Horizontal");
+        moveDirZ = Input.GetAxisRaw("Vertical");
+        inputDir = new Vector3(moveDirX, 0, moveDirZ).normalized;
 
-            rb.MovePosition(transform.position + inputDir*Time.deltaTime*playerMoveSpeed);
-            playerAnimator.SetBool("isWalk",inputDir != Vector3.zero);
-            PlayerRotate();
-        }
+        rb.MovePosition(transform.position + inputDir*Time.deltaTime*playerMoveSpeed);
+        playerAnimator.SetBool("isWalk",inputDir != Vector3.zero);
+        PlayerRotate();
     }
 
     private void PlayerRotate(){
@@ -142,15 +149,14 @@ public class PlayerController : MonoBehaviour
 
     //마우스로 공격하는 함수
     private void AttackToMouse(){     
-        if(!lockBehaviour){
-            if(Input.GetMouseButtonDown(0)){
-                //행동 제한
-                lockBehaviour =true;
-                
-                transform.rotation = Quaternion.LookRotation(mouseDir);
-                GameObject instObject = Instantiate(combat.skillPrefab,transform.position, Quaternion.identity);
-                instObject.transform.parent = transform;
-            }
+        if(lockBehaviour) return;
+        if(Input.GetMouseButtonDown(0)){
+            //행동 제한
+            lockBehaviour =true;
+            
+            transform.rotation = Quaternion.LookRotation(mouseDir);
+            GameObject instObject = Instantiate(combat.skillPrefab,transform.position, Quaternion.identity);
+            instObject.transform.parent = transform;
         }
     }
     private void Skill_Q(){
@@ -184,7 +190,7 @@ public class PlayerController : MonoBehaviour
 
         if (defeatedDamage < 0)
         {
-            defeatedDamage = 0;
+            defeatedDamage = 50;
         }
 
         playerCurrentHP -= defeatedDamage;
@@ -193,6 +199,8 @@ public class PlayerController : MonoBehaviour
         if(playerCurrentHP <= 0){
             deadCheck = true;
             playerAnimator.SetTrigger("Death");
+            isAlive = false;
+            Destroy(this.gameObject.GetComponent<CapsuleCollider>());
         }
     }
     #endregion
@@ -206,6 +214,10 @@ public class PlayerController : MonoBehaviour
             playerLvUpExp *= 1.3f;
             interfaceManager.ActiveSelectAbillity();
         }
+    }
+
+    public void PlayStepSound(){
+        sound_Step.Play();
     }
     #endregion
 
@@ -249,7 +261,7 @@ public class PlayerController : MonoBehaviour
             break;
             case "Potion":
                 //potion의 고유 hp로 바꿔야함.
-                playerCurrentHP += 10;
+                playerCurrentHP += 100;
                 Debug.Log("CurrentHP has recovered");
                 if(playerCurrentHP >= playerMaxHP){
                     playerCurrentHP = playerMaxHP;

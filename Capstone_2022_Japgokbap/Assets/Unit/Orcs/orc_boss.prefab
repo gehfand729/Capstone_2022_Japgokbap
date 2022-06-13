@@ -1403,7 +1403,7 @@ GameObject:
   - component: {fileID: 6971717871356106096}
   - component: {fileID: 2448041770610516007}
   - component: {fileID: 8708929910197334076}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: orc_boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -1490,6 +1490,7 @@ MonoBehaviour:
   enemyAttackSpeed: 4
   isFollowingPlayer: 0
   isAttacking: 0
+  currentState: 
   attackPrefab: {fileID: 5499419445137193981, guid: 02b4dce336050484cb70a26e0970a9ba, type: 3}
   hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
   rushDelay: 5

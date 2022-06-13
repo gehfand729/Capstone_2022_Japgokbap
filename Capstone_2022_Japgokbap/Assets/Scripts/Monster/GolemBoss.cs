@@ -53,9 +53,6 @@ public class GolemBoss : Monster
 
     protected void Attack_Update()
     {
-        if (!this.enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-            this.transform.LookAt(targetPosition);
-
         strayDelay -= Time.deltaTime;
 
         if (this.enemyAttackDelay < 0)
@@ -111,24 +108,15 @@ public class GolemBoss : Monster
         this.enemyAnimator.SetTrigger("attackTrigger");
     }
 
-    protected IEnumerator ThrowAttackPrefab()
+    protected void ThrowAttackPrefab()
     {
-        GameObject attack = Instantiate(attackSpell, targetPosition + new Vector3(0, 1, 0), Quaternion.Euler(-90, 0, 0));
+        GameObject attack = Instantiate(attackSpell, this.transform.position + (targetPosition - this.transform.position).normalized * 10f + new Vector3(0, 4f, 0), Quaternion.identity);
         attack.transform.LookAt(targetPosition);
-        attack.transform.parent = StageManager.instance.enemyPrefabs.transform;
-        Destroy(attack, this.enemyAttackSpeed);
+        attack.transform.parent = this.transform;
 
-        yield return new WaitForSeconds(1.5f);
-
-        SpawnAttackPrefab(attack);
-    }
-
-    protected void SpawnAttackPrefab(GameObject spell)
-    {
-        GameObject attack = Instantiate(attackPrefab, spell.transform.position + new Vector3(0, 5, 0), Quaternion.Euler(-90, 0, 0));
+        attack = Instantiate(this.attackPrefab, targetPosition + new Vector3(0,3,0), Quaternion.Euler(-90,0,0));
         attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower);
-        attack.transform.parent = StageManager.instance.enemyPrefabs.transform;
-        Destroy(attack, this.enemyAttackSpeed);
+        Destroy(attack, this.enemyAttackSpeed / 2);
     }
 
     protected void SpawnStaryPrefab()
@@ -136,7 +124,6 @@ public class GolemBoss : Monster
         strayDelay = strayCoolTime;
 
         GameObject stary = Instantiate(strayPrefab, this.transform.position + new Vector3(0, 6, 0), Quaternion.identity);
-        stary.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower * 2);
         stary.transform.parent = this.transform;
         Destroy(stary, strayDelay);
     }

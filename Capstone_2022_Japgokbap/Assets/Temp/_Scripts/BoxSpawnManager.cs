@@ -19,7 +19,7 @@ public class BoxSpawnManager : MonoBehaviour
     #endregion
 
     private void Awake(){
-        needCount = 10;
+        needCount = 25;
 
         randomRange = 25.0f;
     }

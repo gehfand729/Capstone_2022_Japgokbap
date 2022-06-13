@@ -17,6 +17,8 @@ public class ChasingArrow : MonoBehaviour
     private float nextTime = 0.0f;
 
     [SerializeField] LayerMask m_layerMask = 0;
+    
+    int count = 0;
 
     private void Awake() {
         playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
@@ -44,8 +46,12 @@ public class ChasingArrow : MonoBehaviour
     }
 
     private void ChasingFunc(){
+        count ++;
         this.gameObject.transform.LookAt(m_tfTarget);
-        m_rigid.AddForce(this.gameObject.transform.forward * projectileSpeed, ForceMode.Impulse);
+        if(count % 30 == 0){
+            GetComponent<AudioSource>().Play();
+        }
+         m_rigid.AddForce(this.gameObject.transform.forward * projectileSpeed, ForceMode.Impulse);
         // m_rigid.velocity = dir.normalized * projectileSpeed; 
             
     }
