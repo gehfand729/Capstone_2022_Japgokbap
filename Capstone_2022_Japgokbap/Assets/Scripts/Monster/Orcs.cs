@@ -26,8 +26,6 @@ public class Orcs : Monster
 
         if (this.isFollowingPlayer)
         {
-            FollowSetting();
-
             Move();
         }
 
