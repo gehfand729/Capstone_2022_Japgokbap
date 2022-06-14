@@ -3470,7 +3470,7 @@ GameObject:
   - component: {fileID: 8368029286573521025}
   - component: {fileID: -3447941321695686617}
   - component: {fileID: 8775437893334837690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: golem_boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -3561,7 +3561,7 @@ MonoBehaviour:
   hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
   attackSpell: {fileID: 3268407896318955953, guid: cb91ab3357ad45545804bde1354abe3d, type: 3}
   strayDelay: 15
-  strayCoolTime: 25
+  strayCoolTime: 15
   strayPrefab: {fileID: 2960330917617857991, guid: c0b9d66c6780ee840bd7cf9cfb5509e0, type: 3}
 --- !u!136 &8775437893334837690
 CapsuleCollider:

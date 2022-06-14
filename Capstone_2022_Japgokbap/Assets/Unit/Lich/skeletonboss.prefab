@@ -2081,7 +2081,7 @@ GameObject:
   - component: {fileID: -7993055974861849269}
   - component: {fileID: 277758624}
   - component: {fileID: 8137638630153633474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: skeletonboss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -2187,6 +2187,7 @@ MonoBehaviour:
   enemyAttackSpeed: 7
   isFollowingPlayer: 0
   isAttacking: 0
+  currentState: 
   attackPrefab: {fileID: 0}
   hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
   spawnSpell: {fileID: 4885406171349288090, guid: 5b411e251bf4a5646aea1667c39ded36, type: 3}

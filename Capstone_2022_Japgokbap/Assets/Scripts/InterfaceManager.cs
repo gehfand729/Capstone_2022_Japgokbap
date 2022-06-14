@@ -227,7 +227,6 @@ public class InterfaceManager : MonoBehaviour
                 ChoicedSkillManage(selectButtons[selectNumber].skill);
             }
             playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).skillLevel += 1;
-            // playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).damage = playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).baseDamage *playerController.skillList.Find(x => x.skillCode == selectButtons[selectNumber].skill.skillCode).skillLevel;
         }else {
             if(selectButtons[selectNumber].skill.skillName == "근력강화"){
                 playerController.playerOffensePower += selectButtons[selectNumber].skill.enhancementStatus;

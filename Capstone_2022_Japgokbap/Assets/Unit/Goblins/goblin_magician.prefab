@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 919488387969091527}
   - component: {fileID: 4903468802697672916}
   - component: {fileID: 5222592231797272666}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: goblin_magician
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -951,6 +951,7 @@ MonoBehaviour:
   enemyAttackSpeed: 7
   isFollowingPlayer: 0
   isAttacking: 0
+  currentState: 
   attackPrefab: {fileID: 4971319159835614275, guid: 550f5357be9c1e34392b2a55b565c50a, type: 3}
   hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
 --- !u!136 &4903468802697672916
