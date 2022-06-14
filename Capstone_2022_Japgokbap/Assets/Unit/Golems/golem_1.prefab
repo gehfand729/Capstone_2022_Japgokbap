@@ -2836,7 +2836,7 @@ GameObject:
   - component: {fileID: 1736469477408031940}
   - component: {fileID: 7587142946156074080}
   - component: {fileID: 7689828041180269609}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: golem_1
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -2911,7 +2911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e336aeecbec4f447a66563f8e748b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHp: 620
+  enemyHp: 320
   originHp: 0
   enemyOffensePower: 280
   enemyDefensePower: 55

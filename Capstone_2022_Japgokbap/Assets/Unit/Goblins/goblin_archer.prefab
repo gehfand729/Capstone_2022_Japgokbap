@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 4711259687979921473}
   - component: {fileID: 2309995832683111704}
   - component: {fileID: 8698977320935016585}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: goblin_archer
   m_TagString: Monster
   m_Icon: {fileID: 0}
