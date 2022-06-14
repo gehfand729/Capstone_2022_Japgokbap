@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 8222393179913384835}
   - component: {fileID: -2206814981477001862}
   - component: {fileID: 4916703757097452967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: goblin_army
   m_TagString: Monster
   m_Icon: {fileID: 0}

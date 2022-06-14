@@ -15,11 +15,11 @@ C:/Users/Game/Desktop/gitdes/Capstone_2022_Japgokbap/Capstone_2022_Japgokbap
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60382
+49855
 Successfully changed project path to: C:/Users/Game/Desktop/gitdes/Capstone_2022_Japgokbap/Capstone_2022_Japgokbap
 C:/Users/Game/Desktop/gitdes/Capstone_2022_Japgokbap/Capstone_2022_Japgokbap
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 46.96 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 47.54 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.33f1 (915a7af8b0d5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.33f1/Editor/Data/Resources/UnitySubsystems
@@ -35,90 +35,90 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.33f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.33f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.33f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56516
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56712
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.33f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007527 seconds.
+Registered in 0.006724 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 40.10 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 39.52 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.755 seconds
+- Completed reload, in  0.797 seconds
 Domain Reload Profiling:
-	ReloadAssembly (755ms)
-		BeginReloadAssembly (161ms)
+	ReloadAssembly (797ms)
+		BeginReloadAssembly (172ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (493ms)
-			LoadAssemblies (149ms)
+		EndReloadAssembly (500ms)
+			LoadAssemblies (168ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (150ms)
+			SetupTypeCache (164ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (196ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (151ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (40ms)
-				BeforeProcessingInitializeOnLoad (17ms)
-				ProcessInitializeOnLoadAttributes (76ms)
-				ProcessInitializeOnLoadMethodAttributes (58ms)
+				BeforeProcessingInitializeOnLoad (15ms)
+				ProcessInitializeOnLoadAttributes (67ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.017943 seconds.
+Registered in 0.009507 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Game\Desktop\gitdes\Capstone_2022_Japgokbap\Capstone_2022_Japgokbap\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.840 seconds
+- Completed reload, in  1.608 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1841ms)
-		BeginReloadAssembly (223ms)
+	ReloadAssembly (1610ms)
+		BeginReloadAssembly (241ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (1508ms)
-			LoadAssemblies (215ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1287ms)
+			LoadAssemblies (168ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (453ms)
+			SetupTypeCache (386ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (59ms)
-			SetupLoadedEditorAssemblies (680ms)
+			RebuildScriptCaches (75ms)
+			SetupLoadedEditorAssemblies (567ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (250ms)
-				ProcessInitializeOnLoadAttributes (354ms)
-				ProcessInitializeOnLoadMethodAttributes (19ms)
-				AfterProcessingInitializeOnLoad (50ms)
-				EditorAssembliesLoaded (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (106ms)
+				ProcessInitializeOnLoadAttributes (393ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (52ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1770 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 109.3 MB.
-System memory in use after: 109.3 MB.
+System memory in use before: 109.6 MB.
+System memory in use after: 109.7 MB.
 
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2225.
-Total: 2.498400 ms (FindLiveObjects: 0.145500 ms CreateObjectMapping: 0.064300 ms MarkObjects: 2.222800 ms  DeleteObjects: 0.065300 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2228.
+Total: 2.290800 ms (FindLiveObjects: 0.123500 ms CreateObjectMapping: 0.052200 ms MarkObjects: 2.051100 ms  DeleteObjects: 0.063400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -132,547 +132,646 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/warrior_xattack.fbx
-  artifactKey: Guid(f45aa78cc6bbf524b8c51071e929931d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/warrior_xattack.fbx using Guid(f45aa78cc6bbf524b8c51071e929931d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dc611fdb62607ec01a570dde30dd36d') in 0.131166 seconds 
+  path: Assets/Scenes/EnemyTestScene.unity
+  artifactKey: Guid(44501a405d37fa44a99ed6137eac7770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/EnemyTestScene.unity using Guid(44501a405d37fa44a99ed6137eac7770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '231d1f7bdb609eb0d7baa246b0332568') in 0.006681 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000183 seconds.
-  path: Assets/Cube.prefab
-  artifactKey: Guid(38b3a502db29e4a47925de3357288b27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cube.prefab using Guid(38b3a502db29e4a47925de3357288b27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a05927d442e29c747329d5b3810016e') in 0.375302 seconds 
+  Time since last request: 0.000194 seconds.
+  path: Assets/Scenes/LoadingScene.unity
+  artifactKey: Guid(2353e3d164381b843b1d67c0e02aa0eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LoadingScene.unity using Guid(2353e3d164381b843b1d67c0e02aa0eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c656a636409cd32d763b80d04725322a') in 0.004380 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000168 seconds.
-  path: Assets/Unit/Skeletons/Skeleton2.prefab
-  artifactKey: Guid(493bef09536156c4098f060fb48e35de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton2.prefab using Guid(493bef09536156c4098f060fb48e35de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '038e58d5b8dfe25b1269715b41a207ec') in 0.525769 seconds 
+  Time since last request: 0.000211 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(8800aa351dd389b4f884ab2a24b7368e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(8800aa351dd389b4f884ab2a24b7368e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0123e184c8d195dcd223be12bdd0618') in 0.005222 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000196 seconds.
-  path: Assets/Unit/Skeletons/Skeleton1.prefab
-  artifactKey: Guid(4869629ee6ba3f14d8ebe7498e799f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton1.prefab using Guid(4869629ee6ba3f14d8ebe7498e799f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd977289e734dc4d285dd4fef492f7434') in 0.110872 seconds 
+  Time since last request: 2.556014 seconds.
+  path: Assets/Characters
+  artifactKey: Guid(38ace054e030b474d992f846e79b41df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters using Guid(38ace054e030b474d992f846e79b41df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5151a0a133270dfabf8fc908fc6a767b') in 0.004688 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000308 seconds.
-  path: Assets/Unit/Skeletons/Skeleton4.prefab
-  artifactKey: Guid(ceb82173a6538e745964d5c23f170081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton4.prefab using Guid(ceb82173a6538e745964d5c23f170081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01a2740a42d8912eb77788eaedd0fa92') in 0.102172 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000306 seconds.
-  path: Assets/Unit
-  artifactKey: Guid(ef428ec79014b8b49bdfbb7f4bb7f406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit using Guid(ef428ec79014b8b49bdfbb7f4bb7f406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22b29c45035938ff9c192303ef11cf17') in 0.005566 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/warrior_rage.fbx
-  artifactKey: Guid(cff5495e3cbe449479c462e8801d5e93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/warrior_rage.fbx using Guid(cff5495e3cbe449479c462e8801d5e93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c376c652d1d7fc552ede4effd9b09c0') in 0.012525 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000290 seconds.
-  path: Assets/Unit/Skeletons/Skeleton3.prefab
-  artifactKey: Guid(b76dfcab8424d25449f82dcbedc315d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton3.prefab using Guid(b76dfcab8424d25449f82dcbedc315d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1226401b200ecb8efa40d4502e0e5c75') in 0.061407 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000230 seconds.
-  path: Assets/Unit/Skeletons/s_Skeleton.prefab
-  artifactKey: Guid(d413e9966ba7d9a429411afc7d7491b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/s_Skeleton.prefab using Guid(d413e9966ba7d9a429411afc7d7491b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03d0e1595e46926e3fa7d2b82aded241') in 0.159685 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000242 seconds.
-  path: Assets/Scenes/GameScene.unity
-  artifactKey: Guid(977376159fd45c947bbf40ae742f7b76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/GameScene.unity using Guid(977376159fd45c947bbf40ae742f7b76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07fa0c37f5bdc8ac94e33a9ee066ef7d') in 0.004298 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/Unit/Skeletons
-  artifactKey: Guid(1e72db6b4cf5e4740aaf6ab361a1954d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons using Guid(1e72db6b4cf5e4740aaf6ab361a1954d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c77f6cae2d942f0d9c4a5abc363f90ba') in 0.004498 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000190 seconds.
-  path: Assets/warrior_armor.fbx
-  artifactKey: Guid(f0ef78a334646594c8e326dea16977d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/warrior_armor.fbx using Guid(f0ef78a334646594c8e326dea16977d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5511b2e1c426793702a08855917972aa') in 0.010369 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.951096 seconds.
-  path: Assets/Unit/Goblins
-  artifactKey: Guid(d685ff55bb6fc7f48b3e6a123920d733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Goblins using Guid(d685ff55bb6fc7f48b3e6a123920d733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c66e351d4ebd1b295a9bb0941c884fc') in 0.005632 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.030278 seconds.
-  path: Assets/Unit/Goblins/goblin_archer.prefab
-  artifactKey: Guid(5b6c51ed0e53ef54eb57066b57ff1bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Goblins/goblin_archer.prefab using Guid(5b6c51ed0e53ef54eb57066b57ff1bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd871fa465a7da500fc9f691c7ba38a5e') in 0.054286 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000202 seconds.
-  path: Assets/Unit/Goblins/goblin_base.prefab
-  artifactKey: Guid(072ea26c2fa4a174ab6773980f178714) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Goblins/goblin_base.prefab using Guid(072ea26c2fa4a174ab6773980f178714) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00622fb34ad7061fa90340cb955c201c') in 0.047506 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000172 seconds.
-  path: Assets/Unit/Goblins/goblin_army.prefab
-  artifactKey: Guid(c1f2ac0630b8e5840b5b071b56d536a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Goblins/goblin_army.prefab using Guid(c1f2ac0630b8e5840b5b071b56d536a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6a1d3d8f5716341b915d607dbfe444d') in 0.048117 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000163 seconds.
-  path: Assets/Unit/Goblins/goblin_magician.prefab
-  artifactKey: Guid(f8b3e9347704ed141a9fc4d0a7248783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Goblins/goblin_magician.prefab using Guid(f8b3e9347704ed141a9fc4d0a7248783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '535148c6e6dc88635dbfe294caa2a084') in 0.049094 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000189 seconds.
-  path: Assets/Unit/Goblins/New Material.mat
-  artifactKey: Guid(3d299f702f65a25478700ae5aa1a020a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Goblins/New Material.mat using Guid(3d299f702f65a25478700ae5aa1a020a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b38fccadece10c7286f83880cd32e41') in 0.128521 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.803454 seconds.
-  path: Assets/Unit/Golems
-  artifactKey: Guid(9e2f20102664f784fbc3f552a42d9d40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Golems using Guid(9e2f20102664f784fbc3f552a42d9d40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b84bcc272b80ca55066134014164cc13') in 0.005370 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.017581 seconds.
-  path: Assets/Unit/Golems/golem_1.prefab
-  artifactKey: Guid(a0042e141058fd14a9fe838f3ed61e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Golems/golem_1.prefab using Guid(a0042e141058fd14a9fe838f3ed61e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a5e41dcc550aebe2f4001d9d09e756c') in 0.043422 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000176 seconds.
-  path: Assets/Unit/Golems/golem_3.prefab
-  artifactKey: Guid(9c9ea1ced2271b341aaf0acf671c48a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Golems/golem_3.prefab using Guid(9c9ea1ced2271b341aaf0acf671c48a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbcbb0696b1e8291694ef46bd8d5142c') in 0.051304 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000217 seconds.
-  path: Assets/Unit/Golems/golem_4.prefab
-  artifactKey: Guid(83a7c7815387fbe46a8c1147e6eafde4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Golems/golem_4.prefab using Guid(83a7c7815387fbe46a8c1147e6eafde4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6eb4e68024186795ab19902bbe3ae1e7') in 0.051971 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000185 seconds.
-  path: Assets/Unit/Golems/golem_boss.prefab
-  artifactKey: Guid(79391eaf03a21c94eb6e80b2f15e1245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Golems/golem_boss.prefab using Guid(79391eaf03a21c94eb6e80b2f15e1245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23cb6a0482c5140bc0322b84ccee3203') in 0.055381 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000206 seconds.
-  path: Assets/Unit/Golems/golem_2.prefab
-  artifactKey: Guid(920d1ccdaa0b56640ad1da894b93e48a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Golems/golem_2.prefab using Guid(920d1ccdaa0b56640ad1da894b93e48a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02087173336d0eb7e4c3509463c3af5a') in 0.042499 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.212743 seconds.
-  path: Assets/Unit/Demon
-  artifactKey: Guid(04106f09f82a89140a145c35541a032a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Demon using Guid(04106f09f82a89140a145c35541a032a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b51aebe71ee4ae9f64f6b438941e45bb') in 0.005263 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.032525 seconds.
-  path: Assets/Unit/Demon/demon.prefab
-  artifactKey: Guid(2eed2e3bea7abb345bbfbd11b7710b01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Demon/demon.prefab using Guid(2eed2e3bea7abb345bbfbd11b7710b01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe3ed43a1318d34b679cb3a9ab3e296e') in 0.115311 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.348946 seconds.
-  path: Assets/Unit/Orcs
-  artifactKey: Guid(e9b9f14dde662bf48b2c7352459321b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Orcs using Guid(e9b9f14dde662bf48b2c7352459321b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9049d2e6972539374c6c35c50fac470b') in 0.005875 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.025941 seconds.
-  path: Assets/Unit/Orcs/orc_boss.prefab
-  artifactKey: Guid(14f3417ad62ad524eb461f94c6d032f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Orcs/orc_boss.prefab using Guid(14f3417ad62ad524eb461f94c6d032f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f36ca03417325ec53be856338d33e121') in 0.052861 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.956226 seconds.
-  path: Assets/Characters/archer/archer.fbx
-  artifactKey: Guid(82256093f273b5d4d985612b365c6f08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/archer/archer.fbx using Guid(82256093f273b5d4d985612b365c6f08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4de940263fd4f8929b6c968e13ae0392') in 0.069463 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000214 seconds.
-  path: Assets/Characters/warrior/mix base2.fbx
-  artifactKey: Guid(106571eb7a7d3a0448f0c534cbfa7d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/warrior/mix base2.fbx using Guid(106571eb7a7d3a0448f0c534cbfa7d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a376d644e12b7ead3dbc3e2638138bf') in 0.052769 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000249 seconds.
-  path: Assets/Unit/Goblins/original fbx/goblin_base.fbx
-  artifactKey: Guid(1335b80dfd92b0244b6397e0cc880a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Goblins/original fbx/goblin_base.fbx using Guid(1335b80dfd92b0244b6397e0cc880a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '883968216b0a62617b97a7e106e36a17') in 0.237753 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000214 seconds.
-  path: Assets/Unit/Demon/original fbx/demon.fbx
-  artifactKey: Guid(b29ddab7ec7545549846053aa6af4b7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Demon/original fbx/demon.fbx using Guid(b29ddab7ec7545549846053aa6af4b7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd234549a5b540ab5559c10102b2967c5') in 0.053355 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Assets/Characters/Great Sword Walk.fbx
-  artifactKey: Guid(646acc3e3609f03408ea6b3b08cb7b97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Great Sword Walk.fbx using Guid(646acc3e3609f03408ea6b3b08cb7b97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d9ae2f3cd72fba6f2363597f05052cc') in 0.038613 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000223 seconds.
-  path: Assets/Unit/Golems/original fbx/golem_1.fbx
-  artifactKey: Guid(f3bc33885d9817143b9b11ec5837c596) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Golems/original fbx/golem_1.fbx using Guid(f3bc33885d9817143b9b11ec5837c596) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1433453969611330723bf95a797a62a8') in 0.085233 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000237 seconds.
-  path: Assets/Animation/ArcherDead.fbx
-  artifactKey: Guid(ad94d620a09ca22498d5c6d3ac09fbad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/ArcherDead.fbx using Guid(ad94d620a09ca22498d5c6d3ac09fbad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57c1d5d097ea914481731ffc1cdc9abd') in 0.030603 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000245 seconds.
-  path: Assets/Unit/Goblins/meterials/goblin_archer 1.fbx
-  artifactKey: Guid(a6a29ece5dada0e40a45c3e5cc8b5082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Goblins/meterials/goblin_archer 1.fbx using Guid(a6a29ece5dada0e40a45c3e5cc8b5082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa7d3da5f4ce2cb9523bbad2124a8e1d') in 0.050071 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000277 seconds.
-  path: Assets/Unit/Goblins/meterials/goblin_magician.fbx
-  artifactKey: Guid(a74075b596f492c418a41c8fcd9d79dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Goblins/meterials/goblin_magician.fbx using Guid(a74075b596f492c418a41c8fcd9d79dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ba4cd6628bf92ca5ad2f137d5809c2c') in 0.041571 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000176 seconds.
-  path: Assets/Characters/archer/archerIdle.fbx
-  artifactKey: Guid(85ffb6536918686448b06765afab6cd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/archer/archerIdle.fbx using Guid(85ffb6536918686448b06765afab6cd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c16e4b2689e903a6c9e0ad12b2cadc02') in 0.046690 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000172 seconds.
-  path: Assets/Unit/Orcs/original fbx/orc_boss.fbx
-  artifactKey: Guid(25a609a364575cc449fa7129b6fcd5b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Orcs/original fbx/orc_boss.fbx using Guid(25a609a364575cc449fa7129b6fcd5b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a17e5dae5fe46ebf4f3e0a24b5ea2a94') in 0.043097 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000188 seconds.
-  path: Assets/Unit/Lich/original fbx/sk_boss.fbx
-  artifactKey: Guid(6471cebaa6342784b9eb4abcb33fb00b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Lich/original fbx/sk_boss.fbx using Guid(6471cebaa6342784b9eb4abcb33fb00b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26bb96c6564dbff21abc33f27b871a01') in 0.037671 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Assets/Characters/warrior/warrior_asset/worrior avatar.fbx
-  artifactKey: Guid(ed7b334fe5c2e6841aa9cc25b5362afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/warrior/warrior_asset/worrior avatar.fbx using Guid(ed7b334fe5c2e6841aa9cc25b5362afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dae902ce46756b6e693dc25baf655c7') in 0.034554 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000215 seconds.
-  path: Assets/Unit/Goblins/meterials/goblin_army.fbx
-  artifactKey: Guid(ef5fdd404043bb94aa917066380826e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Goblins/meterials/goblin_army.fbx using Guid(ef5fdd404043bb94aa917066380826e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '627f62d9add9f16b9b026914131ef6bc') in 0.045005 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000183 seconds.
-  path: Assets/Characters/SeismWave.fbx
-  artifactKey: Guid(38557eda5bbbe4443b66fe2f90ff5c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/SeismWave.fbx using Guid(38557eda5bbbe4443b66fe2f90ff5c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2128c3d888ed64e097c7e9044332f17') in 0.010628 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Assets/kawetofe_Assets/medievalTentSmall/model/medievalTentSmall.fbx
-  artifactKey: Guid(0ab466c619430a84182c2a188ccd2d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kawetofe_Assets/medievalTentSmall/model/medievalTentSmall.fbx using Guid(0ab466c619430a84182c2a188ccd2d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8e750f22970d9a70a1eda89af1546e5') in 0.134384 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000242 seconds.
-  path: Assets/Characters/mix base.fbx
-  artifactKey: Guid(681f8180da4b6594f96ccd7dbe6f93c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/mix base.fbx using Guid(681f8180da4b6594f96ccd7dbe6f93c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dca4972db94c4613715169261f3a1b5') in 0.039464 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000195 seconds.
-  path: Assets/Characters/mix base@Two Handed Sword Death.fbx
-  artifactKey: Guid(c73cf92ed93248349bc15470c6de73b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/mix base@Two Handed Sword Death.fbx using Guid(c73cf92ed93248349bc15470c6de73b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86a4c63e4dc7b9a7a6cabb57a50574f6') in 0.015322 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000265 seconds.
-  path: Assets/Characters/Idle2.fbx
-  artifactKey: Guid(f09207f86c80c0b46a29e828aae0ba80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Idle2.fbx using Guid(f09207f86c80c0b46a29e828aae0ba80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '281db016c74918c5077c0bf2ceb7914e') in 0.011717 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.110320 seconds.
-  path: Assets/Unit/Skeletons/meterials
-  artifactKey: Guid(4564b8c9bc35a1f46983f1a3ad16cdac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials using Guid(4564b8c9bc35a1f46983f1a3ad16cdac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e707cdf0a85b3a8ff5e17e4936cc7766') in 0.005400 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.022207 seconds.
-  path: Assets/Unit/Skeletons/meterials/armor.fbx
-  artifactKey: Guid(d25a2ab36b3d3204f85b8a354a9e6300) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/armor.fbx using Guid(d25a2ab36b3d3204f85b8a354a9e6300) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '573a506d87d74f06e0f440b1feb14f1b') in 0.024786 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000172 seconds.
-  path: Assets/Unit/Skeletons/meterials/skel_pr_lambert32_BaseMap.1001.png
-  artifactKey: Guid(c060d0437cd52cf4bbfa630b13f65ea3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/skel_pr_lambert32_BaseMap.1001.png using Guid(c060d0437cd52cf4bbfa630b13f65ea3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7942f066b2f0eb1fcb2492e9cda43e06') in 0.040003 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Assets/Unit/Skeletons/meterials/skel_pr_lambert18_BaseMap.1001.png
-  artifactKey: Guid(bc48c5cec51a376438fe03d0b26aba9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/skel_pr_lambert18_BaseMap.1001.png using Guid(bc48c5cec51a376438fe03d0b26aba9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fe61e93e4c514091d4592e76d38abf9') in 0.013989 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000245 seconds.
-  path: Assets/Unit/Skeletons/meterials/skel_pr_lambert30_BaseMap.1001.png
-  artifactKey: Guid(7d18f5811ea18464eaf105c218acdb93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/skel_pr_lambert30_BaseMap.1001.png using Guid(7d18f5811ea18464eaf105c218acdb93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dc10296769da3611a2ec1f2787d1141') in 0.018314 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000166 seconds.
-  path: Assets/Unit/Skeletons/meterials/helmet.mat
-  artifactKey: Guid(5bd7f04445f26594bb7584b0b3ed53d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/helmet.mat using Guid(5bd7f04445f26594bb7584b0b3ed53d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff93d90029b873acf8ffb7fbca0fce61') in 0.016854 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Assets/Unit/Skeletons/meterials/pants.fbx
-  artifactKey: Guid(036472bdd70e1254387f094b0998344d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/pants.fbx using Guid(036472bdd70e1254387f094b0998344d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eef83ba1e6c7eecf8efc73e26622c126') in 0.021237 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000164 seconds.
-  path: Assets/Unit/Skeletons/meterials/sword.fbx
-  artifactKey: Guid(f1ba4e8adb52f4c49b93af41fe3cd9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/sword.fbx using Guid(f1ba4e8adb52f4c49b93af41fe3cd9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '117bf64ce924113ffbf9093705748851') in 0.021138 seconds 
+  Time since last request: 0.016059 seconds.
+  path: Assets/Characters/Archer Instance.prefab
+  artifactKey: Guid(679ea1af042d79a43be9766a0343d543) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Archer Instance.prefab using Guid(679ea1af042d79a43be9766a0343d543) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd70c87bfb9ebb12f9345f561a4b170b8') in 0.136089 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000174 seconds.
-  path: Assets/Unit/Skeletons/meterials/skel_pr_lambert27_BaseMap.1001.png
-  artifactKey: Guid(e4cf1196bf2c4c64db9ac16a23db03e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/skel_pr_lambert27_BaseMap.1001.png using Guid(e4cf1196bf2c4c64db9ac16a23db03e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4572e460e4c6a66f5ac3210d260b406') in 0.014750 seconds 
+  path: Assets/Characters/Worrior.prefab
+  artifactKey: Guid(9bc014e9c99048747b7d79c8540bc486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Worrior.prefab using Guid(9bc014e9c99048747b7d79c8540bc486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a79e8b860f4a26a9e02ea7f348c7246d') in 0.065637 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000305 seconds.
-  path: Assets/Unit/Skeletons/meterials/helmet.fbx
-  artifactKey: Guid(707d7aeb241724743bb3c982425f51f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/helmet.fbx using Guid(707d7aeb241724743bb3c982425f51f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e20284cc9cebb7f5b9426471ee94d38') in 0.020847 seconds 
+  Time since last request: 0.000186 seconds.
+  path: Assets/Characters/axwe.prefab
+  artifactKey: Guid(57cf2ee20dbc9074c951e7b631624932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/axwe.prefab using Guid(57cf2ee20dbc9074c951e7b631624932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73366e91d2a35216c912226a179713e8') in 0.017872 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Characters/warrior mat.mat
+  artifactKey: Guid(7235da4d4a6394c4c90b755fd9acc9b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/warrior mat.mat using Guid(7235da4d4a6394c4c90b755fd9acc9b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ff3bbcc0e065cd495be739fc4f21d01') in 0.123689 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Characters/box.prefab
+  artifactKey: Guid(a80aa5e3b6d9f32429396b4bcddf57e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/box.prefab using Guid(a80aa5e3b6d9f32429396b4bcddf57e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd14ab583a5e61ce3859dbaf456fef1d') in 0.024881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Characters/Walk.fbx
+  artifactKey: Guid(7748a1b5566b57e4c90273cf27d94e22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Walk.fbx using Guid(7748a1b5566b57e4c90273cf27d94e22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3aba371d2425cea69eff7be49ad0cbcd') in 0.074312 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000169 seconds.
-  path: Assets/Unit/Skeletons/meterials/knee.mat
-  artifactKey: Guid(47dd35ab0ef3a6245b77cb2e41ec143c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/knee.mat using Guid(47dd35ab0ef3a6245b77cb2e41ec143c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31026a415b8de41944fe8d113619ce51') in 0.015459 seconds 
+  path: Assets/Characters/Idle.fbx
+  artifactKey: Guid(b9dddf4d20e129c40b3d5f6ee2fc5902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Idle.fbx using Guid(b9dddf4d20e129c40b3d5f6ee2fc5902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd46ca0d0315f6fe0dca4dfae1965ff70') in 0.010033 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000171 seconds.
-  path: Assets/Unit/Skeletons/meterials/sho.fbx
-  artifactKey: Guid(0d65e7a68a80e0143b6c70e36d521638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/sho.fbx using Guid(0d65e7a68a80e0143b6c70e36d521638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b75d149971cc68d30f9edce0380e567e') in 0.023082 seconds 
+  Time since last request: 0.000238 seconds.
+  path: Assets/Characters/Slash.fbx
+  artifactKey: Guid(666c9e22e1ac17f47a709b5e8ace67d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Slash.fbx using Guid(666c9e22e1ac17f47a709b5e8ace67d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b45256977414ed15bd22875d61be959') in 0.010568 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000178 seconds.
-  path: Assets/Unit/Skeletons/meterials/skel_pr_lambert29_BaseMap.1001.png
-  artifactKey: Guid(358bfe5e057f3874ea84388ef9403ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/skel_pr_lambert29_BaseMap.1001.png using Guid(358bfe5e057f3874ea84388ef9403ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c3d258b20b7c5e52a8ddb989bf15d57') in 0.014209 seconds 
+  Time since last request: 0.000226 seconds.
+  path: Assets/Characters/Magician Instance.prefab
+  artifactKey: Guid(e770ba99307278946b6792a64b768598) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Magician Instance.prefab using Guid(e770ba99307278946b6792a64b768598) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3a97c9c76d78a2519aeab96577a27a6') in 0.011525 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000188 seconds.
-  path: Assets/Unit/Skeletons/meterials/pants.mat
-  artifactKey: Guid(2b8905a6f481efe4fbfdddb5167ffd48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/pants.mat using Guid(2b8905a6f481efe4fbfdddb5167ffd48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9252b7857efe78cfed9936348c45d3f') in 0.016008 seconds 
+  Time since last request: 0.000158 seconds.
+  path: Assets/Characters/axe mat.mat
+  artifactKey: Guid(1150453554f2a7448b6f92953468d15a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/axe mat.mat using Guid(1150453554f2a7448b6f92953468d15a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36950f751c68da843895865cd994c60e') in 0.013966 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000188 seconds.
-  path: Assets/Unit/Skeletons/meterials/skel_pr_lambert26_BaseMap.1001.png
-  artifactKey: Guid(05ea697e98ef8d945a27bbc1576693ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/skel_pr_lambert26_BaseMap.1001.png using Guid(05ea697e98ef8d945a27bbc1576693ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51ffb1702b542f44679f53e51713fd20') in 0.012967 seconds 
+  Time since last request: 0.000226 seconds.
+  path: Assets/Characters/Warrior.prefab
+  artifactKey: Guid(424dd9d24226a7449b20cc39211d811c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Warrior.prefab using Guid(424dd9d24226a7449b20cc39211d811c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c1a29c054970742694290c0cf21dc0c') in 0.040611 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000181 seconds.
-  path: Assets/Unit/Skeletons/meterials/sho.mat
-  artifactKey: Guid(f505a874c2576544e99e9b7e8cc27370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/sho.mat using Guid(f505a874c2576544e99e9b7e8cc27370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92b01a10f31a5649ff23877079bf1637') in 0.016741 seconds 
+  Time since last request: 0.000175 seconds.
+  path: Assets/Characters/Male Standing Pose.fbx
+  artifactKey: Guid(fb2c9fef4245bc3438b6d36905b1d3cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Male Standing Pose.fbx using Guid(fb2c9fef4245bc3438b6d36905b1d3cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a3a825276b6c0e4126e25e5bc0db6dd') in 0.032710 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Assets/Unit/Skeletons/meterials/skel_pr_lambert28_BaseMap.1001.png
-  artifactKey: Guid(8549bb4a84e7ef245bac2e78604a22bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/skel_pr_lambert28_BaseMap.1001.png using Guid(8549bb4a84e7ef245bac2e78604a22bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19f0cb5cdc9d229d5810cd3c645e55c7') in 0.015085 seconds 
+  Time since last request: 0.000211 seconds.
+  path: Assets/Characters/Male Sitting Pose.fbx
+  artifactKey: Guid(a1679303c8358a849959a9b8934ee93b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Male Sitting Pose.fbx using Guid(a1679303c8358a849959a9b8934ee93b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8679bec4021ca842102ed55ec5f7e900') in 0.009491 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000230 seconds.
-  path: Assets/Unit/Skeletons/meterials/armor.mat
-  artifactKey: Guid(b04790dcbfeabd04a8b8c61f7c1a9fef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/armor.mat using Guid(b04790dcbfeabd04a8b8c61f7c1a9fef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '322cdbbcf6184e36d04e9a004829f37f') in 0.014969 seconds 
+  Time since last request: 0.000234 seconds.
+  path: Assets/Characters/mix base@Standing Melee Combo Attack Ver. 3 (1).fbx
+  artifactKey: Guid(67bef5add2b9ab74fba901238cba8520) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/mix base@Standing Melee Combo Attack Ver. 3 (1).fbx using Guid(67bef5add2b9ab74fba901238cba8520) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff541601e8dd593fa669f4b00be59567') in 0.010433 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009643 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Game\Desktop\gitdes\Capstone_2022_Japgokbap\Capstone_2022_Japgokbap\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.360 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1360ms)
+		BeginReloadAssembly (181ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (1096ms)
+			LoadAssemblies (166ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (350ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (491ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (96ms)
+				ProcessInitializeOnLoadAttributes (334ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (33ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1739 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 110.8 MB.
+System memory in use after: 110.9 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2277.
+Total: 4.194700 ms (FindLiveObjects: 0.189600 ms CreateObjectMapping: 0.106300 ms MarkObjects: 3.863600 ms  DeleteObjects: 0.034200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 87.846192 seconds.
+  path: Assets/Unit/Skeletons/animation/walk.fbx
+  artifactKey: Guid(5a4324e6319037d4c958de7a99bccb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/animation/walk.fbx using Guid(5a4324e6319037d4c958de7a99bccb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc42fd915ccd605d2a62d70662c58fce') in 0.054316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.704504 seconds.
+  path: Assets/Unit/Skeletons/animation/Skeleton3.controller
+  artifactKey: Guid(882ab105aa81405429160d3b58b2b996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/animation/Skeleton3.controller using Guid(882ab105aa81405429160d3b58b2b996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2882d1521d2e9a91c660a5fd1df59b06') in 0.011617 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008684 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Game\Desktop\gitdes\Capstone_2022_Japgokbap\Capstone_2022_Japgokbap\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.837 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1837ms)
+		BeginReloadAssembly (194ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (1562ms)
+			LoadAssemblies (174ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (329ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (850ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (95ms)
+				ProcessInitializeOnLoadAttributes (711ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
+				AfterProcessingInitializeOnLoad (25ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1739 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 110.8 MB.
+System memory in use after: 111.0 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2281.
+Total: 2.326400 ms (FindLiveObjects: 0.132200 ms CreateObjectMapping: 0.058000 ms MarkObjects: 2.117500 ms  DeleteObjects: 0.018100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 95.512227 seconds.
+  path: Assets/Unit/Skeletons/animation/skeleton.mask
+  artifactKey: Guid(27ad73c724982e24384c0ca9a5663bb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/animation/skeleton.mask using Guid(27ad73c724982e24384c0ca9a5663bb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '949ff11a5067738356cb78e407e31930') in 0.023262 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 307.203492 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset
+  artifactKey: Guid(1ca2686a724344645a3c4bde24b4f186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset using Guid(1ca2686a724344645a3c4bde24b4f186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a650093bd960bddd449c4f2840417c3') in 0.005224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.123044 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel
+  artifactKey: Guid(82863de778dd9ef4da982e04846c9c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel using Guid(82863de778dd9ef4da982e04846c9c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2077489bdac70de1583bd3de2516127b') in 0.004915 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.022672 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/3skel_armor.fbx
+  artifactKey: Guid(b2da0586102fe144ca7af7f979ff04c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/3skel_armor.fbx using Guid(b2da0586102fe144ca7af7f979ff04c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ab1f3b5ac33e3fdb239b3d5114bd76c') in 0.079569 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/3skel_sh.fbx
+  artifactKey: Guid(edd838a28ce44544592e9377e8a7beec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/3skel_sh.fbx using Guid(edd838a28ce44544592e9377e8a7beec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd61b8f06ee92dc314d7192ce756a7a42') in 0.039000 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.034427 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2
+  artifactKey: Guid(4d14462907dbb094a828511be773f1c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2 using Guid(4d14462907dbb094a828511be773f1c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d7d973f13bf2a140bb934e23de07561') in 0.004805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.029364 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/3skel_asset_lambert20_BaseMap.1001.png
+  artifactKey: Guid(fce6d87273c0f584ea30aedd2e788bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/3skel_asset_lambert20_BaseMap.1001.png using Guid(fce6d87273c0f584ea30aedd2e788bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '689b6fdcca1dc1f4d8d208f6f79ba1ff') in 0.047267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/3skel_sh.prefab
+  artifactKey: Guid(1f2b3ca399ad1604884c9014e6a843fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/3skel_sh.prefab using Guid(1f2b3ca399ad1604884c9014e6a843fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c00af7cfa5e19b2cd470c2ebf38f8e1d') in 0.017390 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/skeleton_base.fbx
+  artifactKey: Guid(8e688bc8258b83244b7a1ff73fb87e5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/skeleton_base.fbx using Guid(8e688bc8258b83244b7a1ff73fb87e5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '313edee2414cb54761c73e897ce1cbe8') in 0.038523 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/3skel_asset_lambert20_Emissive.1001.png
+  artifactKey: Guid(18507a0f66828d245a537421d371f6b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/3skel_asset_lambert20_Emissive.1001.png using Guid(18507a0f66828d245a537421d371f6b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7317e8fa730fd0e10f43f51917753892') in 0.014571 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000317 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/3skel_asset_lambert20_MaskMap.1001.png
+  artifactKey: Guid(c866bfd04d6ece0439121612b8be0077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/3skel_asset_lambert20_MaskMap.1001.png using Guid(c866bfd04d6ece0439121612b8be0077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4973341e392bb08a42e7ce78f5761d45') in 0.017868 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/3skel_asset_lambert20_Normal.1001.png
+  artifactKey: Guid(ea4d250284bb6314380422676e35bba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/3skel_asset_lambert20_Normal.1001.png using Guid(ea4d250284bb6314380422676e35bba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3429c769fc719703f3ac6a852bb3eb41') in 0.021750 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/shoulder.mat
+  artifactKey: Guid(57345dea478f9964ebaf201626635a6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/shoulder.mat using Guid(57345dea478f9964ebaf201626635a6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a18be5001ca1f45ffc6cc06d3d34c68a') in 0.017927 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 53.534340 seconds.
+  path: Assets/Unit/Skeletons/skeleton_base@Dying.fbx
+  artifactKey: Guid(8b9c09228920a4f45bb039e82280c402) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/skeleton_base@Dying.fbx using Guid(8b9c09228920a4f45bb039e82280c402) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ac134b0845d8a02cf697808016a6ca5') in 0.010672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 37.813427 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/skeleton.mask
+  artifactKey: Guid(df7b23779ea15a5489193210d6725add) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/skeleton.mask using Guid(df7b23779ea15a5489193210d6725add) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4135f0283608bbd999bb4d6d39ce4b2d') in 0.005122 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 197.385154 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/1skel_asset/1skel_weapon.mat
+  artifactKey: Guid(51efa69978d834f46a97441c5e9caebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/1skel_asset/1skel_weapon.mat using Guid(51efa69978d834f46a97441c5e9caebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb9e25b954c907a7bcd25102f209bd46') in 0.037517 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 1/3skel_asset_lambert19_BaseMap.1001.png
+  artifactKey: Guid(f30ad20063d32994fbfcbca9818da646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 1/3skel_asset_lambert19_BaseMap.1001.png using Guid(f30ad20063d32994fbfcbca9818da646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09e11d28a7827623bb1467aec6ac7128') in 0.018368 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon_lambert6_BaseMap.1001.png
+  artifactKey: Guid(a03cbf9cd9c0a6a4f85e6be7e34d33f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon_lambert6_BaseMap.1001.png using Guid(a03cbf9cd9c0a6a4f85e6be7e34d33f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86cd1bd729d844c371b2ecc68e21acb8') in 0.014132 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000244 seconds.
-  path: Assets/Unit/Skeletons/meterials/shield.fbx
-  artifactKey: Guid(e7418a6add48e7f47a85e059012ec334) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/shield.fbx using Guid(e7418a6add48e7f47a85e059012ec334) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fa52b3866e9a57aee3df6a5b52f1b8c') in 0.020610 seconds 
+  path: Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon_lambert6_Emissive.1001.png
+  artifactKey: Guid(df9452c9ccdd1324a920ad28f42d2cc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon_lambert6_Emissive.1001.png using Guid(df9452c9ccdd1324a920ad28f42d2cc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1790be93c566ec1c93cc9ae5dd7be13f') in 0.012188 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000280 seconds.
-  path: Assets/Unit/Skeletons/meterials/knee.fbx
-  artifactKey: Guid(7923e58f7921c7940bab51c069c95e1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/knee.fbx using Guid(7923e58f7921c7940bab51c069c95e1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '477888e5f977af8871dc0893a707eac8') in 0.020054 seconds 
+  Time since last request: 0.000276 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder/3skel_asset_lambert18_BaseMap.1001.png
+  artifactKey: Guid(3c616c5e1d20d07448b6e89d3cc2c727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder/3skel_asset_lambert18_BaseMap.1001.png using Guid(3c616c5e1d20d07448b6e89d3cc2c727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d348eea7bfc59bffa002c3f9485b2ea') in 0.013328 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000168 seconds.
-  path: Assets/Unit/Skeletons/meterials/sword.mat
-  artifactKey: Guid(afa4eb87cc1d7ad40995d3bf773b1df4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/sword.mat using Guid(afa4eb87cc1d7ad40995d3bf773b1df4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c9699b1ddae451d6827e1f4bd3305bd') in 0.014999 seconds 
+  Time since last request: 0.000206 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon.fbx
+  artifactKey: Guid(17013c5ceec6ce54298cb41e3e7fbda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon.fbx using Guid(17013c5ceec6ce54298cb41e3e7fbda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c7b044eb123d8fea1fdd46fa2e38f20') in 0.022832 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 1/3skel_asset_lambert19_Normal.1001.png
+  artifactKey: Guid(6c55c00a58152ad419c07946c2f6bc6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 1/3skel_asset_lambert19_Normal.1001.png using Guid(6c55c00a58152ad419c07946c2f6bc6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7047c66747408d55f654d8cb951c5931') in 0.014293 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 1/3skel_asset_lambert19_MaskMap.1001.png
+  artifactKey: Guid(5ead70b7e1693954694665ab370bc744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 1/3skel_asset_lambert19_MaskMap.1001.png using Guid(5ead70b7e1693954694665ab370bc744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc350b90ccd065d08c060cfdcf9623be') in 0.015097 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/헬멧/3skel_helmet.fbx
+  artifactKey: Guid(a2357ce7e099b0d4096aee8bd9e2c57b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/헬멧/3skel_helmet.fbx using Guid(a2357ce7e099b0d4096aee8bd9e2c57b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9784b6c4d2d4abb141ab39077071c58f') in 0.021693 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000167 seconds.
-  path: Assets/Unit/Skeletons/meterials/shield.mat
-  artifactKey: Guid(d301be6002a210a418e3774f60075210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/meterials/shield.mat using Guid(d301be6002a210a418e3774f60075210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41d1ee4ca55fac63a57ee534a5a2213e') in 0.015116 seconds 
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/헬멧/3skel_low_lambert11_BaseMap.1001.png
+  artifactKey: Guid(389798c31ef80554c8b89c81e00521de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/헬멧/3skel_low_lambert11_BaseMap.1001.png using Guid(389798c31ef80554c8b89c81e00521de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43d15246d062aae3cbd02e3afc8a963f') in 0.012739 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.113883 seconds.
-  path: Assets/Unit/Skeletons/original fbx files
-  artifactKey: Guid(81e00cab465d6e04ab0e5447841c4838) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/original fbx files using Guid(81e00cab465d6e04ab0e5447841c4838) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08fc7ae3206f5fdc5065fb9ee91653d1') in 0.009187 seconds 
+  Time since last request: 0.000216 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/헬멧/3skel_low_lambert11_Normal.1001.png
+  artifactKey: Guid(5764b51814615834d9ec633ed153bc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/헬멧/3skel_low_lambert11_Normal.1001.png using Guid(5764b51814615834d9ec633ed153bc11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c0ba5e8a4a6993674a17a63845ef2fc') in 0.014144 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.496118 seconds.
-  path: Assets/Unit/Skeletons/animation
-  artifactKey: Guid(e6f578f788e7b6a4a8e06a7e81f3b9e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/animation using Guid(e6f578f788e7b6a4a8e06a7e81f3b9e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28e78ecb2532c23865f20ef697f49a1f') in 0.015494 seconds 
+  Time since last request: 0.000197 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/1skel_asset/1skel_weapon.fbx
+  artifactKey: Guid(f305edf362fb2854aa17940d7df07c64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/1skel_asset/1skel_weapon.fbx using Guid(f305edf362fb2854aa17940d7df07c64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd749b952f134f0ffc2400fcff8c56d54') in 0.022179 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000292 seconds.
-  path: Assets/Unit/Skeletons/animation/walk.fbx
-  artifactKey: Guid(5a4324e6319037d4c958de7a99bccb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/animation/walk.fbx using Guid(5a4324e6319037d4c958de7a99bccb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55f89f76635c52c6491896cfcd830d90') in 0.021628 seconds 
+  Time since last request: 0.000187 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/2skel_asset/helmet/skel1_helmet_low_Extract1_lambertSG_Emissive.1001.png
+  artifactKey: Guid(d297d2ac4bfeaef4eb66a34c4cbf79ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/2skel_asset/helmet/skel1_helmet_low_Extract1_lambertSG_Emissive.1001.png using Guid(d297d2ac4bfeaef4eb66a34c4cbf79ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3952a07acd8a98afae6c8746a7ca4c1b') in 0.012641 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000277 seconds.
-  path: Assets/Unit/Skeletons/animation/temp_walk.fbx
-  artifactKey: Guid(6cce9e6b071ec3946972bd414d567549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/animation/temp_walk.fbx using Guid(6cce9e6b071ec3946972bd414d567549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29db232fb65bc9f8a9e1aa0160d2cca4') in 0.019296 seconds 
+  Time since last request: 0.000235 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/헬멧/3skel_low_lambert11_MaskMap.1001.png
+  artifactKey: Guid(25376ddaecaba19419fc9d3f81f6fa01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/헬멧/3skel_low_lambert11_MaskMap.1001.png using Guid(25376ddaecaba19419fc9d3f81f6fa01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c0d06aa42293cd0dbab6ac457fa4690') in 0.013822 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.870543 seconds.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/2skel_asset/helmet/skel1_helmet_low_Extract1_lambertSG_BaseMap.1001.png
+  artifactKey: Guid(6dbc8898ebd0b0546bcafc4ffbf3144d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/2skel_asset/helmet/skel1_helmet_low_Extract1_lambertSG_BaseMap.1001.png using Guid(6dbc8898ebd0b0546bcafc4ffbf3144d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8303ec6e6c1739a75bffd72b09aed22b') in 0.012757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/무기/3skel_weapon.fbx
+  artifactKey: Guid(3ec0d00fb387b1848952cae215f16cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/무기/3skel_weapon.fbx using Guid(3ec0d00fb387b1848952cae215f16cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78c6c01e3aedf8457c090795f77d71af') in 0.029147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/2skel_asset/helmet/skel1_helmet_low_Extract1_lambertSG_Normal.1001.png
+  artifactKey: Guid(3b7f662277eac6342b18244fba7296a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/2skel_asset/helmet/skel1_helmet_low_Extract1_lambertSG_Normal.1001.png using Guid(3b7f662277eac6342b18244fba7296a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73b0a56e98e6f04d69d3052e4c644274') in 0.014037 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon_lambert6_Normal.1001.png
+  artifactKey: Guid(1bb2fbb138ca70744a86ebfd94c74c30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon_lambert6_Normal.1001.png using Guid(1bb2fbb138ca70744a86ebfd94c74c30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ba4ceb6bb90254f256ad0f09ce6fb1c') in 0.015583 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Unit/Lich/skeletonboss.prefab
+  artifactKey: Guid(983521408d3e18b4ead476a678d0bf68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Lich/skeletonboss.prefab using Guid(983521408d3e18b4ead476a678d0bf68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '166e4e33dd217365bb808caa2e99f16f') in 0.114365 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000417 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 1/3skel_asset_lambert19_Emissive.1001.png
+  artifactKey: Guid(1aeae3c167cddf54cb0798f1ed84dcb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 1/3skel_asset_lambert19_Emissive.1001.png using Guid(1aeae3c167cddf54cb0798f1ed84dcb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44cfa8d93138fba179e1a6814fd310b7') in 0.021798 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/2skel_asset/helmet/skel1_helmet_low_Extract1_lambertSG_MaskMap.1001.png
+  artifactKey: Guid(e09b5066b3d1e1f4094414a0d92e7fac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/2skel_asset/helmet/skel1_helmet_low_Extract1_lambertSG_MaskMap.1001.png using Guid(e09b5066b3d1e1f4094414a0d92e7fac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2914eccdd596661c4112af13ec2d2c38') in 0.020149 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon_lambert6_MaskMap.1001.png
+  artifactKey: Guid(788c831df9491f44e9455de10778ad7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon_lambert6_MaskMap.1001.png using Guid(788c831df9491f44e9455de10778ad7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9912b2999f3238fc7e796a46dd4db11') in 0.016258 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon.mat
+  artifactKey: Guid(f06413a8bac0425499843cc12a0bf284) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/weapon/2skel_asset/skel2_weapon.mat using Guid(f06413a8bac0425499843cc12a0bf284) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '850bb74df7e830dae75a4ee127727dde') in 0.018174 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/무기/3skel_low_lambert12_BaseMap.1001.png
+  artifactKey: Guid(fe5b5a359566d4442a255aeeec629937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/무기/3skel_low_lambert12_BaseMap.1001.png using Guid(fe5b5a359566d4442a255aeeec629937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db41fac6bb1974dc91adf308e02e108e') in 0.016011 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.964791 seconds.
+  path: Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/skeleton_base.fbx
+  artifactKey: Guid(8e688bc8258b83244b7a1ff73fb87e5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Unit/Skeletons/meterials/skeleton_asset/3skel/New Folder 2/skeleton_base.fbx using Guid(8e688bc8258b83244b7a1ff73fb87e5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '099702f0ea1cf49bff2184d07c067953') in 0.028903 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.452340 seconds.
   path: Assets/Unit/Skeletons/Skeleton1.prefab
   artifactKey: Guid(4869629ee6ba3f14d8ebe7498e799f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton1.prefab using Guid(4869629ee6ba3f14d8ebe7498e799f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cc5f006f264ef89253e8fc4364c5e7a') in 0.043998 seconds 
+Start importing Assets/Unit/Skeletons/Skeleton1.prefab using Guid(4869629ee6ba3f14d8ebe7498e799f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09ceb9b7266f9b670c9ee995dd3ca3fb') in 0.046700 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.219591 seconds.
+  Time since last request: 0.850736 seconds.
   path: Assets/Unit/Skeletons/Skeleton1.prefab
   artifactKey: Guid(4869629ee6ba3f14d8ebe7498e799f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton1.prefab using Guid(4869629ee6ba3f14d8ebe7498e799f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f59b1f7314307874ded85dede090dbc1') in 0.042303 seconds 
+Start importing Assets/Unit/Skeletons/Skeleton1.prefab using Guid(4869629ee6ba3f14d8ebe7498e799f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84161844acce8b07fd6f2bfa606db70d') in 0.048681 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.674973 seconds.
+  Time since last request: 6.305994 seconds.
   path: Assets/Unit/Skeletons/Skeleton2.prefab
   artifactKey: Guid(493bef09536156c4098f060fb48e35de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton2.prefab using Guid(493bef09536156c4098f060fb48e35de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cac34083f30736d7d250267a38693da7') in 0.042923 seconds 
+Start importing Assets/Unit/Skeletons/Skeleton2.prefab using Guid(493bef09536156c4098f060fb48e35de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87d42cfa077a12e29824f20ecba7a4f4') in 0.054707 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.484498 seconds.
-  path: Assets/Unit/Skeletons/Skeleton2.prefab
-  artifactKey: Guid(493bef09536156c4098f060fb48e35de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton2.prefab using Guid(493bef09536156c4098f060fb48e35de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f44271a41cbd35bc4dd1c3a4c936017a') in 0.047775 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.013070 seconds.
-  path: Assets/Unit/Skeletons/animation/Skeleton1.controller
-  artifactKey: Guid(b17a7794d81c8a14685122a10ff5b3eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/animation/Skeleton1.controller using Guid(b17a7794d81c8a14685122a10ff5b3eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fd46ff802b84112c0a1caa4f2be1c74') in 0.010005 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.401407 seconds.
-  path: Assets/Unit/Skeletons/animation/Skeleton2.controller
-  artifactKey: Guid(2cd97e430a3d096428ed4824bd18e2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/animation/Skeleton2.controller using Guid(2cd97e430a3d096428ed4824bd18e2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c731f562593a9be7983764f494916d8') in 0.006391 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.367355 seconds.
-  path: Assets/Unit/Skeletons/animation/Skeleton3.controller
-  artifactKey: Guid(882ab105aa81405429160d3b58b2b996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/animation/Skeleton3.controller using Guid(882ab105aa81405429160d3b58b2b996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc7618eb4f2b08eab0ed19dd0435279d') in 0.006367 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.791415 seconds.
-  path: Assets/Unit/Skeletons/animation/Skeleton4.controller
-  artifactKey: Guid(8fc33559437b6954d98515a55cd8e17c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/animation/Skeleton4.controller using Guid(8fc33559437b6954d98515a55cd8e17c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f3554501ede0b88006d4d0d48a5612c') in 0.006846 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.559254 seconds.
-  path: Assets/Unit/Skeletons/Skeleton2.prefab
-  artifactKey: Guid(493bef09536156c4098f060fb48e35de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton2.prefab using Guid(493bef09536156c4098f060fb48e35de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3775640411500bb7e33582758f2c27a8') in 0.042707 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.385396 seconds.
+  Time since last request: 3.501538 seconds.
   path: Assets/Unit/Skeletons/Skeleton3.prefab
   artifactKey: Guid(b76dfcab8424d25449f82dcbedc315d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton3.prefab using Guid(b76dfcab8424d25449f82dcbedc315d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeca6a010b7fedaa661c3dc7562d63d5') in 0.047704 seconds 
+Start importing Assets/Unit/Skeletons/Skeleton3.prefab using Guid(b76dfcab8424d25449f82dcbedc315d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36ec6cbead1bfa1ced11934ac43794bd') in 0.078127 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.500265 seconds.
-  path: Assets/Unit/Skeletons/Skeleton3.prefab
-  artifactKey: Guid(b76dfcab8424d25449f82dcbedc315d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton3.prefab using Guid(b76dfcab8424d25449f82dcbedc315d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '372f5d7cae8f3502b31db40246bc29e3') in 0.050956 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.641218 seconds.
+  Time since last request: 2.784991 seconds.
   path: Assets/Unit/Skeletons/Skeleton4.prefab
   artifactKey: Guid(ceb82173a6538e745964d5c23f170081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton4.prefab using Guid(ceb82173a6538e745964d5c23f170081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '194ebd6178e3355a37c5823386bd7e67') in 0.063473 seconds 
+Start importing Assets/Unit/Skeletons/Skeleton4.prefab using Guid(ceb82173a6538e745964d5c23f170081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb8b00cc202e191b353dcd6c5156462a') in 0.068650 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008812 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Game\Desktop\gitdes\Capstone_2022_Japgokbap\Capstone_2022_Japgokbap\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.584 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1584ms)
+		BeginReloadAssembly (227ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (44ms)
+		EndReloadAssembly (1224ms)
+			LoadAssemblies (212ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (292ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (632ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (132ms)
+				ProcessInitializeOnLoadAttributes (456ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (25ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1739 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 112.0 MB.
+System memory in use after: 112.1 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2289.
+Total: 2.248600 ms (FindLiveObjects: 0.127600 ms CreateObjectMapping: 0.051500 ms MarkObjects: 2.047100 ms  DeleteObjects: 0.021800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.671434 seconds.
-  path: Assets/Unit/Skeletons/Skeleton4.prefab
-  artifactKey: Guid(ceb82173a6538e745964d5c23f170081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton4.prefab using Guid(ceb82173a6538e745964d5c23f170081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e570a5f5eb752533b218a0fceb975d5') in 0.067970 seconds 
+  Time since last request: 29.573987 seconds.
+  path: Assets/Scenes/LobbyScene.unity
+  artifactKey: Guid(7733889ae8585034c86cf3a7c183a30c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LobbyScene.unity using Guid(7733889ae8585034c86cf3a7c183a30c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '591589a4e46c720d694aaa2568871808') in 0.007565 seconds 
 ========================================================================
-Received Import Request.
-  Time since last request: 3.343381 seconds.
-  path: Assets/Unit/Skeletons/original fbx files/1skeleton_base.prefab
-  artifactKey: Guid(519d29ca10ba3b0438a8063a736c2a10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/original fbx files/1skeleton_base.prefab using Guid(519d29ca10ba3b0438a8063a736c2a10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9b51c40e715859f608275336fe50328') in 0.017652 seconds 
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008967 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Game\Desktop\gitdes\Capstone_2022_Japgokbap\Capstone_2022_Japgokbap\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.771 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1771ms)
+		BeginReloadAssembly (230ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (1406ms)
+			LoadAssemblies (231ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (284ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (88ms)
+			SetupLoadedEditorAssemblies (767ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (101ms)
+				ProcessInitializeOnLoadAttributes (567ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (71ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1739 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 112.0 MB.
+System memory in use after: 112.1 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2293.
+Total: 2.568000 ms (FindLiveObjects: 0.134000 ms CreateObjectMapping: 0.054100 ms MarkObjects: 2.360600 ms  DeleteObjects: 0.018700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000168 seconds.
-  path: Assets/Unit/Skeletons/original fbx files/2skeleton_base.prefab
-  artifactKey: Guid(91691ce530e661e4da7848d37ae92bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/original fbx files/2skeleton_base.prefab using Guid(91691ce530e661e4da7848d37ae92bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00213c4bbfd3304d7365122572efefc3') in 0.023494 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000212 seconds.
-  path: Assets/Unit/Skeletons/original fbx files/3skeleton_base.prefab
-  artifactKey: Guid(fc73b4d271895774fbbd8aa55f6466d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/original fbx files/3skeleton_base.prefab using Guid(fc73b4d271895774fbbd8aa55f6466d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c80b51e1aea26843125e8355fe21e3a') in 0.024326 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000190 seconds.
-  path: Assets/Unit/Skeletons/original fbx files/4skeleton_base.prefab
-  artifactKey: Guid(4049c4c1d2fdaee49981a4e44d1bc300) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/original fbx files/4skeleton_base.prefab using Guid(4049c4c1d2fdaee49981a4e44d1bc300) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00fe38720715839fa0f23eb1c802dd3c') in 0.040269 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.357030 seconds.
-  path: Assets/Unit/Skeletons/Skeleton1.prefab
-  artifactKey: Guid(4869629ee6ba3f14d8ebe7498e799f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Unit/Skeletons/Skeleton1.prefab using Guid(4869629ee6ba3f14d8ebe7498e799f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02ffc0c5edc93e3901cf0fcd81998df1') in 0.041598 seconds 
+Received Prepare
+Refreshing native plugins compatible for Editor in 10.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 77.0 MB.
+System memory in use after: 77.2 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 2293.
+Total: 4.070800 ms (FindLiveObjects: 0.231700 ms CreateObjectMapping: 0.109700 ms MarkObjects: 3.704200 ms  DeleteObjects: 0.024000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -3470,7 +3470,7 @@ GameObject:
   - component: {fileID: 8368029286573521025}
   - component: {fileID: -3447941321695686617}
   - component: {fileID: 8775437893334837690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: golem_boss
   m_TagString: Boss
   m_Icon: {fileID: 0}

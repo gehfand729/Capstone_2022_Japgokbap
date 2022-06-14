@@ -1431,7 +1431,7 @@ GameObject:
   - component: {fileID: -947848024255532585}
   - component: {fileID: 5101038083171749084}
   - component: {fileID: 7943304895959494620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: demon
   m_TagString: Boss
   m_Icon: {fileID: 0}

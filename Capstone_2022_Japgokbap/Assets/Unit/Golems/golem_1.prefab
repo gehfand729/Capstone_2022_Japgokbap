@@ -2836,7 +2836,7 @@ GameObject:
   - component: {fileID: 1736469477408031940}
   - component: {fileID: 7587142946156074080}
   - component: {fileID: 7689828041180269609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: golem_1
   m_TagString: Monster
   m_Icon: {fileID: 0}
