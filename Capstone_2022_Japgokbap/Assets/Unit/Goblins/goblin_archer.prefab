@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 4711259687979921473}
   - component: {fileID: 2309995832683111704}
   - component: {fileID: 8698977320935016585}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: goblin_archer
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -880,6 +880,7 @@ MonoBehaviour:
   enemyAttackSpeed: 4
   isFollowingPlayer: 0
   isAttacking: 0
+  currentState: 
   attackPrefab: {fileID: 1152963532394531431, guid: f3df76d07f3bcdc43a6366a4883c8e72, type: 3}
   hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
 --- !u!195 &8698977320935016585

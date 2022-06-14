@@ -234,7 +234,7 @@ public class StageManager : MonoBehaviour
         fsm = new StateMachine<States, StateDriverUnity>(this);
 
         fsm.ChangeState(States.Ready);
-        //fsm.ChangeState(States.Stage2); // for debugging
+        //fsm.ChangeState(States.Ready); // for debugging
     }
 
     private void Start()
@@ -600,7 +600,7 @@ public class StageManager : MonoBehaviour
             GameManager.instance.AddScore(Mathf.RoundToInt(GameManager.instance.time) * 60);
             GameManager.instance.ActiveBossUi(false);
 
-            fsm.ChangeState(States.Stage3);
+            fsm.ChangeState(States.BossStage);
         }
         else if (GameManager.instance.time == 0 && !bossCleared)
         {

@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 2534297396375480225}
   - component: {fileID: 6117494085265753327}
   - component: {fileID: 8532678078501709677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: golem_2
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -478,6 +478,7 @@ MonoBehaviour:
   enemyAttackSpeed: 0
   isFollowingPlayer: 0
   isAttacking: 0
+  currentState: 
   attackPrefab: {fileID: 0}
   hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
   attackSpell: {fileID: 0}

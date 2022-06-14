@@ -209,57 +209,29 @@ public class Demon : Monster
         fireFieldDelay -= Time.deltaTime;
         breathDelay -= Time.deltaTime;
     }
-    protected void ThrowAttackPrefab()
+
+    protected void FireField()
     {
-        GameObject attack = Instantiate(this.attackPrefab, this.transform.position + (targetPosition - this.transform.position).normalized * this.enemyAttackRange, this.transform.rotation);
-        attack.transform.parent = this.transform;
+        GameObject attack = Instantiate(fireFieldPrefab,
+            this.transform.position + (GameManager.instance.GetPlayerPosition() - this.transform.position).normalized * 23f,
+            Quaternion.identity);
         attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower);
-        Destroy(attack, 2f);
-    }
-
-    protected IEnumerator FireField()
-    {
-        GameObject spell = Instantiate(fireFieldSpell,
-            this.transform.position + (GameManager.instance.GetPlayerPosition() - this.transform.position).normalized * 23f + new Vector3(0,3,0),
-            Quaternion.Euler(90,0,0));
-
-        spell.transform.parent = StageManager.instance.enemyPrefabs.transform;
-        Destroy(spell, 5f);
-
-        yield return new WaitForSeconds(2f);
-
-        SpawnAttackPrefab(spell);
-    }
-
-    protected void SpawnAttackPrefab(GameObject spell)
-    {
-        GameObject attack = Instantiate(fireFieldPrefab, spell.transform.position
-            + (targetPosition - this.transform.position).normalized * 5f
-            , Quaternion.identity);
-        attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower * 3);
-        attack.transform.parent = StageManager.instance.enemyPrefabs.transform;
-        Destroy(attack, 5f);
+        Destroy(attack, this.enemyAttackSpeed / 2);
     }
 
     protected void FireBreath()
     {
-        GameObject attack = Instantiate(breathPrefab, this.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
-        Rigidbody rb = attack.GetComponent<Rigidbody>();
+        GameObject attack = Instantiate(breathPrefab,
+            this.transform.position + (GameManager.instance.GetPlayerPosition() - this.transform.position).normalized * 23f,
+            Quaternion.identity);
 
-        attack.transform.parent = StageManager.instance.enemyPrefabs.transform;
-        Vector3 dir = targetPosition - attack.transform.position;
+        Vector3 dir = GameManager.instance.GetPlayerPosition() - attack.transform.position;
+        dir.y = 0f;
 
         Quaternion rot = Quaternion.LookRotation(dir.normalized);
-        attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower * 3);
 
         attack.transform.rotation = rot;
-
-        Vector3 movePosition = (targetPosition + new Vector3(0, 2, 0)) - attack.transform.position;
-        rb.AddForce(movePosition, ForceMode.Impulse);
-
-        Destroy(attack, 5f);
     }
-
     protected void FinishedBreath()
     {
         isBreathing = false;

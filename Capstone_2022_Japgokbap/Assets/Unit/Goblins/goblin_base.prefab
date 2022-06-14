@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 7720437825812098196}
   - component: {fileID: 8674107924821150317}
   - component: {fileID: 6702739707539708592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: goblin_base
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -171,6 +171,7 @@ MonoBehaviour:
   enemyAttackSpeed: 0
   isFollowingPlayer: 0
   isAttacking: 0
+  currentState: 
   attackPrefab: {fileID: 0}
   hudDamageText: {fileID: 5850896184546754076, guid: 60410bfb9a81a984f918ab9f1ed5fdef, type: 3}
 --- !u!136 &8674107924821150317
