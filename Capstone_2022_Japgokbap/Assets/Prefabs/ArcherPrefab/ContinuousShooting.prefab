@@ -49,7 +49,7 @@ MonoBehaviour:
   skillPrefab: {fileID: 7139951906352003082, guid: 3fce0c98e4738c14a90d9b7e8ba769cc, type: 3}
   skillParticle: {fileID: 100006, guid: de9afd7f27d217447bbe4cf6139dfe68, type: 3}
   m_cooltime: 0
-  skillDuration: 1
+  skillDuration: 0.8
   DestoryTime: 2
 --- !u!82 &2404371254621479619
 AudioSource:

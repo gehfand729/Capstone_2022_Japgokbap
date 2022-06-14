@@ -1086,7 +1086,7 @@ PrefabInstance:
     - target: {fileID: -7242600476918272363, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}
       propertyPath: skillList.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: e1e20d7942e010f49ac44681ba6bad74, type: 2}
+      objectReference: {fileID: 11400000, guid: d6ee086714bfb95489a5c2a8285dcca1, type: 2}
     - target: {fileID: -7242600476918272363, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}
       propertyPath: skillList.Array.data[2]
       value: 
@@ -1094,6 +1094,10 @@ PrefabInstance:
     - target: {fileID: 5759480657984908, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}
       propertyPath: m_Name
       value: archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759480657984908, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 819556842056574774, guid: 9d1a51cd998577c4299a45099c99744a, type: 3}
       propertyPath: m_RootOrder
@@ -1878,7 +1882,7 @@ PrefabInstance:
       objectReference: {fileID: 3138829618167782500}
     - target: {fileID: 3843726472443132527, guid: 181eca74ec0cd904392558cb4b9a230f, type: 3}
       propertyPath: skillsByClass.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3843726472443132527, guid: 181eca74ec0cd904392558cb4b9a230f, type: 3}
       propertyPath: skillsByClass.Array.data[0]

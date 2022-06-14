@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 434244388801980567}
   - component: {fileID: 8374372304740657697}
   - component: {fileID: -5253296524562439264}
+  - component: {fileID: 3377071524945763026}
   m_Layer: 0
   m_Name: ArcherAttackPrefab
   m_TagString: Untagged
@@ -55,7 +56,7 @@ SphereCollider:
   m_GameObject: {fileID: 7139951906352003082}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -143,6 +144,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3377071524945763026
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7139951906352003082}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6458311, y: 1, z: 3.34516}
+  m_Center: {x: 0.0210706, y: 0, z: 1.17258}
 --- !u!1001 &6969753914078649602
 PrefabInstance:
   m_ObjectHideFlags: 0
