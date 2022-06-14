@@ -1509,10 +1509,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 10000
   originHp: 0
-  enemyOffensePower: 100
-  enemyDefensePower: 100
-  enemyExperience: 70
-  enemyScore: 150
+  enemyOffensePower: 660
+  enemyDefensePower: 75
+  enemyExperience: 0
+  enemyScore: 500
   enemyAttackRange: 10
   enemyAttackDelay: 0
   enemyAttackSpeed: 5

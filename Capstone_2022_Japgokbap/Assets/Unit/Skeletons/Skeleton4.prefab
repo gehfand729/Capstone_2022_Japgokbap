@@ -68,10 +68,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda72ea32d6b3724cac315b5f4b734b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHp: 300
+  enemyHp: 360
   originHp: 0
-  enemyOffensePower: 100
-  enemyDefensePower: 100
+  enemyOffensePower: 130
+  enemyDefensePower: 45
   enemyExperience: 20
   enemyScore: 25
   enemyAttackRange: 0

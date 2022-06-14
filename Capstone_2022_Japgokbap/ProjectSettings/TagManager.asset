@@ -22,6 +22,7 @@ TagManager:
   - LeaderBoard
   - ShopItem
   - InventoryItem
+  - Popup
   layers:
   - Default
   - TransparentFX

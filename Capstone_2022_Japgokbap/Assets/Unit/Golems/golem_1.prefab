@@ -2911,10 +2911,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e336aeecbec4f447a66563f8e748b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHp: 500
+  enemyHp: 620
   originHp: 0
-  enemyOffensePower: 100
-  enemyDefensePower: 100
+  enemyOffensePower: 280
+  enemyDefensePower: 55
   enemyExperience: 30
   enemyScore: 40
   enemyAttackRange: 0

@@ -70,9 +70,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 300
   originHp: 0
-  enemyOffensePower: 100
-  enemyDefensePower: 100
-  enemyExperience: 20
+  enemyOffensePower: 110
+  enemyDefensePower: 30
+  enemyExperience: 15
   enemyScore: 15
   enemyAttackRange: 0
   enemyAttackDelay: 0

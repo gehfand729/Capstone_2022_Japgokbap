@@ -818,7 +818,20 @@ public class StageManager : MonoBehaviour
 
     void Finish_Enter()
     {
-        roundInfoText.text = "끝";
+        roundInfoText.text = "게임 종료";
+
+        ClearChildObject(monsters1);
+        ClearChildObject(monsters2);
+        ClearChildObject(monsters3);
+        ClearChildObject(monsters4);
+        ClearChildObject(monsters5);
+        ClearChildObject(monsters6);
+        ClearChildObject(monsters7);
+        ClearChildObject(monsters8);
+        ClearChildObject(monsters9);
+        ClearChildObject(monsters10);
+        ClearChildObject(monsters11);
+        ClearChildObject(monsters12);
         //결과화면
     }
 

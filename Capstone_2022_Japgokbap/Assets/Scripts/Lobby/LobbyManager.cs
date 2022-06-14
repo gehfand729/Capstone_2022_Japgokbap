@@ -341,6 +341,7 @@ public class LobbyManager : MonoBehaviour
                     {
                         case "Archer Character" :
                             GameObject item = Instantiate(archerCharacterItem, inventoryItems[i].transform);
+                            item.tag = "InventoryItem";
                             break;
                     }
                 }
@@ -364,6 +365,11 @@ public class LobbyManager : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public GameObject GetShopPanel()
+    {
+        return shopPanel;
     }
 
     #endregion
@@ -443,7 +449,7 @@ public class LobbyManager : MonoBehaviour
         //Here we have choses what to do when AuthType is None.
         loginPanel.SetActive(true);
         lobbyPanel.SetActive(false);
-        statusText.text = "";
+        //statusText.text = "";
 
         /*
          * Optionally we could Not do the above and force login silently

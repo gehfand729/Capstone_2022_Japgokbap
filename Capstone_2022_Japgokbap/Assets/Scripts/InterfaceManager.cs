@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
+using PlayFab;
+using PlayFab.ClientModels;
 
 public class InterfaceManager : MonoBehaviour
 {
@@ -44,6 +45,8 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private GameObject gameoverPanel;
     private bool isFaded;
     [SerializeField] private GameObject youdiedImage;
+    [SerializeField] private GameObject restartButton;
+    private int gold;
 
     #endregion
 
@@ -106,14 +109,6 @@ public class InterfaceManager : MonoBehaviour
     }
 
     private void ActiveLeaderBoard(){
-        if(Input.GetKeyDown(KeyCode.Tab)){
-            leaderBoard.SetActive(true);
-        }
-
-        if(Input.GetKeyUp(KeyCode.Tab)){
-            leaderBoard.SetActive(false);
-        }
-
         if(playerController.playerCurrentHP <= 0 && !isFaded){
             isFaded = true;
 
@@ -122,6 +117,8 @@ public class InterfaceManager : MonoBehaviour
     }
 
     private IEnumerator DeadLeaderBoard(){
+        gold = Mathf.RoundToInt(GameManager.instance.gameScore / 5);
+        
         yield return new WaitForSeconds(3.0f);
         Image image = leaderBoard.GetComponent<Image>();
         image.color = new Color(255, 255, 255, 1f);
@@ -130,6 +127,8 @@ public class InterfaceManager : MonoBehaviour
         gameoverPanel.SetActive(true);
         image = gameoverPanel.GetComponent<Image>();
         StartCoroutine(Fadeout(image));
+
+        StageManager.instance.fsm.ChangeState(StageManager.States.Finish);
 
         yield return new WaitForSeconds(2.0f);
 
@@ -166,7 +165,11 @@ public class InterfaceManager : MonoBehaviour
         canGetGold.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.0f);
 
-        canGetGold.text = string.Format("획득한 골드 : ?");
+        canGetGold.text = string.Format("획득한 골드 : " + gold);
+
+        yield return new WaitForSeconds(1.0f);
+        restartButton.SetActive(true);
+
     }
 
     private IEnumerator Fadeout(Image image)
@@ -253,5 +256,21 @@ public class InterfaceManager : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
     }
+
+    public void GoToLobby()
+    {
+        PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(),
+                (result) =>
+                {
+                    result.VirtualCurrency["GD"] = gold;
+                },
+                (error) =>
+                {
+                    //error
+                });
+
+        Application.Quit();
+    }
+
     #endregion
 }
