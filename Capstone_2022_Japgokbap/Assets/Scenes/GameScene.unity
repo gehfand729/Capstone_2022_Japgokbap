@@ -1804,6 +1804,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3138829618167782500}
     - target: {fileID: 3843726472443132527, guid: 181eca74ec0cd904392558cb4b9a230f, type: 3}
+<<<<<<< Updated upstream
+=======
+      propertyPath: skillsByClass.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843726472443132527, guid: 181eca74ec0cd904392558cb4b9a230f, type: 3}
+      propertyPath: skillsByClass.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03d07d6b7955a3745b501d76c87a051b, type: 2}
+    - target: {fileID: 3843726472443132527, guid: 181eca74ec0cd904392558cb4b9a230f, type: 3}
+      propertyPath: skillsByClass.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03d07d6b7955a3745b501d76c87a051b, type: 2}
+    - target: {fileID: 3843726472443132527, guid: 181eca74ec0cd904392558cb4b9a230f, type: 3}
+      propertyPath: skillsByClass.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03d07d6b7955a3745b501d76c87a051b, type: 2}
+    - target: {fileID: 3843726472443132527, guid: 181eca74ec0cd904392558cb4b9a230f, type: 3}
+      propertyPath: skillsByClass.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: cd9055148b43aee4993539aff385f78d, type: 2}
+    - target: {fileID: 3843726472443132527, guid: 181eca74ec0cd904392558cb4b9a230f, type: 3}
+>>>>>>> Stashed changes
       propertyPath: skillBarLevels.Array.data[0]
       value: 
       objectReference: {fileID: 3138829618167782499}
