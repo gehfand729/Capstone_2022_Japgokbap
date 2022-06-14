@@ -22,5 +22,6 @@ MonoBehaviour:
   skillCooltime: 30
   coolCheck: 1
   isPassive: 0
-  skillDescription: "\uC801\uC744 \uCD94\uC801\uD558\uB294 \uD654\uC0B4\uC744 \uB0A0\uB9B0\uB2E4"
+  skillDescription: "\uD50C\uB808\uC774\uC5B4\uC640 \uAC00\uAE4C\uC6B4 \uC784\uC758\uC758
+    \uC801\uC744 \uCD94\uACA9\uD558\uB294 \uD654\uC0B4 1\uBC1C\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
   enhancementStatus: 0
