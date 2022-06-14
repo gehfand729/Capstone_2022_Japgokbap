@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 5749371119450932441}
   - component: {fileID: 261564588}
   m_Layer: 0
-  m_Name: WorriorInstance
+  m_Name: Worrior
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

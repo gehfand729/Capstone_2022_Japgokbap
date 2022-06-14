@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using PlayFab;
 using PlayFab.ClientModels;
 
@@ -55,6 +56,20 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private GameObject changeUsernamePanel;
     [SerializeField] private Text guestChangeUsernameText;
 
+    [Header("Character Selects")]
+    [SerializeField] private GameObject warriorCharacterInstance;
+    [SerializeField] private GameObject archerCharacterInstance;
+    [SerializeField] private GameObject warriorSelectedUi;
+    [SerializeField] private GameObject archerSelectedUi;
+
+    [Header("Shop & Inventory")]
+    [SerializeField] private GameObject[] shopItems;
+    [SerializeField] private GameObject[] inventoryItems;
+    [SerializeField] private GameObject archerCharacterItem;
+    [SerializeField] private GameObject purchaseSuccessMessage;
+    [SerializeField] private GameObject purchaseFailureMessage;
+    [SerializeField] private Text currentGoldInfoText;
+    [SerializeField] private int currentHaveGold;
 
     #endregion
 
@@ -211,7 +226,7 @@ public class LobbyManager : MonoBehaviour
         if ( m_authService.AuthType == Authtypes.Silent)
         {
             // 게스트 로그인 시 닉변 안됨
-            Destroy(changeUsernamePanel, 3f);
+            Invoke("SetActiveFalseNicknamePanel", 3f);
         }
         else
         {
@@ -239,12 +254,116 @@ public class LobbyManager : MonoBehaviour
 
     public void OnActivePanelsButtonClicked(GameObject panel)
     {
+        settingPanel.SetActive(false);
+        inventoryPanel.SetActive(false);
+        shopPanel.SetActive(false);
+        leaderboardPanel.SetActive(false);
         panel.SetActive(true);
     }
 
     public void OnDeactivePanelsButtonClicked(GameObject panel)
     {
         panel.SetActive(false);
+    }
+
+    public void PurchaseItem()
+    {
+        GameObject clickObject = EventSystem.current.currentSelectedGameObject;
+        
+        if (clickObject.transform.childCount == 0)
+        {
+            return;
+        }
+
+        var request = new PurchaseItemRequest()
+        {
+            CatalogVersion = "Characters",
+            ItemId = "Archer Character",
+            VirtualCurrency = "GD",
+            Price = 1000
+        };
+
+        PlayFabClientAPI.PurchaseItem(request,
+            (result) =>
+            {
+                purchaseSuccessMessage.SetActive(true);
+
+                Invoke("SetActiveFalsePurchaseSuccessPanel", 2f);
+
+                PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(),
+                (result) =>
+                {
+                    currentHaveGold = result.VirtualCurrency["GD"];
+                    currentGoldInfoText.text = string.Format("보유 골드 : " + currentHaveGold);
+                },
+                (error) =>
+                {
+                    //error
+                });
+            },
+            (error) =>
+            {
+                purchaseFailureMessage.SetActive(true);
+
+                Invoke("SetActiveFalsePurchaseFailurePanel", 2f);
+            });
+    }
+
+    public void OnActiveShopPanel()
+    {
+        PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(),
+            (result) =>
+            {
+                currentHaveGold = result.VirtualCurrency["GD"];
+                currentGoldInfoText.text = string.Format("보유 골드 : " + currentHaveGold);
+            },
+            (error) =>
+            {
+                //error
+            });
+    }
+
+    public void OnActiveInventoryPanel()
+    {
+        PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(),
+            (result) =>
+            {
+                for (int i = 0; i < result.Inventory.Count; i++)
+                {
+                    if (inventoryItems[i].transform.childCount != 0)
+                    {
+                        return;
+                    }
+
+                    var inventoryItem = result.Inventory[i];
+
+                    switch (inventoryItem.ItemId)
+                    {
+                        case "Archer Character" :
+                            GameObject item = Instantiate(archerCharacterItem, inventoryItems[i].transform);
+                            break;
+                    }
+                }
+            },
+            (error) =>
+            {
+                //error
+            });
+    }
+
+    public void OnActiveInventoryItem()
+    {
+        GameObject clickObject = EventSystem.current.currentSelectedGameObject;
+
+        if (clickObject.transform.childCount != 0)
+        {
+            switch (clickObject.transform.GetChild(0).name)
+            {
+                case "Archer Character(Clone)" :
+                    archerCharacterInstance.SetActive(true);
+                    break;
+            }
+        }
     }
 
     #endregion
@@ -350,11 +469,13 @@ public class LobbyManager : MonoBehaviour
                     case "Warrior":
                         isCharacterTouched = true;
                         mainCamera.transform.position = cameraPoints[1].transform.position;
+                        warriorSelectedUi.SetActive(true);
                         selectName = hit.collider.name;
                         break;
                     case "Archer" :
                         isCharacterTouched = true;
                         mainCamera.transform.position = cameraPoints[2].transform.position;
+                        archerSelectedUi.SetActive(true);
                         selectName = hit.collider.name;
                         break;
                     case "Magacian" :
@@ -376,7 +497,15 @@ public class LobbyManager : MonoBehaviour
                 switch (hit.collider.name)
                 {
                     case "Warrior" :
+                        isCharacterTouched = false;
+                        mainCamera.transform.position = cameraPoints[0].transform.position;
+                        warriorSelectedUi.SetActive(false);
+                        break;
                     case "Archer" :
+                        isCharacterTouched = false;
+                        mainCamera.transform.position = cameraPoints[0].transform.position;
+                        archerSelectedUi.SetActive(false);
+                        break;
                     case "Magacian" :
                         isCharacterTouched = false;
                         mainCamera.transform.position = cameraPoints[0].transform.position;
@@ -388,6 +517,21 @@ public class LobbyManager : MonoBehaviour
                 characterSelectedUi.SetActive(false);
             }   
         }   
+    }
+
+    private void SetActiveFalseNicknamePanel()
+    {
+        changeUsernamePanel.SetActive(false);
+    }
+
+    private void SetActiveFalsePurchaseSuccessPanel()
+    {
+        purchaseSuccessMessage.SetActive(false);
+    }
+
+    private void SetActiveFalsePurchaseFailurePanel()
+    {
+        purchaseFailureMessage.SetActive(false);
     }
 
     #endregion

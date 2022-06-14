@@ -20,6 +20,8 @@ TagManager:
   - Boss
   - PiercingShot
   - LeaderBoard
+  - ShopItem
+  - InventoryItem
   layers:
   - Default
   - TransparentFX
