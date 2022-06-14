@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 380958209652736124}
   - component: {fileID: 1556059041555597673}
   - component: {fileID: 1666894579105827578}
+  - component: {fileID: 3565334233910216378}
   m_Layer: 6
   m_Name: Skeleton2
   m_TagString: Monster
@@ -96,6 +97,25 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!95 &3565334233910216378
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4886527229725609321}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 8e688bc8258b83244b7a1ff73fb87e5b, type: 3}
+  m_Controller: {fileID: 9100000, guid: 2cd97e430a3d096428ed4824bd18e2f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6071783298137642169
 PrefabInstance:
   m_ObjectHideFlags: 0
