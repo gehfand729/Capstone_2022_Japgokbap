@@ -21,8 +21,6 @@ public class Lich : Monster
     {
         if (this.isFollowingPlayer)
         {
-            FollowSetting();
-
             Move();
         }
 

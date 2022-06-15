@@ -23,8 +23,6 @@ public class GolemBoss : Monster
         
         if (this.isFollowingPlayer)
         {
-            FollowSetting();
-
             Move();
         }
 

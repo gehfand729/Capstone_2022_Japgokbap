@@ -41,8 +41,6 @@ public class Demon : Monster
 
         if (this.isFollowingPlayer)
         {
-            FollowSetting();
-
             Move();
         }
 
