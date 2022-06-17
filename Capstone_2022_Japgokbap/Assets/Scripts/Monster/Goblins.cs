@@ -92,7 +92,7 @@ public class Goblins : Monster
 
         attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower);
         attack.transform.parent = StageManager.instance.enemyPrefabs.transform;
-        rb.AddForce(movePosition, ForceMode.Impulse);
+        rb.AddForce(movePosition.normalized * 15f, ForceMode.Impulse);
 
         Destroy(attack, 5f);
     }

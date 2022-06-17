@@ -423,7 +423,7 @@ public class StageManager : MonoBehaviour
 
     void Stage1_Update()
     {
-        if (GameManager.instance.time < 60f && currentBoss == null)
+        if (GameManager.instance.time < 60f && currentBoss == null && !bossCleared)
         {
             ClearChildObject(monsters1);
             ClearChildObject(monsters2);
@@ -591,7 +591,7 @@ public class StageManager : MonoBehaviour
 
     void Stage2_Update()
     {
-        if (GameManager.instance.time < 60f && currentBoss == null)
+        if (GameManager.instance.time < 60f && currentBoss == null && !bossCleared)
         {
             ClearChildObject(monsters4);
             ClearChildObject(monsters5);
@@ -754,7 +754,7 @@ public class StageManager : MonoBehaviour
 
     void Stage3_Update()
     {
-        if (GameManager.instance.time < 60f && currentBoss == null)
+        if (GameManager.instance.time < 60f && currentBoss == null && !bossCleared)
         {
             roundInfoText.text = "Stage 3 Boss";
             roundCount = 5;

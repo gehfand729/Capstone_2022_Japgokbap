@@ -234,7 +234,8 @@ public class Demon : Monster
         GameObject attack = Instantiate(fireFieldPrefab, spell.transform.position
             + (targetPosition - this.transform.position).normalized * 5f
             , Quaternion.identity);
-        attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower * 3);
+        float damage = this.enemyOffensePower * 1.3f;
+        attack.GetComponent<EnemyAttackHit>().SetDamage(damage);
         attack.transform.parent = StageManager.instance.enemyPrefabs.transform;
         Destroy(attack, 5f);
     }
@@ -248,7 +249,8 @@ public class Demon : Monster
         Vector3 dir = targetPosition - attack.transform.position;
 
         Quaternion rot = Quaternion.LookRotation(dir.normalized);
-        attack.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower * 3);
+        float damage = this.enemyOffensePower * 1.2f;
+        attack.GetComponent<EnemyAttackHit>().SetDamage(damage);
 
         attack.transform.rotation = rot;
 

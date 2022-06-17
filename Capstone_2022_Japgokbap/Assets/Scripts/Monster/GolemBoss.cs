@@ -134,7 +134,8 @@ public class GolemBoss : Monster
         strayDelay = strayCoolTime;
 
         GameObject stary = Instantiate(strayPrefab, this.transform.position + new Vector3(0, 6, 0), Quaternion.identity);
-        stary.GetComponent<EnemyAttackHit>().SetDamage(this.enemyOffensePower * 2);
+        float damage = this.enemyOffensePower * 1.5f;
+        stary.GetComponent<EnemyAttackHit>().SetDamage(damage);
         stary.transform.parent = this.transform;
         Destroy(stary, strayDelay);
     }

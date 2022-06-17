@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemyAttackHit : MonoBehaviour
 {
-    private int attackDamage;
+    private float attackDamage;
 
-    public void SetDamage(int damage)
+    public void SetDamage(float damage)
     {
         attackDamage = damage;
     }
 
-    public int GetDamage()
+    public float GetDamage()
     {
         return attackDamage;
     }

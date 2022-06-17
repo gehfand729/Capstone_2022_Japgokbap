@@ -270,7 +270,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(other.gameObject);
             break;
             case "AttackPrefab" :
-                GetDamaged(other.gameObject.GetComponent<EnemyAttackHit>().GetDamage());
+                GetDamaged(Mathf.RoundToInt(other.gameObject.GetComponent<EnemyAttackHit>().GetDamage()));
                 Destroy(other.gameObject);
             break;
         }
