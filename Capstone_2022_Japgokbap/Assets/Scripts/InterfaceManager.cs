@@ -8,6 +8,9 @@ using PlayFab.ClientModels;
 public class InterfaceManager : MonoBehaviour
 {
     #region "Private"
+
+    private static InterfaceManager m_instance;
+
     private PlayerController playerController;
     private Text playerLv;
     [SerializeField] private Text currentGameScore;
@@ -52,6 +55,19 @@ public class InterfaceManager : MonoBehaviour
 
     #region "Public"
     public SelectButton[] selectButtons = new SelectButton[3];
+
+    public static InterfaceManager instance
+    {
+        get
+        {
+            if (m_instance == null)
+            {
+                m_instance = FindObjectOfType<InterfaceManager>();
+            }
+
+            return m_instance;
+        }
+    }
     #endregion
 
     private void Awake() {
@@ -81,7 +97,11 @@ public class InterfaceManager : MonoBehaviour
         CurrentLv();
         CalScore();
         AddUsableBar();
-        ActiveLeaderBoard();
+
+        if (playerController.playerCurrentHP <= 0)
+        {
+            ActiveLeaderBoard();
+        }
     }
 
     #region "Private Methods"
@@ -108,8 +128,9 @@ public class InterfaceManager : MonoBehaviour
         }else return;
     }
 
-    private void ActiveLeaderBoard(){
-        if(playerController.playerCurrentHP <= 0 && !isFaded){
+    public void ActiveLeaderBoard(){
+        if(!isFaded)
+        {
             isFaded = true;
 
             StartCoroutine(DeadLeaderBoard());

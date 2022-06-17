@@ -51,6 +51,8 @@ public class StageManager : MonoBehaviour
 
     public int debugCount;
 
+    [SerializeField] private string currentState;
+
     [Header ("Settings")]
     public float waitingTime;
     public int spawnerCount;
@@ -244,6 +246,8 @@ public class StageManager : MonoBehaviour
 
     private void Update() 
     {
+        currentState = fsm.State.ToString();
+
         fsm.Driver.Update.Invoke();
     }
 
@@ -440,7 +444,8 @@ public class StageManager : MonoBehaviour
 
             fsm.ChangeState(States.Stage2);
         }
-        else if (GameManager.instance.time == 0 && !bossCleared)
+        
+        if (GameManager.instance.time <= 0 && !bossCleared)
         {
             GameManager.instance.ActiveBossUi(false);
 
@@ -602,7 +607,8 @@ public class StageManager : MonoBehaviour
 
             fsm.ChangeState(States.Stage3);
         }
-        else if (GameManager.instance.time == 0 && !bossCleared)
+        
+        if (GameManager.instance.time <= 0 && !bossCleared)
         {
             GameManager.instance.ActiveBossUi(false);
 
@@ -758,7 +764,8 @@ public class StageManager : MonoBehaviour
 
             fsm.ChangeState(States.BossStage);
         }
-        else if (GameManager.instance.time == 0 && !bossCleared)
+        
+        if (GameManager.instance.time <= 0 && !bossCleared)
         {
             GameManager.instance.ActiveBossUi(false);
             fsm.ChangeState(States.Finish);
@@ -802,7 +809,7 @@ public class StageManager : MonoBehaviour
         {
             GameManager.instance.bossHpBar.value = currentBoss.GetComponent<Monster>().GetEnemyHp() / currentBoss.GetComponent<Monster>().GetOriginHp();
         }
-        else if (bossCleared)
+        else
         {
             GameManager.instance.ActiveBossUi(false);
             GameManager.instance.AddScore(Mathf.RoundToInt(GameManager.instance.time) * 80);
@@ -838,6 +845,7 @@ public class StageManager : MonoBehaviour
     void Finish_Update()
     {
         //로비로 돌아가기
+        InterfaceManager.instance.ActiveLeaderBoard();
     }
 
     void Finish_Exit()

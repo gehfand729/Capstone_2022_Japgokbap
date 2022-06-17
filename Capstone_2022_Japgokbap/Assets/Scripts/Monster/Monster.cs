@@ -54,6 +54,8 @@ public abstract class Monster : MonoBehaviour
 
         MyNavMesh = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
+
+        MyNavMesh.speed += Random.Range(-1f, 1f);
     }
 
     void Update()
