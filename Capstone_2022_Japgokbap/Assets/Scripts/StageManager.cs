@@ -419,21 +419,25 @@ public class StageManager : MonoBehaviour
 
             yield return new WaitForSeconds(waitingTime);
         }
-
-        yield return new WaitForSeconds(10f);
-
-        roundInfoText.text = "Stage 1 Boss";
-        roundCount = 4;
-
-        GameManager.instance.ActiveBossUi(true);
-        GameObject monster = Instantiate(lich, bossSpawner.transform.position, Quaternion.identity);
-        monster.transform.parent = monsters3.transform;
-        currentBoss = monster;
     }
 
     void Stage1_Update()
     {
-        if (!bossCleared)
+        if (GameManager.instance.time < 60f && currentBoss == null)
+        {
+            ClearChildObject(monsters1);
+            ClearChildObject(monsters2);
+            ClearChildObject(monsters3);
+
+            roundInfoText.text = "Stage 1 Boss";
+            roundCount = 4;
+
+            GameManager.instance.ActiveBossUi(true);
+            GameObject monster = Instantiate(lich, bossSpawner.transform.position, Quaternion.identity);
+            currentBoss = monster;
+        }
+
+        if (currentBoss != null && !bossCleared)
         {
             GameManager.instance.bossHpBar.value = currentBoss.GetComponent<Monster>().GetEnemyHp() / currentBoss.GetComponent<Monster>().GetOriginHp();
         }
@@ -456,6 +460,7 @@ public class StageManager : MonoBehaviour
     void Stage1_Exit()
     {
         bossCleared = false;
+        currentBoss = null;
 
         ClearChildObject(monsters1);
         ClearChildObject(monsters2);
@@ -582,21 +587,26 @@ public class StageManager : MonoBehaviour
 
             yield return new WaitForSeconds(waitingTime);
         }
-
-        yield return new WaitForSeconds(10f);
-
-        roundInfoText.text = "Stage 2 Boss";
-        roundCount = 5;
-
-        GameManager.instance.ActiveBossUi(true);
-        GameObject monster = Instantiate(orc, bossSpawner.transform.position, Quaternion.identity);
-        monster.transform.parent = monsters7.transform;
-        currentBoss = monster;
     }
 
     void Stage2_Update()
     {
-        if (!bossCleared)
+        if (GameManager.instance.time < 60f && currentBoss == null)
+        {
+            ClearChildObject(monsters4);
+            ClearChildObject(monsters5);
+            ClearChildObject(monsters6);
+            ClearChildObject(monsters7);
+
+            roundInfoText.text = "Stage 2 Boss";
+            roundCount = 5;
+
+            GameManager.instance.ActiveBossUi(true);
+            GameObject monster = Instantiate(orc, bossSpawner.transform.position, Quaternion.identity);
+            currentBoss = monster;
+        }
+
+        if (currentBoss != null && !bossCleared)
         {
             GameManager.instance.bossHpBar.value = currentBoss.GetComponent<Monster>().GetEnemyHp() / currentBoss.GetComponent<Monster>().GetOriginHp();
         }
@@ -619,6 +629,7 @@ public class StageManager : MonoBehaviour
     void Stage2_Exit()
     {
         bossCleared = false;
+        currentBoss = null;
 
         ClearChildObject(monsters4);
         ClearChildObject(monsters5);
@@ -739,21 +750,26 @@ public class StageManager : MonoBehaviour
 
             yield return new WaitForSeconds(waitingTime);
         }
-
-        yield return new WaitForSeconds(10f);
-
-        roundInfoText.text = "Stage 3 Boss";
-        roundCount = 5;
-
-        GameManager.instance.ActiveBossUi(true);
-        GameObject monster = Instantiate(golem, bossSpawner.transform.position, Quaternion.identity);
-        monster.transform.parent = monsters11.transform;
-        currentBoss = monster;
     }
 
     void Stage3_Update()
     {
-        if (!bossCleared)
+        if (GameManager.instance.time < 60f && currentBoss == null)
+        {
+            roundInfoText.text = "Stage 3 Boss";
+            roundCount = 5;
+
+            ClearChildObject(monsters8);
+            ClearChildObject(monsters9);
+            ClearChildObject(monsters10);
+            ClearChildObject(monsters11);
+
+            GameManager.instance.ActiveBossUi(true);
+            GameObject monster = Instantiate(golem, bossSpawner.transform.position, Quaternion.identity);
+            currentBoss = monster;
+        }
+
+        if (currentBoss != null && !bossCleared)
         {
             GameManager.instance.bossHpBar.value = currentBoss.GetComponent<Monster>().GetEnemyHp() / currentBoss.GetComponent<Monster>().GetOriginHp();
         }
@@ -775,6 +791,7 @@ public class StageManager : MonoBehaviour
     void Stage3_Exit()
     {
         bossCleared = false;
+        currentBoss = null;
 
         ClearChildObject(monsters8);
         ClearChildObject(monsters9);

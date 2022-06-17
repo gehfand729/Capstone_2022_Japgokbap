@@ -376,7 +376,7 @@ PrefabInstance:
       objectReference: {fileID: 1488380716}
     - target: {fileID: 3820174900497407265, guid: ae42de4f2233a7343b8d2d5ada2bfec9, type: 3}
       propertyPath: waitingTime
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3820174900497407265, guid: ae42de4f2233a7343b8d2d5ada2bfec9, type: 3}
       propertyPath: enemyPrefabs
